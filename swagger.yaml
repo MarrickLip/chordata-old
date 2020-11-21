@@ -18,6 +18,7 @@ paths:
     get:
       tags:
       - datasets
+      description: Test
       parameters: []
       responses:
         "200":
