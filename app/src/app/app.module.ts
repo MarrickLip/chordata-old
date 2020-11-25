@@ -6,7 +6,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AppComponent }   from './app.component';
+import { AppComponent } from './app.component';
 
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';

@@ -346,19 +346,19 @@
     // Active color changing
 
     &[data-active-color="primary"]{
-        @include sidebar-active-color($primary-color);
+        @include sidebar-active-color($chordata-primary-accent);
     }
     &[data-active-color="info"]{
-        @include sidebar-active-color($info-color);
+        @include sidebar-active-color(orange);
     }
     &[data-active-color="success"]{
-        @include sidebar-active-color($success-color);
+        @include sidebar-active-color(yellow);
     }
     &[data-active-color="warning"]{
-        @include sidebar-active-color($warning-color);
+        @include sidebar-active-color(green);
     }
     &[data-active-color="danger"]{
-        @include sidebar-active-color($danger-color);
+        @include sidebar-active-color(blue);
     }
 
     .user{

@@ -1,6 +1,9 @@
 .DS_Store
 **/.DS_Store
 
+.idea
+**/.idea
+
 app/typings
 app/node_modules
 app/.*
