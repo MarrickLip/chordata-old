@@ -1,3 +1,10 @@
+.DS_Store
+**/.DS_Store
+
+app/typings
+app/node_modules
+app/.*
+
 # Logs
 logs
 *.log
