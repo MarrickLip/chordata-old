@@ -62,6 +62,7 @@
     "jquery": "3.4.1",
     "jvectormap": "2.0.4",
     "jw-bootstrap-switch-ng2": "2.0.5",
+    "minimist": "^0.2.1",
     "ngx-chips": "2.1.0",
     "nouislider": "9.2.0",
     "perfect-scrollbar": "1.4.0",
@@ -71,6 +72,7 @@
     "sweetalert2": "8.12.1",
     "twitter-bootstrap-wizard": "1.2.0",
     "web-animations-js": "2.3.1",
+    "webpack-subresource-integrity": "^1.5.1",
     "zone.js": "0.10.2"
   },
   "devDependencies": {
