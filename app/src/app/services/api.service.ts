@@ -34,9 +34,9 @@ const projects: ProjectSummary[] = [
     }
   },
   {
-    id: 'eastern-forrest',
+    id: 'eastern-forest',
     info: {
-      name: 'Eastern Forrest',
+      name: 'Eastern Forest',
       description: 'Footage from the Eastern Forest trials',
       image: 'https://www.doc.govt.nz/globalassets/images/places/nelson-tasman/heaphy-track/heaphy-forest-1200.jpg',
       labels: ['Trail Cameras'],

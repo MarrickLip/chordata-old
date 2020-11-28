@@ -164,7 +164,7 @@ paper-dashboard-pro-angular/
 │   │   ├── layouts
 │   │   │   ├── admin
 │   │   │   │   ├── admin-layout.component.html
-│   │   │   │   └── admin-layout.component.ts
+│   │   │   │   └── project-details.component.ts
 │   │   │   └── auth
 │   │   │       ├── auth-layout.component.html
 │   │   │       └── auth-layout.component.ts
