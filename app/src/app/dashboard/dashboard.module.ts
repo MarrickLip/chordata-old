@@ -8,6 +8,7 @@ import {
 import { DashboardComponent } from './dashboard.component';
 
 import { DashboardRoutes } from './dashboard.routing';
+import {NavbarModule} from "../shared/navbar/navbar.module";
 
 @NgModule({
     imports: [
@@ -15,8 +16,9 @@ import { DashboardRoutes } from './dashboard.routing';
         RouterModule.forChild(DashboardRoutes),
         FormsModule,
         AgmCoreModule.forRoot({
-          apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-        })
+            apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+        }),
+        NavbarModule
     ],
     declarations: [DashboardComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

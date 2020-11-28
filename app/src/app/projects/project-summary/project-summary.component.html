@@ -1,0 +1,20 @@
+<div class="card project-card" routerLink="projects/{{project.id}}">
+    <div>
+        <img class="project-card--image"
+            src="{{ project?.info?.image }}"
+            alt="Image for {{project?.info?.name}}"
+        >
+    </div>
+    <div class="card-content">
+        <h6 class="project-card--title">
+            {{ project?.info?.name }}
+        </h6>
+        <div class="text-muted project-card--description ">
+            {{ project?.info?.description }}
+        </div>
+    </div>
+    <div class="footer project-card--labels">
+        <span class="badge badge-pill badge-default project-card--label">Trail Cameras</span>
+        <span class="badge badge-pill badge-default project-card--label">Eradication</span>
+    </div>
+</div>

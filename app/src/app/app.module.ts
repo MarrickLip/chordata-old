@@ -15,6 +15,8 @@ import { NavbarModule} from './shared/navbar/navbar.module';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { AppRoutes } from './app.routing';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectSummaryComponent } from './projects/project-summary/project-summary.component';
 
 @NgModule({
     imports:      [
@@ -34,6 +36,8 @@ import { AppRoutes } from './app.routing';
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent,
+        ProjectsComponent,
+        ProjectSummaryComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
