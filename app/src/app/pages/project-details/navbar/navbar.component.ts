@@ -1,10 +1,9 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef, Directive } from '@angular/core';
-import { ROUTES } from '../sidebar/sidebar.component';
 import { Router, ActivatedRoute, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 
-let misc: any = {
+const misc: any = {
     navbar_menu_visible: 0,
     active_collapse: true,
     disabled_collapse_init: 0,
@@ -34,8 +33,6 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.listTitles = ROUTES.filter(listTitle => listTitle);
-
         const navbar: HTMLElement = this.element.nativeElement;
         const body = document.getElementsByTagName('body')[0];
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -84,8 +81,8 @@ export class NavbarComponent implements OnInit {
     }
 
     sidebarOpen() {
-        let toggleButton = this.toggleButton;
-        let html = document.getElementsByTagName('html')[0];
+        const toggleButton = this.toggleButton;
+        const html = document.getElementsByTagName('html')[0];
         setTimeout(function() {
             toggleButton.classList.add('toggled');
         }, 500);
@@ -97,7 +94,7 @@ export class NavbarComponent implements OnInit {
         this.sidebarVisible = true;
     }
     sidebarClose() {
-        let html = document.getElementsByTagName('html')[0];
+        const html = document.getElementsByTagName('html')[0];
         this.toggleButton.classList.remove('toggled');
         this.sidebarVisible = false;
         html.classList.remove('nav-open');
@@ -120,24 +117,7 @@ export class NavbarComponent implements OnInit {
     }
 
     getTitle() {
-        let titlee = this.location.prepareExternalUrl(this.location.path());
-        if (titlee.charAt(0) === '#') {
-            titlee = titlee.slice( 1 );
-        }
-        for (let item = 0; item < this.listTitles.length; item++) {
-            let parent = this.listTitles[item];
-            if (parent.path === titlee) {
-                return parent.title;
-            } else if (parent.children) {
-                let children_from_url = titlee.split('/')[2];
-                for (let current = 0; current < parent.children.length; current++) {
-                    if (parent.children[current].path === children_from_url ) {
-                        return parent.children[current].title;
-                    }
-                }
-            }
-        }
-        return 'Dashboard';
+
     }
 
     getPath() {

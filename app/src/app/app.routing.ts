@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import {HomePageComponent} from './pages/home/home-page.component';
+import {SectionComponent} from './pages/project-details/section/section.component';
 
 export const AppRoutes: Routes = [
     {
@@ -16,5 +17,16 @@ export const AppRoutes: Routes = [
     {
         path: 'projects/:id',
         component: ProjectDetailsComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'dashboard',
+            },
+            {
+                path: ':section',
+                component: SectionComponent,
+            }
+        ]
     }
 ];

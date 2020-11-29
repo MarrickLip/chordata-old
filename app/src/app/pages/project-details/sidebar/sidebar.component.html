@@ -1,4 +1,3 @@
-
 <div class="logo">
 	<a href="https://www.creative-tim.com" class="simple-text logo-mini">
         <div class="logo-image-small">
@@ -14,30 +13,13 @@
 
 <div class="sidebar-wrapper">
     <ul class="nav">
-            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
-                <!--If is a single link-->
-                <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
-                    <i class="{{menuitem.icontype}}"></i>
-                    <p>{{menuitem.title}}</p>
-                </a>
-                <!--If it have a submenu-->
-                <a data-toggle="collapse" href="#{{menuitem.collapse}}" *ngIf="menuitem.type === 'sub'">
-                    <i class="{{menuitem.icontype}}"></i>
-                    <p>{{menuitem.title}}<b class="caret"></b></p>
-                </a>
-
-                <!--Display the submenu items-->
-                <div id="{{menuitem.collapse}}" class="collapse" *ngIf="menuitem.type === 'sub'">
-                    <ul class="nav">
-                        <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
-                            <a [routerLink]="[menuitem.path, childitem.path]">
-                                <span class="sidebar-mini-icon">{{childitem.ab}}</span>
-                                <span class="sidebar-normal">{{childitem.title}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
+        <li routerLinkActive="active" *ngFor="let section of sections">
+            <a [routerLink]="[section.id]">
+                <p>
+                    <span><i class="fas fa-{{section.icon}}"></i></span>
+                    <span class="section--title">{{section.name}}</span>
+                </p>
+            </a>
+        </li>
+    </ul>
 </div>

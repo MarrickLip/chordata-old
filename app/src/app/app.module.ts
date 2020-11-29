@@ -13,14 +13,15 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 import { AppRoutes } from './app.routing';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { ProjectSummaryComponent } from './pages/home/project-summary/project-summary.component';
-import {DashboardModule} from "./pages/project-details/dashboard/dashboard.module";
+import { DashboardModule } from './pages/project-details/dashboard/dashboard.module';
+import { SectionComponent } from './pages/project-details/section/section.component';
 
 @NgModule({
     imports: [
         BrowserAnimationsModule,
         FormsModule,
         RouterModule.forRoot(AppRoutes, {
-            useHash: true
+            //useHash: true,
         }),
         NgbModule,
         HttpModule,
@@ -33,6 +34,7 @@ import {DashboardModule} from "./pages/project-details/dashboard/dashboard.modul
         ProjectDetailsComponent,
         HomePageComponent,
         ProjectSummaryComponent,
+        SectionComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
