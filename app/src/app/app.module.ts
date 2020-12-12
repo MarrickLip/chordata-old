@@ -14,7 +14,7 @@ import { AppRoutes } from './app.routing';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { ProjectSummaryComponent } from './pages/home/project-summary/project-summary.component';
 import { DashboardModule } from './pages/project-details/dashboard/dashboard.module';
-import { SectionComponent } from './pages/project-details/section/section.component';
+import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
 
 @NgModule({
     imports: [
@@ -34,7 +34,7 @@ import { SectionComponent } from './pages/project-details/section/section.compon
         ProjectDetailsComponent,
         HomePageComponent,
         ProjectSummaryComponent,
-        SectionComponent,
+        SectionWrapperComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
