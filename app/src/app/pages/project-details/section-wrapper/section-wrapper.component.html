@@ -1,0 +1,8 @@
+<div class="main-content">
+    <ng-container [ngSwitch]="sectionId">
+        <app-dashboard *ngSwitchCase="'dashboard'"></app-dashboard>
+        <div *ngSwitchDefault>
+            Other Section: {{sectionId}}
+        </div>
+    </ng-container>
+</div>
