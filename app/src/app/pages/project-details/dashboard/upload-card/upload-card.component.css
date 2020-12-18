@@ -29,5 +29,6 @@
 .upload-card--body--title {
     font-size: 28px;
     margin: 12px;
-    color: var(--primary-contrast);   
+    color: var(--primary-contrast);
+    letter-spacing: 0.075em;   
 }
