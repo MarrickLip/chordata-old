@@ -111,3 +111,9 @@ $container-max-widths: (
 
 @import 'paper-dashboard/responsive';
 @import 'paper-dashboard/media-queries';
+
+:root{
+        --primary: #6F8581;
+        --primary-contrast: #f4f3ef;
+        --primary-accent: #9fd4bf;
+}

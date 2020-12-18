@@ -22,6 +22,7 @@ import { SectionWrapperComponent } from './pages/project-details/section-wrapper
         FormsModule,
         RouterModule.forRoot(AppRoutes, {
             //useHash: true,
+            // enableTracing: true,
         }),
         NgbModule,
         HttpModule,

@@ -4,14 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
 
 import {NavbarModule} from '../navbar/navbar.module';
+import { UploadCardComponent } from './upload-card/upload-card.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        NavbarModule
+        NavbarModule,
+        RouterModule,
     ],
-    declarations: [DashboardComponent],
+    declarations: [DashboardComponent, UploadCardComponent],
     exports: [
         DashboardComponent
     ],

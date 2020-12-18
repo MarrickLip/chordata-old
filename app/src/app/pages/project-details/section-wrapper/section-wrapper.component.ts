@@ -9,6 +9,7 @@ import { Section } from '../project-details.component';
 })
 export class SectionWrapperComponent implements OnInit {
   sectionId: string;
+  showUploadModal: boolean;
 
   constructor(
     private route: ActivatedRoute
@@ -16,8 +17,13 @@ export class SectionWrapperComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
-      params => {this.sectionId = params.get('section')}
+      params => this.sectionId = params.get('section')
     )
+
+    this.route.fragment.subscribe(
+      fragment => this.showUploadModal = fragment === 'upload'
+    )
+
   }
 
 }
