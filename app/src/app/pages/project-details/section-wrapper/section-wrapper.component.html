@@ -1,10 +1,12 @@
 <div class="main-content">
-    <ng-container [ngSwitch]="sectionId">
+    <!-- <ng-container [ngSwitch]="sectionId">
         <app-dashboard *ngSwitchCase="'dashboard'"></app-dashboard>
         <div *ngSwitchDefault>
             Other Section: {{sectionId}}
         </div>
-    </ng-container>
-    <div *ngIf="showUploadModal" class="upload-modal" tabindex="-1" role="dialog">
-    </div>    
+    </ng-container>      -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">
+        Launch upload modal
+      </button>
+    <app-upload-modal></app-upload-modal>    
 </div>

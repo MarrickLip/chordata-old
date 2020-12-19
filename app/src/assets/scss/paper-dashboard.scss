@@ -17,7 +17,7 @@ $grid-breakpoints: (
         sm: 576px,
         md: 768px,
         lg: 1000px,
-        xl: 1200px,
+        xl: 1400px,
         xxl: 1900px
 );
 
@@ -25,7 +25,7 @@ $container-max-widths: (
         sm: 540px,
         md: 720px,
         lg: 1000px,
-        xl: 1140px,
+        xl: 1540px,
         xxl: 1610px
 );
 
@@ -117,3 +117,8 @@ $container-max-widths: (
         --primary-contrast: #f4f3ef;
         --primary-accent: #9fd4bf;
 }
+
+@import '~ng-wizard/themes/ng_wizard.min.css';
+// @import '~ng-wizard/themes/ng_wizard_theme_arrows.min.css';
+@import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
+// @import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';

@@ -21,14 +21,14 @@
 }
 
 .upload-card--body--icon {
-    font-size: 64px;
-    margin: 12px;
+    font-size: 56px;
+    margin-right: 6px;
     color: var(--primary-contrast);
 }
 
 .upload-card--body--title {
-    font-size: 28px;
-    margin: 12px;
+    font-size: 24px;
+    margin-left: 6px;
     color: var(--primary-contrast);
     letter-spacing: 0.075em;   
 }

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgWizardModule, THEME } from 'ng-wizard';
 
 import { AppComponent } from './app.component';
 
@@ -15,6 +16,7 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { ProjectSummaryComponent } from './pages/home/project-summary/project-summary.component';
 import { DashboardModule } from './pages/project-details/dashboard/dashboard.module';
 import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
+import { UploadModalComponent } from './pages/project-details/upload-modal/upload-modal.component';
 
 @NgModule({
     imports: [
@@ -29,6 +31,7 @@ import { SectionWrapperComponent } from './pages/project-details/section-wrapper
         SidebarModule,
         NavbarModule,
         DashboardModule,
+        NgWizardModule.forRoot({theme: THEME.circles})
     ],
     declarations: [
         AppComponent,
@@ -36,6 +39,7 @@ import { SectionWrapperComponent } from './pages/project-details/section-wrapper
         HomePageComponent,
         ProjectSummaryComponent,
         SectionWrapperComponent,
+        UploadModalComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
