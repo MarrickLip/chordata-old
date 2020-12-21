@@ -14,9 +14,10 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 import { AppRoutes } from './app.routing';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { ProjectSummaryComponent } from './pages/home/project-summary/project-summary.component';
-import { DashboardModule } from './pages/project-details/dashboard/dashboard.module';
+import { ProjectDetailsModule } from './pages/project-details/project-details.module';
 import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
 import { UploadModalComponent } from './pages/project-details/upload-modal/upload-modal.component';
+import { CardButtonComponent } from './components/card-button/card-button.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,7 @@ import { UploadModalComponent } from './pages/project-details/upload-modal/uploa
         HttpModule,
         SidebarModule,
         NavbarModule,
-        DashboardModule,
+        ProjectDetailsModule,
         NgWizardModule.forRoot({theme: THEME.circles})
     ],
     declarations: [
@@ -40,6 +41,7 @@ import { UploadModalComponent } from './pages/project-details/upload-modal/uploa
         ProjectSummaryComponent,
         SectionWrapperComponent,
         UploadModalComponent,
+        CardButtonComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
