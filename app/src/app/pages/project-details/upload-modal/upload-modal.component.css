@@ -1,4 +1,21 @@
+.upload-modal-dialog {
+    max-width: 1000px;
+    
+}
+
 .upload-modal-body {
     padding: 0;
     padding-top: 16px;
+}
+
+.ng-wizard-theme-circles>ul.step-anchor {
+    margin-bottom: 0;
+  }
+
+.step-title {
+    margin-bottom: 10px;
+}
+
+.step-description {
+    font-weight: 200
 }

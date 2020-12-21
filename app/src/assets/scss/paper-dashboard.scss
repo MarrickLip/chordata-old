@@ -119,6 +119,4 @@ $container-max-widths: (
 }
 
 @import '~ng-wizard/themes/ng_wizard.min.css';
-// @import '~ng-wizard/themes/ng_wizard_theme_arrows.min.css';
-@import '~ng-wizard/themes/ng_wizard_theme_circles.min.css';
-// @import '~ng-wizard/themes/ng_wizard_theme_dots.min.css';
+@import 'ng_wizard_theme_chordata_circles.css';
