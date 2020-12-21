@@ -1,17 +1,18 @@
 .ng-wizard-theme-circles {}
 
 .ng-wizard-theme-circles .ng-wizard-container {
-  min-height: 300px;
+  height: 100%;
 }
 
 .ng-wizard-theme-circles .step-content {
-  padding: 10px 0;
-  background-color: #FFF;
+  padding: 16px 0;
+  /* background-color: #FFF; */
   text-align: left;
+  height: 100%;
 }
 
 .ng-wizard-theme-circles .ng-wizard-toolbar {
-  background: #fff;
+  /* background: #fff; */
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 0 !important;
@@ -26,7 +27,7 @@
 
 .ng-wizard-theme-circles>ul.step-anchor {
   position: relative;
-  background: #fff;
+  /* background: #fff; */
   border: none;
   list-style: none;
   margin-bottom: 12px;
