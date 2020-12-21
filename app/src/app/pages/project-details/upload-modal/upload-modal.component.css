@@ -19,3 +19,14 @@
 .step-description {
     font-weight: 200
 }
+
+.step-body {
+    background: var(--primary-contrast);
+    margin: 16px;
+    border-radius: 16px;
+    flex-grow: 1;
+}
+
+.step-content {
+    height: 100%;
+}

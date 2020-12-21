@@ -3,9 +3,12 @@
     <div class="modal-content">
       <div class="modal-body upload-modal-body">
         <ng-wizard>
-          <ng-wizard-step title="📷">
+          <ng-wizard-step class="step" title="📷">
             <h3 class="text-center step-title">Connect Device</h3>
             <h6 class="text-center step-description">Select a device type and locate its data.</h6>
+            <div class="step-body">
+              <app-step-device></app-step-device>
+            </div>
           </ng-wizard-step>
           <ng-wizard-step title="📋">
             <span>Add metadata!</span>

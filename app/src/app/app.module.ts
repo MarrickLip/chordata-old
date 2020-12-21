@@ -18,6 +18,7 @@ import { ProjectDetailsModule } from './pages/project-details/project-details.mo
 import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
 import { UploadModalComponent } from './pages/project-details/upload-modal/upload-modal.component';
 import { CardButtonComponent } from './components/card-button/card-button.component';
+import { StepDeviceComponent } from './pages/project-details/upload-modal/step-device/step-device.component';
 
 @NgModule({
     imports: [
@@ -42,6 +43,7 @@ import { CardButtonComponent } from './components/card-button/card-button.compon
         SectionWrapperComponent,
         UploadModalComponent,
         CardButtonComponent,
+        StepDeviceComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
