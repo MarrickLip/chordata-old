@@ -85,29 +85,29 @@
 }
 
 .ng-wizard-theme-circles>ul.step-anchor>li.clickable>a:hover {
-  color: var(--primary) !important;
+  color: var(--primary-accent) !important;
 }
 
 .ng-wizard-theme-circles>ul.step-anchor>li.active>a {
-  border-color: var(--primary-accent);
-  color: #fff;
-  background: var(--primary-accent);
-}
-
-.ng-wizard-theme-circles>ul.step-anchor>li.active>a>small {
-  color: var(--primary-accent);
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.ng-wizard-theme-circles>ul.step-anchor>li.done>a {
   border-color: var(--primary);
   color: #fff;
   background: var(--primary);
 }
 
-.ng-wizard-theme-circles>ul.step-anchor>li.done>a>small {
+.ng-wizard-theme-circles>ul.step-anchor>li.active>a>small {
   color: var(--primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.ng-wizard-theme-circles>ul.step-anchor>li.done>a {
+  border-color: var(--primary-accent);
+  color: #fff;
+  background: var(--primary-accent);
+}
+
+.ng-wizard-theme-circles>ul.step-anchor>li.done>a>small {
+  color: var(--primary-accent);
   font-weight: 500;
   font-size: 14px;
 }
