@@ -1,0 +1,29 @@
+service: chordata-engine
+provider:
+  name: aws
+  region: ap-southeast-2
+  runtime: nodejs12.x
+  tracing:
+      apiGateway: true
+  logs:
+    restApi: true
+  apiGateway:
+    minimumCompressionSize: 1024
+    metrics: true
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+frameworkVersion: '2'
+custom:
+  webpack:
+    webpackConfig: "./webpack.config.js"
+    includeModules: true
+plugins:
+  - serverless-webpack
+functions:
+  hello:
+    handler: handler.hello
+    events:
+    - http:
+        method: get
+        path: hello
+        cors: true
