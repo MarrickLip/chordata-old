@@ -23,15 +23,15 @@
     flex-shrink: 1;
 }
 
-.project-card--labels {
+.project-card--tags {
     padding: 8px 16px 16px 16px;
 }
 
-.project-card--label {
+.project-card--tag {
     margin: 3px 3px;
 }
 
-.project-card--label__icon {
+.project-card--tag__icon {
     display: inline-block;
     font-size: 12px;
     margin: 0 4px;

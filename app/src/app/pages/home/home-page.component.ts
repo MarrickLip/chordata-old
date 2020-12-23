@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListProjectsResponse } from '../../../../../model/api/ListProjectsResponse';
 import {APIService} from '../../services/api.service';
 
 @Component({
@@ -7,6 +8,7 @@ import {APIService} from '../../services/api.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  projects: ListProjectsResponse;
 
   constructor(
       private API: APIService
@@ -14,7 +16,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.API.listProjects().then(
-        projects => console.log({projects})
+        projects => this.projects = projects
     );
   }
 
