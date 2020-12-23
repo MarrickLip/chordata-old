@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@types/mongodb": "^3.6.3",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
