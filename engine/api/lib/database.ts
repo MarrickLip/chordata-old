@@ -1,7 +1,7 @@
 
 import {MongoClient} from 'mongodb';
 
-const uri = "mongodb+srv://admin:3rPbvKr6gqe1Q2eC@chordata.v9yqd.mongodb.net/chordata?retryWrites=true&w=majority";
+const uri = `mongodb+srv://admin:${process.env.DB_PASSWORD}@chordata.v9yqd.mongodb.net/chordata?retryWrites=true&w=majorit`;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 let connection = undefined;
