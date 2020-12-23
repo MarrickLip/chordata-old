@@ -19,7 +19,7 @@ export async function handler(event, _context) {
     'GET /projects': listProjectsHandler,
     'GET /projects/{projectId}': getProjectHandler,
   }[`${event.httpMethod} ${event.resource}`];
-  return withCors(_handler.handle(event))
+  return withCors(await _handler.handle(event))
 }
 
 const listProjectsHandler = new EventHandler(

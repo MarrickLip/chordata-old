@@ -13,7 +13,11 @@ export class APIService {
 
   async listProjects(): Promise<ListProjectsResponse> {
     const url = `${API_ENDPOINT}/projects`
-    return this.http.get<ListProjectsResponse>(url).toPromise()
+    console.log({
+      response: await this.http.get(url).toPromise(),
+      url,
+    })
+    return this.http.get<ListProjectsResponse>(url).toPromise();
   }
 
 }
