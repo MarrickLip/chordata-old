@@ -4,6 +4,8 @@ items:
   properties:
     id:
       type: string
+    type:
+      type: string
     info:
       type: object
       properties:
@@ -20,6 +22,7 @@ items:
             type: string
 example:
   - id: auckland-bats
+    type: audio-detection-v1
     info:
       name: Auckland Bats
       description: ABM recordings in the Auckland region.

@@ -9,6 +9,9 @@ app/node_modules
 app/.*
 app/dist
 
+engine/.*
+engine/node_modules
+
 # Logs
 logs
 *.log
