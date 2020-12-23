@@ -1,18 +1,27 @@
 import { APIGatewayProxyHandler } from 'aws-lambda';
 import 'source-map-support/register';
-import { db } from '../lib/database';
 
-export const handle: APIGatewayProxyHandler = async (event, _context) => {
-  const projects = await db.projects()
-  const results = await projects.find({}).toArray()
-  
-  return {
+import { EventHandler } from '../lib/EventHandler';
+import { getProject, listProjects } from './actions';
+import { ProjectExists } from './guards';
+
+export const handler: APIGatewayProxyHandler = async (event, _context) => ({
+  'GET /projects': listProjectsHandler,
+  'GET /projects/{projectId}': getProjectHandler,
+}[`${event.httpMethod} ${event.resource}`].handle(event));
+
+const listProjectsHandler = new EventHandler(
+  [ProjectExists],
+  async event => ({
     statusCode: 200,
-    body: JSON.stringify({
-      message: '[Chordata API] Projects',
-      projects: results,
-      path: event.path,
-      method: event.httpMethod,
-    }, null, 2),
-  };
-}
+    body: JSON.stringify(await listProjects()),
+  })
+)
+
+const getProjectHandler = new EventHandler(
+  [ProjectExists],
+  async event => ({
+    statusCode: 200,
+    body: JSON.stringify(await getProject(event.pathParameters.projectId)),
+  })
+)

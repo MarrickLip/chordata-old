@@ -22,7 +22,7 @@ plugins:
   - serverless-webpack
 functions:
   API-Projects:
-    handler: api/projects/handlers.handle
+    handler: api/projects/handlers.handler
     events:
     - http:
         path: projects  
