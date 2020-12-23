@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProjectSummary} from '../../../services/api.service';
+// import {ProjectSummary} from '../../../services/api.service';
 
 @Component({
   selector: 'app-project-summary',
@@ -7,12 +7,12 @@ import {ProjectSummary} from '../../../services/api.service';
   styleUrls: ['./project-summary.component.css']
 })
 export class ProjectSummaryComponent implements OnInit {
-  @Input() project: ProjectSummary;
+  // @Input() project: ProjectSummary;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log({project: this.project})
+    // console.log({project: this.project})
   }
 
 }

@@ -11,7 +11,7 @@ export const handler: APIGatewayProxyHandler = async (event, _context) => ({
 }[`${event.httpMethod} ${event.resource}`].handle(event));
 
 const listProjectsHandler = new EventHandler(
-  [ProjectExists],
+  [],
   async event => ({
     statusCode: 200,
     body: JSON.stringify(await listProjects()),

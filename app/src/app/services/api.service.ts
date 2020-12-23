@@ -1,45 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { ListProjectsResponse } from '../../../../model/api/ListProjectsResponse'
+import { API_ENDPOINT } from 'app/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class APIService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  async listProjects(): Promise<ProjectSummary[]> {
-    return projects;
+  async listProjects(): Promise<ListProjectsResponse> {
+    const url = `${API_ENDPOINT}/projects`
+    return this.http.get<ListProjectsResponse>(url).toPromise()
   }
 
 }
-
-export interface ProjectSummary {
-  id: string,
-  info: {
-    name: string,
-    description: string,
-    image: string,
-    labels: string[],
-  }
-}
-
-const projects: ProjectSummary[] = [
-  {
-    id: 'auckland-islands',
-    info: {
-      name: 'Maungahuka / Auckland Islands (2020)',
-      description: 'The Auckland Islands are an archipelago of New Zealand, lying 465 kilometres (290 mi) south of the South Island. The main Auckland Island occupies 510 km2 (200 sq mi)',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Auckland_Islands_-_STS089-743-5.jpg/500px-Auckland_Islands_-_STS089-743-5.jpg',
-      labels: ['Trail Cameras', 'Eradication'],
-    }
-  },
-  {
-    id: 'eastern-forest',
-    info: {
-      name: 'Eastern Forest',
-      description: 'Footage from the Eastern Forest trials',
-      image: 'https://www.doc.govt.nz/globalassets/images/places/nelson-tasman/heaphy-track/heaphy-forest-1200.jpg',
-      labels: ['Trail Cameras'],
-    }
-  }
-];

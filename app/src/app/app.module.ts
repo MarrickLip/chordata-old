@@ -19,9 +19,12 @@ import { SectionWrapperComponent } from './pages/project-details/section-wrapper
 import { UploadModalComponent } from './pages/project-details/upload-modal/upload-modal.component';
 import { CardButtonComponent } from './components/card-button/card-button.component';
 import { StepDeviceComponent } from './pages/project-details/upload-modal/step-device/step-device.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     imports: [
+        BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
         RouterModule.forRoot(AppRoutes, {
@@ -29,7 +32,7 @@ import { StepDeviceComponent } from './pages/project-details/upload-modal/step-d
             // enableTracing: true,
         }),
         NgbModule,
-        HttpModule,
+        HttpClientModule,
         SidebarModule,
         NavbarModule,
         ProjectDetailsModule,
@@ -45,7 +48,7 @@ import { StepDeviceComponent } from './pages/project-details/upload-modal/step-d
         CardButtonComponent,
         StepDeviceComponent,
     ],
-    bootstrap:    [ AppComponent ]
+    bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }
