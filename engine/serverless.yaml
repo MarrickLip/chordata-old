@@ -21,10 +21,62 @@ custom:
 plugins:
   - serverless-webpack
 functions:
-  hello:
-    handler: handler.hello
+  API-Projects:
+    handler: api/projects/handlers.handle
     events:
     - http:
+        path: projects  
         method: get
-        path: hello
         cors: true
+    - http:
+        path: projects/{projectId}  
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+    - http:
+        path: projects/{projectId}  
+        method: put
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+    - http:
+        path: projects/{projectId}  
+        method: patch
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+    - http:
+        path: projects/{projectId}  
+        method: delete
+        cors: true
+        request:
+          parameters:
+            paths:
+              id: true
+  API-Deployments:
+    handler: api/deployments/handlers.handle
+    events:
+    - http:
+        path: projects/{projectId}/deployments  
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              projectId: true
+    - http:
+        path: projects/{projectId}/deployments/{id}  
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              projectId: true
+              id: true
