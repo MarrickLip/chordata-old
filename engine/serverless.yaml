@@ -13,6 +13,7 @@ provider:
     metrics: true
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+    DB_PASSWORD: ${ssm:/chordata/DB_PASSWORD}
 frameworkVersion: '2'
 custom:
   webpack:

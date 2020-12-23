@@ -9,7 +9,6 @@ export class EventHandler {
     ) {}
 
     async handle(event: APIGatewayProxyEvent) {
-        console.log('HANDLING', {event, guards: this.guards})
         for (var [test, response] of this.guards) {
             if (!(await test(event))) { return response }
         }
