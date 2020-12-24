@@ -1,9 +1,9 @@
 <div class="card card-button">
     <div class="card-body card-button--body">
         <span class="icon">
-            <i class="fas fa-microphone"></i>
+            <i [class]="icon"></i>
         </span>
-        <h5 class="card-title title">AudioMoth</h5>
-        <a href="#" class="stretched-link"></a>
+        <h5 class="card-title title">{{name}}</h5>
+        <a (click)="click.emit()" class="stretched-link"></a>
     </div>
 </div>
