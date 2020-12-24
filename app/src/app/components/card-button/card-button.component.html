@@ -1,9 +1,8 @@
 <div class="card card-button">
-    <div class="card-body card-button--body">
+    <div class="card-body card-button--body" (click)="handleClick($event)">
         <span class="icon">
             <i [class]="icon"></i>
         </span>
         <h5 class="card-title title">{{name}}</h5>
-        <a (click)="click.emit()" class="stretched-link"></a>
     </div>
 </div>

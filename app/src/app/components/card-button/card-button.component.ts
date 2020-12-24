@@ -8,12 +8,16 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class CardButtonComponent implements OnInit {
   @Input() name: string;
   @Input() icon: string;
-  @Output() click = new EventEmitter<void>();
+  @Output() cardButtonClick = new EventEmitter<void>();
   
   constructor() { }
 
   ngOnInit(): void {
     console.log({name: this.name, icon: this.icon})
+  }
+
+  handleClick() {
+    this.cardButtonClick.emit()
   }
 
 }

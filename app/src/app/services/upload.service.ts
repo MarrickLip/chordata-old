@@ -10,8 +10,14 @@ export type UploadDevice = {
   providedIn: 'root'
 })
 export class UploadService {
+  fileList: FileList = undefined;
 
   constructor() { }
+
+  setFiles(device: UploadDevice, fileList: FileList): boolean {
+    this.fileList = fileList.length ? fileList : undefined;
+    return !!this.fileList;
+  }
 
   async getDevices(projectId: string): Promise<UploadDevice[]> {
     return [
@@ -19,11 +25,12 @@ export class UploadService {
         id: 'audio-moth',
         name: 'Audio Moth',
         icon: 'fas fa-microphone',
-      }, {
-        id: 'audio-moth',
-        name: 'Audio Moth',
-        icon: 'fas fa-microphone',
       }
+      // }, {
+      //   id: 'audio-moth',
+      //   name: 'Audio Moth',
+      //   icon: 'fas fa-microphone',
+      // }
     ]
   }
 

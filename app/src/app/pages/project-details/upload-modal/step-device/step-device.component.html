@@ -3,13 +3,14 @@
         *ngFor="let device of devices"
         [name]="device.name"
         [icon]="device.icon"
-        (click)="selectDevice(device)"
+        (cardButtonClick)="selectDevice(device)"
     ></app-card-button>
 </div>
 <input
     type="file"
     id="upload"
     name="upload"
-    style="visibility: hidden; width: 1px; height: 1px"
     webkitdirectory
+    (change)="selectFiles($event)"
+    hidden
 />
