@@ -23,6 +23,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { HttpClientModule } from '@angular/common/http'
 
 import { ToastrModule } from 'ngx-toastr'
+import { StepMetadataComponent } from './pages/project-details/upload-modal/step-metadata/step-metadata.component'
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import { ToastrModule } from 'ngx-toastr'
         UploadModalComponent,
         CardButtonComponent,
         StepDeviceComponent,
+        StepMetadataComponent,
     ],
     bootstrap: [AppComponent],
 })
