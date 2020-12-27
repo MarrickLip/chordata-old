@@ -16,5 +16,8 @@
     ".webpack/**/*",
     "_warmup/**/*",
     ".vscode/**/*"
-  ]
+  ],
+  "paths": {
+    "@model/*": ["../model/*"],
+  }
 }
