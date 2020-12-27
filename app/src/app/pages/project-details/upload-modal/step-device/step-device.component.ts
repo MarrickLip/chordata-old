@@ -16,7 +16,7 @@ export class StepDeviceComponent implements OnInit {
 
   constructor(
     public project: ProjectService,
-    public upload: UploadService
+    public upload: UploadService,
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +31,8 @@ export class StepDeviceComponent implements OnInit {
   };
 
   async selectFiles(event: any) {
-    if (this.upload.setFiles(this.selectedDevice, event.target.files)) {
+    const filesAccepted = this.upload.setFiles(this.selectedDevice, event.target.files);
+    if (filesAccepted) {
       //
     } else {
       // 

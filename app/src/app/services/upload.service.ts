@@ -15,12 +15,20 @@ export class UploadService {
 
   setFiles(device: Device, files: FileList): boolean {
     for (let [test, errorMessage] of device.guards.errors) {
+      console.log({test, errorMessage, result: test(files)})
       if (!test(files)) {
-        this.toastr.error(errorMessage);
+        this.toastr.error(errorMessage, null, {positionClass: 'toast-top-center'});
+        return false;
+      }
+    }
+
+    for (let [test, warningMessage] of device.guards.warnings) {
+      console.log({test, warningMessage, result: test(files)})
+      if (!test(files)) {
+        this.toastr.warning(warningMessage, null, {positionClass: 'toast-top-center'});
       }
     }
     
-
     return true;
   }
 

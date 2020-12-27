@@ -1,8 +1,8 @@
 <div class="device-buttons">
     <app-card-button
         *ngFor="let device of devices"
-        [name]="device.name"
-        [icon]="device.icon"
+        [name]="device.meta.name"
+        [icon]="device.meta.icon"
         (cardButtonClick)="selectDevice(device)"
     ></app-card-button>
 </div>
