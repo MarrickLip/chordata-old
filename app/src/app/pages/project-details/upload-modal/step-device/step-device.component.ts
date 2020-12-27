@@ -25,11 +25,13 @@ export class StepDeviceComponent implements OnInit {
         this.upload
             .getDevices(this.project.id)
             .then((devices) => (this.devices = devices))
+
     }
 
     selectDevice(device: Device) {
         this.selectedDevice = device
-        this.uploadEl.nativeElement.click()
+        // this.uploadEl.nativeElement.click()
+        this.wizard.next();
     }
 
     async selectFiles(event: any) {

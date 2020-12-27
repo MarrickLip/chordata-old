@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { ToastrModule } from 'ngx-toastr'
 import { StepMetadataComponent } from './pages/project-details/upload-modal/step-metadata/step-metadata.component'
+import { TagInputModule } from 'ngx-chips';
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import { StepMetadataComponent } from './pages/project-details/upload-modal/step
         ProjectDetailsModule,
         NgWizardModule.forRoot({ theme: THEME.circles }),
         ToastrModule.forRoot(),
+        TagInputModule,
     ],
     declarations: [
         AppComponent,
