@@ -1,0 +1,1 @@
+export type FileListGuard = (fileList: FileList) => boolean;
