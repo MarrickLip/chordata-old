@@ -1,23 +1,22 @@
 <div class="logo">
-	<a href="https://app.chordata.nz" class="simple-text logo-mini">
+    <a href="https://app.chordata.nz" class="simple-text logo-mini">
         <div class="logo-image-small">
-            <img src="../../../../assets/img/angular2-logo-white.png"/>
+            <img src="../../../../assets/img/angular2-logo-white.png" />
         </div>
-	</a>
+    </a>
 
-	<a href="https://app.chordata.nz" class="simple-text logo-normal">
-		Chordata
-	</a>
+    <a href="https://app.chordata.nz" class="simple-text logo-normal">
+        Chordata
+    </a>
 </div>
-
 
 <div class="sidebar-wrapper">
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let section of sections">
             <a [routerLink]="[section.id]">
                 <p>
-                    <span><i class="fas fa-{{section.icon}}"></i></span>
-                    <span class="section--title">{{section.name}}</span>
+                    <span><i class="fas fa-{{ section.icon }}"></i></span>
+                    <span class="section--title">{{ section.name }}</span>
                 </p>
             </a>
         </li>

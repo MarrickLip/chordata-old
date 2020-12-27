@@ -18,8 +18,8 @@
         box-shadow: none !important;
     }
 
-    &:not([data-action]):hover{
-        box-shadow:  none;
+    &:not([data-action]):hover {
+        box-shadow: none;
     }
 
     &.disabled,
@@ -38,60 +38,60 @@
     }
 
     // btn-neutral style
-    @if $btn-color == $white-color{
+    @if $btn-color == $white-color {
         color: $primary-color;
 
-        &.btn-danger{
+        &.btn-danger {
             color: $danger-color;
 
             &:hover,
             &:focus,
             &:active,
-            &:active:focus{
+            &:active:focus {
                 color: $danger-states-color !important;
             }
         }
 
-        &.btn-info{
+        &.btn-info {
             color: $info-color !important;
 
             &:hover,
             &:focus,
             &:active,
-            &:active:focus{
+            &:active:focus {
                 color: $info-states-color !important;
             }
         }
 
-        &.btn-warning{
+        &.btn-warning {
             color: $warning-color !important;
 
             &:hover,
             &:focus,
             &:active,
-            &:active:focus{
+            &:active:focus {
                 color: $warning-states-color !important;
             }
         }
 
-        &.btn-success{
+        &.btn-success {
             color: $success-color !important;
 
             &:hover,
             &:focus,
             &:active,
-            &:active:focus{
+            &:active:focus {
                 color: $success-states-color !important;
             }
         }
 
-        &.btn-default{
+        &.btn-default {
             color: $default-color !important;
 
             &:hover,
             &:focus,
             &:active,
-            &:active:focus{
+            &:active:focus {
                 color: $default-states-color !important;
             }
         }
@@ -111,26 +111,24 @@
         }
 
         &:hover,
-        &:focus{
+        &:focus {
             color: $primary-states-color !important;
 
-            &:not(.nav-link){
+            &:not(.nav-link) {
                 box-shadow: none;
             }
-
         }
-
     } @else {
         color: $white-color;
     }
 
-    &.btn-simple{
+    &.btn-simple {
         color: $btn-color;
         border-color: $btn-color;
 
         &:hover,
         &:focus,
-        &:active{
+        &:active {
             background-color: $transparent-bg;
             color: $btn-states-color;
             border-color: $btn-states-color;
@@ -138,7 +136,7 @@
         }
     }
 
-    &.btn-link{
+    &.btn-link {
         color: $btn-color;
 
         &:hover,
@@ -153,7 +151,7 @@
     }
 }
 
-@mixin btn-outline-styles($btn-color, $btn-states-color){
+@mixin btn-outline-styles($btn-color, $btn-states-color) {
     background: $transparent-bg;
     border: 2px solid $btn-color !important;
     color: $btn-color;
@@ -165,15 +163,15 @@
     &:focus:active,
     &.active,
     .open > &.dropdown-toggle {
-      background-color: $btn-color !important;
-      color: $fill-font-color !important;
-      border-color: $btn-color !important;
-      .caret{
-          border-top-color: $fill-font-color !important;
-      }
+        background-color: $btn-color !important;
+        color: $fill-font-color !important;
+        border-color: $btn-color !important;
+        .caret {
+            border-top-color: $fill-font-color !important;
+        }
     }
 
-    .caret{
+    .caret {
         border-top-color: $white-color !important;
     }
 
@@ -181,30 +179,29 @@
     &:disabled,
     &[disabled],
     fieldset[disabled] & {
-      &,
-      &:hover,
-      &:focus,
-      &.focus,
-      &:active,
-      &.active {
-        background-color: $transparent-bg !important;
-        border-color: $btn-color !important;
-      }
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+            background-color: $transparent-bg !important;
+            border-color: $btn-color !important;
+        }
     }
 }
 
-@mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border){
-   font-size: $font-size;
-   border-radius: $border;
-   padding: $padding-vertical $padding-horizontal;
+@mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border) {
+    font-size: $font-size;
+    border-radius: $border;
+    padding: $padding-vertical $padding-horizontal;
 
-   &.btn-simple{
-       padding: $padding-vertical - 1 $padding-horizontal - 1;
-   }
-
+    &.btn-simple {
+        padding: $padding-vertical - 1 $padding-horizontal - 1;
+    }
 }
 
-@mixin rotate-180(){
+@mixin rotate-180() {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);

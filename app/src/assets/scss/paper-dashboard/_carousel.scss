@@ -1,15 +1,15 @@
 // display flex was causing errors
 .carousel-item-next,
 .carousel-item-prev,
-.carousel-item.active{
+.carousel-item.active {
     display: block;
 }
 
-.carousel{
-    .carousel-inner{
+.carousel {
+    .carousel-inner {
         box-shadow: $box-shadow-raised;
     }
-    .nc-icon{
+    .nc-icon {
         font-size: 2em;
     }
 }

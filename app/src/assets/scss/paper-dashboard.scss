@@ -13,20 +13,20 @@
 
  */
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        lg: 1000px,
-        xl: 1400px,
-        xxl: 1900px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1000px,
+    xl: 1400px,
+    xxl: 1900px,
 );
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 1000px,
-        xl: 1540px,
-        xxl: 1610px
+    sm: 540px,
+    md: 720px,
+    lg: 1000px,
+    xl: 1540px,
+    xxl: 1610px,
 );
 
 @import '~bootstrap/scss/bootstrap';
@@ -80,42 +80,37 @@ $container-max-widths: (
 @import 'paper-dashboard/sidebar-and-main-panel';
 @import 'paper-dashboard/timeline';
 
-
-
 // cards
 @import 'paper-dashboard/cards';
-@import "paper-dashboard/cards/card-chart";
-@import "paper-dashboard/cards/card-map";
-@import "paper-dashboard/cards/card-user";
+@import 'paper-dashboard/cards/card-chart';
+@import 'paper-dashboard/cards/card-map';
+@import 'paper-dashboard/cards/card-user';
 
-@import "paper-dashboard/cards/card-background";
-@import "paper-dashboard/cards/card-collapse";
-@import "paper-dashboard/cards/card-contributions";
-@import "paper-dashboard/cards/card-info-area";
-@import "paper-dashboard/cards/card-lock";
-@import "paper-dashboard/cards/card-pricing";
-@import "paper-dashboard/cards/card-profile";
-@import "paper-dashboard/cards/card-signup";
-@import "paper-dashboard/cards/card-stats-mini";
-@import "paper-dashboard/cards/card-stats";
-@import "paper-dashboard/cards/card-subcategories";
-@import "paper-dashboard/cards/card-testimonials";
-@import "paper-dashboard/cards/card-tasks";
-
-
+@import 'paper-dashboard/cards/card-background';
+@import 'paper-dashboard/cards/card-collapse';
+@import 'paper-dashboard/cards/card-contributions';
+@import 'paper-dashboard/cards/card-info-area';
+@import 'paper-dashboard/cards/card-lock';
+@import 'paper-dashboard/cards/card-pricing';
+@import 'paper-dashboard/cards/card-profile';
+@import 'paper-dashboard/cards/card-signup';
+@import 'paper-dashboard/cards/card-stats-mini';
+@import 'paper-dashboard/cards/card-stats';
+@import 'paper-dashboard/cards/card-subcategories';
+@import 'paper-dashboard/cards/card-testimonials';
+@import 'paper-dashboard/cards/card-tasks';
 
 // example pages and sections
 @import 'paper-dashboard/example-pages';
 @import 'paper-dashboard/sections';
 
-
 @import 'paper-dashboard/responsive';
 @import 'paper-dashboard/media-queries';
 
-:root{
-        --primary: #6F8581;
-        --primary-contrast: #f4f3ef;
-        --primary-accent: #b3c9b8;
+:root {
+    --primary: #6f8581;
+    --primary-contrast: #f4f3ef;
+    --primary-accent: #b3c9b8;
 }
 
 @import '~ng-wizard/themes/ng_wizard.min.css';

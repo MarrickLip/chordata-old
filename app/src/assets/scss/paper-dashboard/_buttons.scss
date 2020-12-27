@@ -1,5 +1,5 @@
 .btn,
-.navbar .navbar-nav > a.btn{
+.navbar .navbar-nav > a.btn {
     border-width: $border-thick;
     font-weight: $font-weight-semi;
     font-size: $font-size-small;
@@ -15,19 +15,19 @@
     @include transition($fast-transition-time, linear);
 
     &:hover,
-    &:focus{
+    &:focus {
         @include opacity(1);
         outline: 0 !important;
     }
     &:active,
     &.active,
     .open > &.dropdown-toggle {
-         @include box-shadow(none);
-         outline: 0 !important;
+        @include box-shadow(none);
+        outline: 0 !important;
     }
 
-    .badge{
-      margin: 0;
+    .badge {
+        margin: 0;
     }
 
     &.btn-icon {
@@ -41,11 +41,11 @@
         position: relative;
         line-height: normal;
 
-        &.btn-simple{
+        &.btn-simple {
             padding: 0;
         }
 
-        &.btn-sm{
+        &.btn-sm {
             height: $btn-icon-size-small;
             min-width: $btn-icon-size-small;
             width: $btn-icon-size-small;
@@ -53,12 +53,12 @@
             .fa,
             .far,
             .fas,
-            .nc-icon{
+            .nc-icon {
                 font-size: $btn-icon-font-size-small;
             }
         }
 
-        &.btn-lg{
+        &.btn-lg {
             height: $btn-icon-size-lg;
             min-width: $btn-icon-size-lg;
             width: $btn-icon-size-lg;
@@ -66,7 +66,7 @@
             .fa,
             .far,
             .fas,
-            .nc-icon{
+            .nc-icon {
                 font-size: $btn-icon-font-size-lg;
             }
         }
@@ -74,7 +74,7 @@
         &:not(.btn-footer) .nc-icon,
         &:not(.btn-footer) .fa,
         &:not(.btn-footer) .far,
-        &:not(.btn-footer) .fas{
+        &:not(.btn-footer) .fas {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -84,11 +84,11 @@
         }
 
         &.btn-neutral {
-          font-size: 20px;
+            font-size: 20px;
         }
     }
 
-    &:not(.btn-icon) .nc-icon{
+    &:not(.btn-icon) .nc-icon {
         position: relative;
         top: 1px;
     }
@@ -96,22 +96,45 @@
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
-.btn-primary { @include btn-styles($primary-color, $primary-states-color); }
-.btn-success { @include btn-styles($success-color, $success-states-color); }
-.btn-info    { @include btn-styles($info-color, $info-states-color); }
-.btn-warning { @include btn-styles($warning-color, $warning-states-color); }
-.btn-danger  { @include btn-styles($danger-color, $danger-states-color); }
+.btn-primary {
+    @include btn-styles($primary-color, $primary-states-color);
+}
+.btn-success {
+    @include btn-styles($success-color, $success-states-color);
+}
+.btn-info {
+    @include btn-styles($info-color, $info-states-color);
+}
+.btn-warning {
+    @include btn-styles($warning-color, $warning-states-color);
+}
+.btn-danger {
+    @include btn-styles($danger-color, $danger-states-color);
+}
 // .btn-neutral { @include btn-styles($white-color, $white-color); }
 
-.btn-outline-default { @include btn-outline-styles($default-color, $default-states-color); }
-.btn-outline-primary { @include btn-outline-styles($primary-color, $primary-states-color); }
-.btn-outline-success { @include btn-outline-styles($success-color, $success-states-color); }
-.btn-outline-info    { @include btn-outline-styles($info-color, $info-states-color); }
-.btn-outline-warning { @include btn-outline-styles($warning-color, $warning-states-color); }
-.btn-outline-danger  { @include btn-outline-styles($danger-color, $danger-states-color); }
-.btn-outline-neutral { @include btn-outline-styles($white-color, $default-states-color);
+.btn-outline-default {
+    @include btn-outline-styles($default-color, $default-states-color);
+}
+.btn-outline-primary {
+    @include btn-outline-styles($primary-color, $primary-states-color);
+}
+.btn-outline-success {
+    @include btn-outline-styles($success-color, $success-states-color);
+}
+.btn-outline-info {
+    @include btn-outline-styles($info-color, $info-states-color);
+}
+.btn-outline-warning {
+    @include btn-outline-styles($warning-color, $warning-states-color);
+}
+.btn-outline-danger {
+    @include btn-outline-styles($danger-color, $danger-states-color);
+}
+.btn-outline-neutral {
+    @include btn-outline-styles($white-color, $default-states-color);
     &:hover,
-    &:focus{
+    &:focus {
         color: $default-states-color;
         background-color: $white-color;
     }
@@ -120,39 +143,39 @@
     @include btn-styles($white-color, $white-color);
     color: $default-color;
     &:hover,
-    &:focus{
+    &:focus {
         color: $default-states-color;
     }
 
-    &.btn-border{
+    &.btn-border {
         &:hover,
-        &:focus{
+        &:focus {
             color: $default-color;
         }
 
         &:active,
         &.active,
-        .open > &.dropdown-toggle{
-             background-color: $white-color;
-             color: $default-color;
+        .open > &.dropdown-toggle {
+            background-color: $white-color;
+            color: $default-color;
         }
     }
 
     &.btn-link:active,
-    &.btn-link.active{
+    &.btn-link.active {
         background-color: transparent;
     }
 }
 
-.btn{
-     &:disabled,
-     &[disabled],
-     &.disabled{
-        @include opacity(.5);
+.btn {
+    &:disabled,
+    &[disabled],
+    &.disabled {
+        @include opacity(0.5);
         pointer-events: none;
     }
 }
-.btn-simple{
+.btn-simple {
     border: $border;
     border-color: $default-color;
     padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
@@ -160,7 +183,7 @@
 }
 
 .btn-simple,
-.btn-link{
+.btn-link {
     &.disabled,
     &:disabled,
     &[disabled],
@@ -176,59 +199,68 @@
     }
 }
 
-.btn-link{
-  border: $none;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  background-color: $transparent-bg;
+.btn-link {
+    border: $none;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    background-color: $transparent-bg;
 }
 
-.btn-lg{
-   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+.btn-lg {
+    @include btn-size(
+        $padding-large-vertical,
+        $padding-large-horizontal,
+        $font-size-large,
+        $border-radius-large
+    );
 }
-.btn-sm{
-    @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+.btn-sm {
+    @include btn-size(
+        $padding-small-vertical,
+        $padding-small-horizontal,
+        $font-size-small,
+        $border-radius-small
+    );
 }
 
 .btn-wd {
     min-width: 140px;
 }
-.btn-group.select{
+.btn-group.select {
     width: 100%;
 }
-.btn-group.select .btn{
+.btn-group.select .btn {
     text-align: left;
 }
-.btn-group.select .caret{
+.btn-group.select .caret {
     position: absolute;
     top: 50%;
     margin-top: -1px;
     right: 8px;
 }
 .btn-group {
-  .btn + .btn {
-    margin-left: -3px;
-  }
-  .btn {
-    &:focus {
-      background-color: $info-color !important;
+    .btn + .btn {
+        margin-left: -3px;
     }
-  }
+    .btn {
+        &:focus {
+            background-color: $info-color !important;
+        }
+    }
 }
 
-
-.btn-round{
+.btn-round {
     border-width: $border-thin;
     border-radius: $btn-round-radius;
     padding-right: $padding-round-horizontal;
     padding-left: $padding-round-horizontal;
 
-    &.btn-simple{
-        padding: $padding-btn-vertical - 1  $padding-round-horizontal - 1;
+    &.btn-simple {
+        padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
     }
 }
 
 .no-caret {
-  &.dropdown-toggle::after {
-    display: none;
-  }
+    &.dropdown-toggle::after {
+        display: none;
+    }
 }

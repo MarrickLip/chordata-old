@@ -1,4 +1,4 @@
-.card-timeline{
+.card-timeline {
     .timeline {
         list-style: none;
         padding: 20px 0 20px;
@@ -8,36 +8,35 @@
             top: 0;
             bottom: 0;
             position: absolute;
-            content: " ";
+            content: ' ';
             width: 3px;
             background-color: darken($light-gray, 3%);
             left: 50%;
             margin-left: -1.5px;
         }
 
-        .timeline-footer{
-          .btn{
-            margin: 0;
-          }
+        .timeline-footer {
+            .btn {
+                margin: 0;
+            }
         }
 
-        h6{
+        h6 {
             color: $dark-gray;
             font-weight: 400;
             margin: 10px 0px 0px;
         }
 
-        &.timeline-simple{
-
-            &:before{
+        &.timeline-simple {
+            &:before {
                 left: 5%;
             }
 
-            > li > .timeline-panel{
+            > li > .timeline-panel {
                 width: 86%;
             }
 
-            > li > .timeline-badge{
+            > li > .timeline-badge {
                 left: 5%;
             }
         }
@@ -48,14 +47,13 @@
 
             &:before,
             &:after {
-                content: " ";
+                content: ' ';
                 display: table;
             }
 
             &:after {
                 clear: both;
             }
-
         }
 
         > li > .timeline-panel {
@@ -78,7 +76,7 @@
                 border-left: 15px solid $light-gray;
                 border-right: 0 solid $light-gray;
                 border-bottom: 15px solid transparent;
-                content: " ";
+                content: ' ';
             }
 
             &:after {
@@ -90,11 +88,9 @@
                 border-left: 14px solid $white-color;
                 border-right: 0 solid $white-color;
                 border-bottom: 14px solid transparent;
-                content: " ";
+                content: ' ';
             }
         }
-
-
 
         > li > .timeline-badge {
             color: $white-color;
@@ -113,20 +109,18 @@
             border-bottom-left-radius: 50%;
             border: 3px solid #f4f3ef;
 
-            [class^="fa-"],
-            [class*=" fa-"]{
+            [class^='fa-'],
+            [class*=' fa-'] {
                 line-height: inherit;
             }
 
-            .nc-icon{
-              line-height: 2.1;
-              width: 25px;
-              text-align: center;
-              font-size: 21px;
+            .nc-icon {
+                line-height: 2.1;
+                width: 25px;
+                text-align: center;
+                font-size: 21px;
             }
         }
-
-
 
         > li.timeline-inverted > .timeline-panel {
             float: right;
@@ -145,45 +139,41 @@
                 left: -14px;
                 right: auto;
             }
-
         }
-
-
     }
-    .timeline-heading{
+    .timeline-heading {
         margin-bottom: 15px;
     }
     .timeline-badge.primary {
-      background-color: $info-color !important;
+        background-color: $info-color !important;
     }
     .timeline-badge.info {
-      background-color: $info-color !important;
+        background-color: $info-color !important;
     }
 
     .timeline-badge.success {
-      background-color: $success-color !important;
+        background-color: $success-color !important;
     }
 
     .timeline-badge.warning {
-      background-color: $warning-color !important;
+        background-color: $warning-color !important;
     }
 
     .timeline-badge.danger {
-      background-color: $danger-color !important;
+        background-color: $danger-color !important;
     }
 
-
     .timeline-title {
-      margin-top: 0;
-      color: inherit;
+        margin-top: 0;
+        color: inherit;
     }
 
     .timeline-body > p,
     .timeline-body > ul {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
 
     .timeline-body > p + p {
-      margin-top: 5px;
+        margin-top: 5px;
     }
 }

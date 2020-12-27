@@ -133,8 +133,8 @@
     text-align: center;
 }
 
-.fixed-table-container input[type="radio"],
-.fixed-table-container input[type="checkbox"] {
+.fixed-table-container input[type='radio'],
+.fixed-table-container input[type='checkbox'] {
     margin: 0 auto !important;
 }
 
@@ -230,7 +230,8 @@
     box-sizing: border-box;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     vertical-align: middle;
     box-sizing: border-box;
 }
@@ -302,8 +303,9 @@ div.fixed-table-scroll-outer {
 }
 
 /* for get correct heights  */
-.fixed-table-toolbar:after, .fixed-table-pagination:after {
-    content: "";
+.fixed-table-toolbar:after,
+.fixed-table-pagination:after {
+    content: '';
     display: block;
     clear: both;
 }
@@ -313,18 +315,18 @@ div.fixed-table-scroll-outer {
     top: 0;
     left: 0;
     z-index: 1050;
-    width: 100%!important;
-    background: #FFF;
+    width: 100% !important;
+    background: #fff;
 }
 
 // small edit
 
 .bootstrap-table {
-  .btn-group {
-    &:last-child .btn{
-      border-top-right-radius: 30px !important;
-      border-bottom-right-radius: 30px !important;
-      margin-left: -2px;
+    .btn-group {
+        &:last-child .btn {
+            border-top-right-radius: 30px !important;
+            border-bottom-right-radius: 30px !important;
+            margin-left: -2px;
+        }
     }
-  }
 }

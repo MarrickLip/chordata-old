@@ -1,4 +1,4 @@
-.popover{
+.popover {
     font-size: $font-size-base;
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
     border: none;
@@ -8,14 +8,14 @@
     &.bs-popover-top .arrow:before,
     &.bs-popover-left .arrow:before,
     &.bs-popover-right .arrow:before,
-    &.bs-popover-bottom .arrow:before,{
+    &.bs-popover-bottom .arrow:before {
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
         border-bottom-color: transparent;
     }
 
-    .popover-header{
+    .popover-header {
         color: $default-color-opacity;
         font-size: $font-size-base;
         text-transform: capitalize;
@@ -26,56 +26,55 @@
         background-color: transparent;
     }
 
-    &:before{
+    &:before {
         display: none;
     }
 
-    &.bs-tether-element-attached-top:after{
-        border-bottom-color:$white-color;
+    &.bs-tether-element-attached-top:after {
+        border-bottom-color: $white-color;
         top: -9px;
     }
 
-    &.popover-primary{
+    &.popover-primary {
         @include popover-color($primary-color, $white-color);
     }
 
-    &.popover-info{
+    &.popover-info {
         @include popover-color($info-color, $white-color);
     }
 
-    &.popover-warning{
+    &.popover-warning {
         @include popover-color($warning-color, $white-color);
     }
 
-    &.popover-danger{
+    &.popover-danger {
         @include popover-color($danger-color, $white-color);
     }
 
-    &.popover-success{
+    &.popover-success {
         @include popover-color($success-color, $white-color);
     }
 }
 
-
-.tooltip{
-    &.bs-tooltip-right .arrow:before{
-        border-right-color:$white-color;
+.tooltip {
+    &.bs-tooltip-right .arrow:before {
+        border-right-color: $white-color;
     }
 
-    &.bs-tooltip-top .arrow:before{
-        border-top-color:$white-color;
+    &.bs-tooltip-top .arrow:before {
+        border-top-color: $white-color;
     }
 
-    &.bs-tooltip-bottom .arrow:before{
-        border-bottom-color:$white-color;
+    &.bs-tooltip-bottom .arrow:before {
+        border-bottom-color: $white-color;
     }
 
-    &.bs-tooltip-left .arrow:before{
-        border-left-color:$white-color;
+    &.bs-tooltip-left .arrow:before {
+        border-left-color: $white-color;
     }
 }
 
-.tooltip-inner{
+.tooltip-inner {
     padding: $padding-base-vertical $padding-base-horizontal;
     min-width: 130px;
     background-color: $white-color;

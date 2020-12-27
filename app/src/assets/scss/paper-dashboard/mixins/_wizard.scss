@@ -1,18 +1,18 @@
 @mixin set-wizard-color($color) {
-      .moving-tab{
-          color: $color;
-      }
+    .moving-tab {
+        color: $color;
+    }
 
-    .picture{
-        &:hover{
+    .picture {
+        &:hover {
             border-color: $color;
         }
     }
 
-    .choice{
+    .choice {
         &:hover,
-        &.active{
-            .icon{
+        &.active {
+            .icon {
                 border-color: $color;
                 color: $color;
             }
@@ -25,17 +25,17 @@
     //     }
     // }
 
-    .checkbox input[type=checkbox]:checked + .checkbox-material{
-        .check{
+    .checkbox input[type='checkbox']:checked + .checkbox-material {
+        .check {
             background-color: $color;
         }
     }
 
-    .radio input[type=radio]:checked ~ .check {
+    .radio input[type='radio']:checked ~ .check {
         background-color: $color;
     }
 
-    .radio input[type=radio]:checked ~ .circle {
+    .radio input[type='radio']:checked ~ .circle {
         border-color: $color;
     }
 }

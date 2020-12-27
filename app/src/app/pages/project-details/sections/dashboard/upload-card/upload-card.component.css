@@ -10,7 +10,7 @@
 }
 
 .upload-card:hover {
-    box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.35)
+    box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.35);
 }
 
 .upload-card--body {
@@ -30,5 +30,5 @@
     font-size: 24px;
     margin-left: 6px;
     color: var(--primary-contrast);
-    letter-spacing: 0.075em;   
+    letter-spacing: 0.075em;
 }

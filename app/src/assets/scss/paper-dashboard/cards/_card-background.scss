@@ -1,35 +1,35 @@
-.card-background{
+.card-background {
     background-position: center center;
     background-size: cover;
     text-align: center;
 
-    .card-body{
+    .card-body {
         position: relative;
         z-index: 2;
         min-height: 370px;
         max-width: 530px;
         margin: 0 auto;
         padding-top: 60px;
-        padding-bottom: 60px;;
+        padding-bottom: 60px;
     }
-    .card-footer{
-      position: relative;
-      z-index: 2;
+    .card-footer {
+        position: relative;
+        z-index: 2;
     }
 
-    &.card-background-product .card-body{
+    &.card-background-product .card-body {
         max-width: 400px;
-        .card-title{
+        .card-title {
             margin-top: 30px;
         }
     }
 
-    .stats{
+    .stats {
         color: $white-color;
     }
 
-    .card-footer{
-        .stats-link > a{
+    .card-footer {
+        .stats-link > a {
             color: $white-color;
             line-height: 1.9;
         }
@@ -37,7 +37,7 @@
 
     .category,
     .card-description,
-    small{
+    small {
         color: $opacity-8;
     }
 
@@ -58,8 +58,8 @@
         display: block;
         left: 0;
         top: 0;
-        content: "";
-        background-color: rgba(0,0,0,.63);
+        content: '';
+        background-color: rgba(0, 0, 0, 0.63);
         border-radius: $border-radius-large;
     }
 }

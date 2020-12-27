@@ -4,37 +4,36 @@
     text-align: center;
     display: block !important;
 
-    &.no-border-header{
+    &.no-border-header {
         border-bottom: 0 none !important;
-        & .modal-title{
+        & .modal-title {
             margin-top: 20px;
-
         }
     }
-    button.close{
-      &:focus {
-        outline: none;
-      }
+    button.close {
+        &:focus {
+            outline: none;
+        }
     }
 
     .modal-profile {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 6.4;
-      border: 1px solid rgba(0,0,0,.3);
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 6.4;
+        border: 1px solid rgba(0, 0, 0, 0.3);
 
-      i {
-        font-size: 30px;
-      }
+        i {
+            font-size: 30px;
+        }
     }
 }
-.modal-dialog{
+.modal-dialog {
     &.modal-sm,
-    &.modal-register{
-        .modal-header{
-            button.close{
+    &.modal-register {
+        .modal-header {
+            button.close {
                 margin-top: 0;
             }
         }
@@ -45,8 +44,8 @@
     border: 0 none;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
-    .modal-header{
-        h6{
+    .modal-header {
+        h6 {
             margin-top: 10px;
         }
     }
@@ -55,7 +54,7 @@
 .modal-dialog {
     padding-top: 60px;
 }
-.modal-body{
+.modal-body {
     padding: 20px 50px;
     color: #000;
 }
@@ -63,23 +62,23 @@
     border-top: 1px solid $medium-gray;
     padding: 0px;
 
-    &.no-border-footer{
+    &.no-border-footer {
         border-top: 0 none;
     }
 }
 .modal-footer .left-side,
-.modal-footer .right-side{
+.modal-footer .right-side {
     display: inline-block;
     text-align: center;
     width: 50%;
     padding: 5px;
 }
-.modal-footer .btn-link{
+.modal-footer .btn-link {
     padding: 20px;
     width: 100%;
     margin: 0;
 }
-.modal-footer .divider{
+.modal-footer .divider {
     background-color: $medium-gray;
     display: inline-block;
     float: inherit;
@@ -88,11 +87,11 @@
     // position: absolute;
     width: 1px;
 }
-.modal-register .modal-footer{
+.modal-register .modal-footer {
     text-align: center;
     margin-bottom: 25px;
     padding: 20px 0 15px;
-    span{
+    span {
         width: 100%;
     }
 }

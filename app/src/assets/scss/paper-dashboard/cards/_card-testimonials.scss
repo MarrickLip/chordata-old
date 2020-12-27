@@ -1,11 +1,11 @@
-.card-testimonial{
+.card-testimonial {
     margin-top: 30px;
     text-align: center;
 
-    .icon{
+    .icon {
         padding: 0;
 
-        i{
+        i {
             font-size: 30px;
             border: 0;
             display: block;
@@ -14,43 +14,43 @@
             margin-bottom: 0px;
         }
     }
-    .card-body{
+    .card-body {
         padding: 15px 30px;
 
-        .card-description{
+        .card-description {
             font-style: italic;
             font-size: 16px;
         }
-        .card-category{
+        .card-category {
             margin-bottom: 20px;
         }
 
-        +.card-footer {
-          padding-top: 0;
-          margin-top: -20px;
+        + .card-footer {
+            padding-top: 0;
+            margin-top: -20px;
         }
     }
 
-    .card-avatar{
+    .card-avatar {
         margin-top: 0;
-        .img{
+        .img {
             border-radius: 50%;
             width: 100px;
             height: 100px;
         }
     }
 
-    .card-footer{
-        .card-title{
+    .card-footer {
+        .card-title {
             color: $black-color;
             text-align: center;
         }
-        .card-category{
+        .card-category {
             color: $dark-gray;
         }
-        .card-avatar{
+        .card-avatar {
             margin-top: 20px;
-            .img{
+            .img {
                 border-radius: 50%;
                 width: 60px;
                 height: 60px;
@@ -59,15 +59,15 @@
     }
 }
 
-.card-testimonial .card-description + .card-title{
+.card-testimonial .card-description + .card-title {
     margin-top: 30px;
 
-    & .card-image{
-        .img{
+    & .card-image {
+        .img {
             border-radius: $border-radius-extreme;
         }
 
-        .card-title{
+        .card-title {
             text-align: center;
         }
     }

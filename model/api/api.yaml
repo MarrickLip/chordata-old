@@ -1,79 +1,79 @@
 openapi: '3.0.2'
 info:
-  title: Chordata API
-  version: '1.0'
-  description: Backend API that powers the Chordata web app.
+    title: Chordata API
+    version: '1.0'
+    description: Backend API that powers the Chordata web app.
 servers:
-  - url: https://api.chordata.nz
+    - url: https://api.chordata.nz
 paths:
-  /projects/:
-    get:
-      summary: List projects
-      tags:
-        - Projects
-      responses:
-        200:
-            description: OK
-            content:
-              application/json:
-                schema:
-                  $ref: 'ListProjectsResponse.yaml'
-  /projects/{id}/:
-    get:
-      summary: Get a project
-      tags:
-        - Projects
-      parameters:
-        - in: path
-          name: id
-          description: Project ID (user generated)
-          schema:
-            type: string
-            example: auckland-bats
-            pattern: '^[a-z0-9-]+$'
-          required: true
+    /projects/:
+        get:
+            summary: List projects
+            tags:
+                - Projects
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: 'ListProjectsResponse.yaml'
+    /projects/{id}/:
+        get:
+            summary: Get a project
+            tags:
+                - Projects
+            parameters:
+                - in: path
+                  name: id
+                  description: Project ID (user generated)
+                  schema:
+                      type: string
+                      example: auckland-bats
+                      pattern: '^[a-z0-9-]+$'
+                  required: true
 
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: 'GetProjectResponse.yaml'
-    put:
-      summary: Create a new project
-      tags:
-        - Projects
-      responses:
-        200:
-          description: OK
-    patch:
-      summary: Edit an existing project
-      tags:
-        - Projects
-      responses:
-        200:
-          description: OK
-    delete:
-      summary: Delete a project
-      tags:
-        - Projects
-      responses:
-        200:
-          description: OK
-  /[Project]/deployments:
-    get:
-      summary: List deployments in a project
-      tags:
-        - Deployments
-      responses:
-        '200':
-          description: OK
-  /[Project]/deployments/{id}:
-    get:
-      summary: Get a deployment
-      tags:
-        - Deployments
-      responses:
-        200:
-          description: OK
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: 'GetProjectResponse.yaml'
+        put:
+            summary: Create a new project
+            tags:
+                - Projects
+            responses:
+                200:
+                    description: OK
+        patch:
+            summary: Edit an existing project
+            tags:
+                - Projects
+            responses:
+                200:
+                    description: OK
+        delete:
+            summary: Delete a project
+            tags:
+                - Projects
+            responses:
+                200:
+                    description: OK
+    /[Project]/deployments:
+        get:
+            summary: List deployments in a project
+            tags:
+                - Deployments
+            responses:
+                '200':
+                    description: OK
+    /[Project]/deployments/{id}:
+        get:
+            summary: Get a deployment
+            tags:
+                - Deployments
+            responses:
+                200:
+                    description: OK

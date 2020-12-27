@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Section} from '../project-details.component';
+import { Component, Input } from '@angular/core'
+import { Section } from '../project-details.component'
 
 @Component({
     moduleId: module.id,
@@ -7,7 +7,6 @@ import {Section} from '../project-details.component';
     templateUrl: 'sidebar.component.html',
     styleUrls: ['sidebar.component.css'],
 })
-
 export class SidebarComponent {
-    @Input() sections: Section[];
+    @Input() sections: Section[]
 }

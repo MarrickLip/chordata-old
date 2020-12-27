@@ -1,83 +1,83 @@
 service: chordata-engine
 provider:
-  name: aws
-  region: ap-southeast-2
-  runtime: nodejs12.x
-  tracing:
-      lambda: true
-      apiGateway: true
-  logs:
-    restApi: true
-  apiGateway:
-    minimumCompressionSize: 1024
-    metrics: true
-  environment:
-    AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
-    DB_PASSWORD: ${ssm:/chordata/DB_PASSWORD}
+    name: aws
+    region: ap-southeast-2
+    runtime: nodejs12.x
+    tracing:
+        lambda: true
+        apiGateway: true
+    logs:
+        restApi: true
+    apiGateway:
+        minimumCompressionSize: 1024
+        metrics: true
+    environment:
+        AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+        DB_PASSWORD: ${ssm:/chordata/DB_PASSWORD}
 frameworkVersion: '2'
 custom:
-  webpack:
-    webpackConfig: "./webpack.config.js"
-    includeModules: true
+    webpack:
+        webpackConfig: './webpack.config.js'
+        includeModules: true
 plugins:
-  - serverless-webpack
+    - serverless-webpack
 functions:
-  API-Projects:
-    handler: api/projects/handlers.handler
-    events:
-    - http:
-        path: projects  
-        method: get
-        cors: true
-    - http:
-        path: projects/{projectId}  
-        method: get
-        cors: true
-        request:
-          parameters:
-            paths:
-              id: true
-    - http:
-        path: projects/{projectId}  
-        method: put
-        cors: true
-        request:
-          parameters:
-            paths:
-              id: true
-    - http:
-        path: projects/{projectId}  
-        method: patch
-        cors: true
-        request:
-          parameters:
-            paths:
-              id: true
-    - http:
-        path: projects/{projectId}  
-        method: delete
-        cors: true
-        request:
-          parameters:
-            paths:
-              id: true
-  API-Deployments:
-    handler: api/deployments/handlers.handle
-    events:
-    - http:
-        path: projects/{projectId}/deployments  
-        method: get
-        cors: true
-        request:
-          parameters:
-            paths:
-              projectId: true
-    - http:
-        path: projects/{projectId}/deployments/{id}  
-        method: get
-        cors: true
-        request:
-          parameters:
-            paths:
-              projectId: true
-              id: true
+    API-Projects:
+        handler: api/projects/handlers.handler
+        events:
+            - http:
+                  path: projects
+                  method: get
+                  cors: true
+            - http:
+                  path: projects/{projectId}
+                  method: get
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              id: true
+            - http:
+                  path: projects/{projectId}
+                  method: put
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              id: true
+            - http:
+                  path: projects/{projectId}
+                  method: patch
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              id: true
+            - http:
+                  path: projects/{projectId}
+                  method: delete
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              id: true
+    API-Deployments:
+        handler: api/deployments/handlers.handle
+        events:
+            - http:
+                  path: projects/{projectId}/deployments
+                  method: get
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              projectId: true
+            - http:
+                  path: projects/{projectId}/deployments/{id}
+                  method: get
+                  cors: true
+                  request:
+                      parameters:
+                          paths:
+                              projectId: true
+                              id: true

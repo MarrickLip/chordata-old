@@ -1,0 +1,23 @@
+{
+    "name": "chordata",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^2.2.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MarrickLip/chordata.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MarrickLip/chordata/issues"
+    },
+    "homepage": "https://github.com/MarrickLip/chordata#readme"
+}

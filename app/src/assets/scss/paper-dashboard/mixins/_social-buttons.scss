@@ -1,16 +1,16 @@
 // for social buttons
-@mixin social-buttons-color ($color, $state-color){
+@mixin social-buttons-color($color, $state-color) {
     background-color: $color;
     color: $white-color;
 
     &:focus,
     &:active,
-    &:hover{
+    &:hover {
         background-color: $state-color !important;
         color: $white-color !important;
     }
 
-    &.btn-simple{
+    &.btn-simple {
         color: $color;
         background-color: $transparent-bg;
         box-shadow: none;
@@ -18,20 +18,19 @@
 
         &:hover,
         &:focus,
-        &:active{
+        &:active {
             color: $state-color;
             border-color: $state-color;
         }
     }
 
-    &.btn-neutral{
+    &.btn-neutral {
         color: $color;
         background-color: $white-color;
 
-
         &:hover,
         &:focus,
-        &:active{
+        &:active {
             color: $state-color !important;
         }
     }

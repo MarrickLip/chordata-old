@@ -1,10 +1,10 @@
-import { Component} from '@angular/core';
-import 'rxjs/add/operator/filter';
+import { Component } from '@angular/core'
+import 'rxjs/add/operator/filter'
 
 export interface Section {
-    id: string,
-    name: string,
-    icon: string,
+    id: string
+    name: string
+    icon: string
 }
 
 export const sections: Section[] = [
@@ -17,7 +17,7 @@ export const sections: Section[] = [
         id: 'samples',
         name: 'Samples',
         icon: 'table',
-    }
+    },
 ]
 
 @Component({
@@ -25,5 +25,5 @@ export const sections: Section[] = [
     templateUrl: './project-details.component.html',
 })
 export class ProjectDetailsComponent {
-    sections = sections;
+    sections = sections
 }

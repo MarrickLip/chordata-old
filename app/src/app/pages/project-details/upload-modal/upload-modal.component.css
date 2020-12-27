@@ -8,16 +8,16 @@
     background: white;
 }
 
-.ng-wizard-theme-circles>ul.step-anchor {
+.ng-wizard-theme-circles > ul.step-anchor {
     margin-bottom: 0;
-  }
+}
 
 .step-title {
     margin-bottom: 10px;
 }
 
 .step-description {
-    font-weight: 200
+    font-weight: 200;
 }
 
 .step-body {

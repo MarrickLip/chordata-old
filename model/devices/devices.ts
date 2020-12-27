@@ -1,22 +1,20 @@
-import { FileListFilter } from "./filters";
-import { FileListGuard } from "./guards";
-import { AudioMothDevice } from './audiomoth';
+import { FileListFilter } from './filters'
+import { FileListGuard } from './guards'
+import { AudioMothDevice } from './audiomoth'
 
-export type WebkitFile = File & {webkitRelativePath: string};
+export type WebkitFile = File & { webkitRelativePath: string }
 
 export type Device = {
-    id: string;
+    id: string
     meta: {
-        name: string,
-        icon: string,
-    },
+        name: string
+        icon: string
+    }
     guards: {
-        errors: Array<[FileListGuard, string]>,
-        warnings: Array<[FileListGuard, string]>,
+        errors: Array<[FileListGuard, string]>
+        warnings: Array<[FileListGuard, string]>
     }
     filters: FileListFilter[]
 }
 
-export const devices = [
-    AudioMothDevice,
-]
+export const devices = [AudioMothDevice]

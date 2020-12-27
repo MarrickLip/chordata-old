@@ -1,12 +1,12 @@
 class Project {
-    id: string;
+    id: string
     info: {
-        name: string,
+        name: string
         description: string
-    };
+    }
     samples: {
         fields: SampleField[]
-    };
+    }
 
     toObject(): object {
         return {
@@ -15,25 +15,25 @@ class Project {
     }
 
     static fromObject() {
-        return new Project
+        return new Project()
     }
 
     static validate(target: object | Project): [boolean, string?] {
-        const project = (target instanceof Project) ? target.toObject() : target;
+        const project = target instanceof Project ? target.toObject() : target
         return [true, undefined]
     }
-
 }
-
 
 type SampleField = {
-    id: string,
-    name: string,
-    required: boolean,
-    items: StringSampleField | NumberSampleField | LabelSampleField,
+    id: string
+    name: string
+    required: boolean
+    items: StringSampleField | NumberSampleField | LabelSampleField
 }
 
-type StringSampleField = {type: 'string'}
-type NumberSampleField = {type: 'number'}
-type LabelSampleField = {type: 'label', properties: {allowMultiple: boolean, values: string[]}}
-
+type StringSampleField = { type: 'string' }
+type NumberSampleField = { type: 'number' }
+type LabelSampleField = {
+    type: 'label'
+    properties: { allowMultiple: boolean; values: string[] }
+}
