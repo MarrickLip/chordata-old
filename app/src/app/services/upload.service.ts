@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { Device, devices } from '~model/devices/devices';
 
@@ -8,11 +9,19 @@ import { Device, devices } from '~model/devices/devices';
 export class UploadService {
   files: FileList = undefined;
 
-  constructor() { }
+  constructor(
+    public toastr: ToastrService,
+  ) { }
 
   setFiles(device: Device, files: FileList): boolean {
-    this.files = files.length ? files : undefined;
-    return !!this.files;
+    for (let [test, errorMessage] of device.guards.errors) {
+      if (!test(files)) {
+        this.toastr.error(errorMessage);
+      }
+    }
+    
+
+    return true;
   }
 
   async getDevices(projectId: string): Promise<Device[]> {

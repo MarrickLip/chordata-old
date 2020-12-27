@@ -22,6 +22,8 @@ import { StepDeviceComponent } from './pages/project-details/upload-modal/step-d
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -36,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
         SidebarModule,
         NavbarModule,
         ProjectDetailsModule,
-        NgWizardModule.forRoot({theme: THEME.circles})
+        NgWizardModule.forRoot({theme: THEME.circles}),
+        ToastrModule.forRoot(),
     ],
     declarations: [
         AppComponent,
