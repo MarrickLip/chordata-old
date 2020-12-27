@@ -1,6 +1,8 @@
 import { FileListFilter } from "./filters";
-import { Filter } from "./filters";
 import { FileListGuard } from "./guards";
+import { AudioMothDevice } from './audiomoth';
+
+export type WebkitFile = File & {webkitRelativePath: string};
 
 export type Device = {
     id: string;
@@ -14,3 +16,7 @@ export type Device = {
     }
     filters: FileListFilter[]
 }
+
+export const devices = [
+    AudioMothDevice,
+]

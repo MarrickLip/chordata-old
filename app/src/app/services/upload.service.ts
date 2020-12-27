@@ -1,37 +1,22 @@
 import { Injectable } from '@angular/core';
 
-export type UploadDevice = {
-  id: string,
-  name: string,
-  icon: string
-}
+import { Device, devices } from '@chordata/model/devices/devices';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
-  fileList: FileList = undefined;
+  files: FileList = undefined;
 
   constructor() { }
 
-  setFiles(device: UploadDevice, fileList: FileList): boolean {
-    this.fileList = fileList.length ? fileList : undefined;
-    return !!this.fileList;
+  setFiles(device: Device, files: FileList): boolean {
+    this.files = files.length ? files : undefined;
+    return !!this.files;
   }
 
-  async getDevices(projectId: string): Promise<UploadDevice[]> {
-    return [
-      {
-        id: 'audio-moth',
-        name: 'Audio Moth',
-        icon: 'fas fa-microphone',
-      }
-      // }, {
-      //   id: 'audio-moth',
-      //   name: 'Audio Moth',
-      //   icon: 'fas fa-microphone',
-      // }
-    ]
+  async getDevices(projectId: string): Promise<Device[]> {
+    return devices;
   }
 
 }

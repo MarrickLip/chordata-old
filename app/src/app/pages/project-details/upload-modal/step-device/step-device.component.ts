@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Device } from '@chordata/model/devices/devices';
 import { ProjectService } from 'app/services/project.service';
-import { UploadDevice, UploadService } from 'app/services/upload.service';
-
-import * as _ from 'lodash';
+import { UploadService } from 'app/services/upload.service';
 
 @Component({
   selector: 'app-step-device',
@@ -10,8 +9,10 @@ import * as _ from 'lodash';
   styleUrls: ['./step-device.component.css']
 })
 export class StepDeviceComponent implements OnInit {
-  public devices: UploadDevice[] = [];
-  public selectedDevice: UploadDevice;
+  @ViewChild('upload', { static: true }) uploadEl: ElementRef;
+  
+  public devices: Device[] = [];
+  public selectedDevice: Device;
 
   constructor(
     public project: ProjectService,
@@ -24,16 +25,16 @@ export class StepDeviceComponent implements OnInit {
     );
   }
 
-  selectDevice(device: UploadDevice) {
+  selectDevice(device: Device) {
     this.selectedDevice = device;
-    document.getElementById('upload').click();
+    this.uploadEl.nativeElement.click();
   };
 
   async selectFiles(event: any) {
     if (this.upload.setFiles(this.selectedDevice, event.target.files)) {
-      alert('files were accepted!!')
+      //
     } else {
-      alert('files were rejected :(');
+      // 
     }
   }
 
