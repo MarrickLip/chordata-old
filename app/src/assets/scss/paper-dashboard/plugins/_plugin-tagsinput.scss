@@ -134,9 +134,7 @@ $regular-primary: $default-color;
 $regular-primary-dark: darken($regular-primary, 10%);
 
 // this is the container's theme
-$regular-theme: (
-    // container-border-bottom: 1px solid $regular-primary
-);
+$regular-theme: (// container-border-bottom: 1px solid $regular-primary);
 
 // this is the tag's theme
 $regular-tag-theme: (

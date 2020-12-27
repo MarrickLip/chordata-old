@@ -5,7 +5,7 @@ import { DashboardComponent } from './sections/dashboard/dashboard.component'
 
 import { NavbarModule } from './navbar/navbar.module'
 import { UploadCardComponent } from './sections/dashboard/upload-card/upload-card.component'
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router'
 import { StepMetadataComponent } from './upload-modal/step-metadata/step-metadata.component'
 
 @NgModule({

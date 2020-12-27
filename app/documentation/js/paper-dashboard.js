@@ -21,7 +21,6 @@ var mobile_menu_visible = 0,
     bootstrap_nav_initialized = false,
     $sidebar,
     isWindows
-
 ;(function () {
     isWindows = navigator.platform.indexOf('Win') > -1 ? true : false
 

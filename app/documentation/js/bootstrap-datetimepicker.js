@@ -422,13 +422,11 @@
                     topRow.append($('<td>').addClass('separator'))
                     middleRow.append(
                         $('<td>').append(
-                            $('<button>')
-                                .addClass('btn btn-primary')
-                                .attr({
-                                    'data-action': 'togglePeriod',
-                                    tabindex: '-1',
-                                    title: options.tooltips.togglePeriod,
-                                })
+                            $('<button>').addClass('btn btn-primary').attr({
+                                'data-action': 'togglePeriod',
+                                tabindex: '-1',
+                                title: options.tooltips.togglePeriod,
+                            })
                         )
                     )
                     bottomRow.append($('<td>').addClass('separator'))
