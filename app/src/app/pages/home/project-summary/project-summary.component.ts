@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ListProjectsResponseItem } from '../../../../../../model/api/ListProjectsResponse';
+import { ListProjectsResponseItem } from '~model/api/ListProjectsResponse';
 
 
 @Component({

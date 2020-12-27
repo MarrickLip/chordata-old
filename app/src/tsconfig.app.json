@@ -12,11 +12,15 @@
     ],
     "outDir": "../out-tsc/app",
     "module": "es2015",
-    "baseUrl": "",
-    "types": []
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "~model/*" : ["../../model/*"],
+      "~app/*" : ["./app/*"],
+    }
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
   ]
 }

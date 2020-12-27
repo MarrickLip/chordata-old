@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListProjectsResponse } from '../../../../../model/api/ListProjectsResponse';
+import { ListProjectsResponse } from '~model/api/ListProjectsResponse';
 import {APIService} from '../../services/api.service';
 
 @Component({

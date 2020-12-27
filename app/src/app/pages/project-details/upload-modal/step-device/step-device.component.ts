@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Device } from '@chordata/model/devices/devices';
-import { ProjectService } from 'app/services/project.service';
-import { UploadService } from 'app/services/upload.service';
+import { Device } from '~model/devices/devices';
+import { UploadService } from '~app/services/upload.service';
+import { ProjectService } from '~app/services/project.service';
 
 @Component({
   selector: 'app-step-device',

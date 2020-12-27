@@ -17,7 +17,4 @@
     "_warmup/**/*",
     ".vscode/**/*"
   ],
-  "paths": {
-    "@model/*": ["../model/*"],
-  }
 }

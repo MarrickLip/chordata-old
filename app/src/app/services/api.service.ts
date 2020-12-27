@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { ListProjectsResponse } from '../../../../model/api/ListProjectsResponse'
-import { API_ENDPOINT } from 'app/constants';
+import { ListProjectsResponse } from '~model/api/ListProjectsResponse'
+import { API_ENDPOINT } from '../constants';
 
 @Injectable({
   providedIn: 'root'

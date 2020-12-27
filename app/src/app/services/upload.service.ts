@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Device, devices } from '@chordata/model/devices/devices';
+import { Device, devices } from '~model/devices/devices';
 
 @Injectable({
   providedIn: 'root'
