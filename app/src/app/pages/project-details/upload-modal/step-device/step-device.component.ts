@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Device } from '~model/devices/devices';
 import { UploadService } from '~app/services/upload.service';
 import { ProjectService } from '~app/services/project.service';
+import { NgWizardService } from 'ng-wizard';
 
 @Component({
   selector: 'app-step-device',
@@ -17,6 +18,7 @@ export class StepDeviceComponent implements OnInit {
   constructor(
     public project: ProjectService,
     public upload: UploadService,
+    public wizard: NgWizardService,
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +35,7 @@ export class StepDeviceComponent implements OnInit {
   async selectFiles(event: any) {
     const filesAccepted = this.upload.setFiles(this.selectedDevice, event.target.files);
     if (filesAccepted) {
-      //
-    } else {
-      // 
+      this.wizard.next()
     }
   }
 
