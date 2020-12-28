@@ -3,7 +3,7 @@
         <div class="row">
             <label class="col-sm-2 col-form-label">
                 Summary
-                <i class="far fa-font-case"></i>
+                <i class="far fa-font-case label--icon"></i>
             </label>
             <div class="col-sm-10">
                 <div class="form-group">
@@ -12,7 +12,10 @@
             </div>
         </div>
         <div class="row">
-            <label class="col-sm-2 col-form-label">Input with error</label>
+            <label class="col-sm-2 col-form-label">
+                Tags
+                <i class="fal fa-tags label--icon"></i>
+            </label>
             <div class="col-sm-10">
                 <tag-input
                     [ngModel]="tags"
@@ -22,36 +25,48 @@
             </div>
         </div>
         <div class="row">
-            <label class="col-sm-2 col-form-label">Column sizing</label>
+            <label class="col-sm-2 col-form-label">
+                Location
+                <i class="fal fa-location label--icon"></i>
+            </label>
             <div class="col-sm-10">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder=".col-md-3"
-                            />
+                    <div class="col-md-4">
+                        <select class="selectpicker">
+                            <option selected disabled>Coordinate System</option>
+                            <option>NZTM</option>
+                            <option>WGS84</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">x:</div>
+                            </div>
+                            <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder=".col-md-4"
-                            />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">y:</div>
+                            </div>
+                            <input type="text" class="form-control" />
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder=".col-md-5"
-                            />
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-2 col-form-label">
+                Notes
+                <i class="fal fa-comment-alt-lines label--icon"></i>
+            </label>
+            <div class="col-sm-10">
+                <div class="form-group">
+                    <textarea
+                        class="form-control"
+                    ></textarea>
                 </div>
             </div>
         </div>

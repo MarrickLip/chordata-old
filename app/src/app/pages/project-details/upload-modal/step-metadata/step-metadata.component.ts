@@ -12,10 +12,17 @@ export class StepMetadataComponent implements OnInit {
     tags = ['Amsterdam', 'Washington', 'Sydney', 'Beijing'];
 
     ngOnInit(): void {
+        // init tag input
         const tagClass = $('.tagsinput').data('color');
         if ($(".tagsinput").length != 0) {
           $('.tagsinput').tagsinput();
         }
         $('.bootstrap-tagsinput').addClass('' + tagClass + '-badge');
+
+        $(".selectpicker").selectpicker({
+          iconBase: "nc-icon",
+          tickIcon: "nc-check-2",
+        });
+
     }
 }
