@@ -1,4 +1,5 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient, Logger } from 'mongodb'
+Logger.setLevel('debug');
 
 const uri = `mongodb+srv://admin:${process.env.DB_PASSWORD}@chordata.v9yqd.mongodb.net/chordata?retryWrites=true&w=majority`
 const client = new MongoClient(uri, { useNewUrlParser: true })
