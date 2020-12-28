@@ -9,7 +9,7 @@ declare var $: any;
 })
 export class StepMetadataComponent implements OnInit {
     constructor() {}
-    tags = ['Amsterdam', 'Washington', 'Sydney', 'Beijing'];
+    tags = ['Amsterdam', 'Washington'];
 
     ngOnInit(): void {
         // init tag input

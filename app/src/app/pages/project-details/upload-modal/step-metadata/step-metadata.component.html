@@ -1,42 +1,51 @@
-<div class="card-body">
-    <form method="get" action="/" class="form-horizontal">
+<div class="card-body step-metadata">
+    <form method="get" action="/" class="form-horizontal metadata-form">
         <div class="row">
-            <label class="col-sm-2 col-form-label">
+            <label class="col-sm-3 col-form-label label-column">
                 Summary
                 <i class="far fa-font-case label--icon"></i>
             </label>
-            <div class="col-sm-10">
+            <div class="col-sm-9">
                 <div class="form-group">
                     <input type="text" class="form-control" value="Success" />
                 </div>
             </div>
         </div>
+        <div class="row spacer-row"></div>
         <div class="row">
-            <label class="col-sm-2 col-form-label">
-                Tags
-                <i class="fal fa-tags label--icon"></i>
-            </label>
-            <div class="col-sm-10">
-                <tag-input
-                    [ngModel]="tags"
-                    name="test"
-                    theme="regular-theme"
-                ></tag-input>
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-sm-2 col-form-label">
+            <label class="col-sm-3 col-form-label label-column">
                 Location
                 <i class="fal fa-location label--icon"></i>
             </label>
-            <div class="col-sm-10">
+            <div class="col-sm-9">
                 <div class="row">
                     <div class="col-md-4">
-                        <select class="selectpicker">
-                            <option selected disabled>Coordinate System</option>
-                            <option>NZTM</option>
-                            <option>WGS84</option>
-                        </select>
+                        <div
+                            class="btn-group btn-group-toggle toggle-button-group"
+                            data-toggle="buttons"
+                        >
+                            <label
+                                class="btn btn-secondary active toggle-button"
+                            >
+                                <input
+                                    type="radio"
+                                    name="options"
+                                    id="option1"
+                                    autocomplete="off"
+                                    checked
+                                />
+                                NZTM
+                            </label>
+                            <label class="btn btn-secondary toggle-button">
+                                <input
+                                    type="radio"
+                                    name="options"
+                                    id="option2"
+                                    autocomplete="off"
+                                />
+                                WGS84
+                            </label>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="input-group">
@@ -57,16 +66,29 @@
                 </div>
             </div>
         </div>
+        <div class="row spacer-row"></div>
         <div class="row">
-            <label class="col-sm-2 col-form-label">
+            <label class="col-sm-3 col-form-label label-column">
+                Tags
+                <i class="fal fa-tags label--icon"></i>
+            </label>
+            <div class="col-sm-9">
+                <tag-input
+                    [ngModel]="tags"
+                    name="test"
+                    theme="regular-theme"
+                ></tag-input>
+            </div>
+        </div>
+        <div class="row spacer-row"></div>
+        <div class="row">
+            <label class="col-sm-3 col-form-label label-column">
                 Notes
                 <i class="fal fa-comment-alt-lines label--icon"></i>
             </label>
-            <div class="col-sm-10">
+            <div class="col-sm-9">
                 <div class="form-group">
-                    <textarea
-                        class="form-control"
-                    ></textarea>
+                    <textarea class="form-control"></textarea>
                 </div>
             </div>
         </div>

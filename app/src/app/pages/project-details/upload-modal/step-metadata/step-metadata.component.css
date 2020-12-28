@@ -10,3 +10,61 @@
 .label--icon {
     margin-left: 4px;
 }
+
+.step-metadata {
+    display: flex;
+    justify-content: center;
+}
+
+.metadata-form {
+    max-width: 650px;
+}
+
+.row {
+    align-items: center;
+}
+
+.spacer-row {
+    height: 16px;
+}
+
+.form-control {
+    height: 40px;
+}
+
+.form-group {
+    margin: 0;
+}
+
+.input-group {
+    margin: 0;
+}
+
+.input-group-prepend {
+    height: 40px;
+}
+
+.col-form-label {
+    padding: 0;
+}
+
+.bootstrap-select {
+    padding: 0 15px;
+}
+
+.toggle-button-group {
+    width: 100%;
+}
+
+.toggle-button {
+    margin: 0;
+    padding: 10px;
+}
+
+.tag {
+    margin: 0;
+}
+
+.label-column {
+    color: grey;
+}
