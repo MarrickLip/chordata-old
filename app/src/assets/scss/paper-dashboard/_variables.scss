@@ -69,8 +69,8 @@ $pale-bg: #fffcf5 !default;
 $medium-pale-bg: #f1eae0 !default;
 $default-body-bg: $chordata-primary-contrast !default;
 
-$primary-color: #51cbce !default;
-$primary-states-color: darken($primary-color, 10%) !default;
+$primary-color: $chordata-primary !default;
+$primary-states-color: $chordata-primary-accent !default;
 
 $success-color: #6bd098 !default;
 $success-states-color: darken($success-color, 10%) !default;

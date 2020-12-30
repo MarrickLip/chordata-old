@@ -32,6 +32,10 @@
     height: 40px;
 }
 
+.form-control-multiline {
+    height: 80px;
+}
+
 .form-group {
     margin: 0;
 }
@@ -67,4 +71,8 @@
 
 .label-column {
     color: grey;
+}
+
+.notes-label {
+    align-self: flex-start;
 }

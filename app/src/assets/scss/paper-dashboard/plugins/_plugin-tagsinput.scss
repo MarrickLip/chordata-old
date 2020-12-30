@@ -137,15 +137,15 @@ $regular-primary-dark: darken($regular-primary, 10%);
 $regular-theme: (
     a: 12,
     // workaround for Prettier bug:
-    // container-border-bottom: 1px solid $regular-primary,
+    // container-border-bottom: 1px solid $regular-primary,,,,,,
 );
 
 // this is the tag's theme
 $regular-tag-theme: (
-    background: $success-color !important,
-    background-focused: $success-color,
-    background-active: $success-color,
-    background-hover: $success-color,
+    background: var(--primary),
+    background-focused: var(--primary-accent),
+    background-active: var(--primary-accent),
+    background-hover: var(--primary-accent),
     color: #fff,
     color-hover: #fff,
     color-active: #fff,

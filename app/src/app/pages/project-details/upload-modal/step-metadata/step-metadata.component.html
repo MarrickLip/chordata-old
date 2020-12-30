@@ -25,7 +25,7 @@
                             data-toggle="buttons"
                         >
                             <label
-                                class="btn btn-secondary active toggle-button"
+                                class="btn btn-outline-primary toggle-button active"
                             >
                                 <input
                                     type="radio"
@@ -36,7 +36,9 @@
                                 />
                                 NZTM
                             </label>
-                            <label class="btn btn-secondary toggle-button">
+                            <label
+                                class="btn btn-outline-primary toggle-button"
+                            >
                                 <input
                                     type="radio"
                                     name="options"
@@ -82,13 +84,15 @@
         </div>
         <div class="row spacer-row"></div>
         <div class="row">
-            <label class="col-sm-3 col-form-label label-column">
+            <label class="col-sm-3 col-form-label label-column notes-label">
                 Notes
                 <i class="fal fa-comment-alt-lines label--icon"></i>
             </label>
             <div class="col-sm-9">
                 <div class="form-group">
-                    <textarea class="form-control"></textarea>
+                    <textarea
+                        class="form-control form-control-multiline"
+                    ></textarea>
                 </div>
             </div>
         </div>

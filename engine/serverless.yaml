@@ -14,6 +14,11 @@ provider:
     environment:
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
         DB_PASSWORD: ${ssm:/chordata/DB_PASSWORD}
+    iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - '*'
+      Resource: '*'
 frameworkVersion: '2'
 custom:
     webpack:
@@ -24,6 +29,8 @@ plugins:
 functions:
     API-Projects:
         handler: api/projects/handlers.handler
+        layers:
+            - arn:aws:lambda:ap-southeast-2:580247275435:layer:LambdaInsightsExtension:12
         events:
             - http:
                   path: projects
@@ -63,6 +70,8 @@ functions:
                               id: true
     API-Deployments:
         handler: api/deployments/handlers.handle
+        layers:
+            - arn:aws:lambda:ap-southeast-2:580247275435:layer:LambdaInsightsExtension:12
         events:
             - http:
                   path: projects/{projectId}/deployments
