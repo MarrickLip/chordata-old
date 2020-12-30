@@ -14,6 +14,7 @@
 
 .step-title {
     margin-bottom: 10px;
+    color: var(--primary);
 }
 
 .step-description {
@@ -21,6 +22,10 @@
 }
 
 .step-body {
-    margin: 16px;
+    margin: 32px 16px 16px 16px;
     padding: 24px;
+}
+
+.ng-wizard-theme-circles > ul.step-anchor > li > a {
+    background: red !important;
 }

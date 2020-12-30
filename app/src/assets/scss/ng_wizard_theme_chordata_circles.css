@@ -7,13 +7,13 @@
 
 .ng-wizard-theme-circles .step-content {
     padding: 16px 0;
-    /* background-color: #FFF; */
+    background-color: #fff;
     text-align: left;
     height: 100%;
 }
 
 .ng-wizard-theme-circles .ng-wizard-toolbar {
-    /* background: #fff; */
+    background: #fff;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 0 !important;
@@ -29,7 +29,7 @@
 
 .ng-wizard-theme-circles > ul.step-anchor {
     position: relative;
-    /* background: #fff; */
+    background: #fff;
     border: none;
     list-style: none;
     margin-bottom: 12px;
@@ -70,11 +70,12 @@
     color: #bbb;
     background: #f5f5f5;
     line-height: 1;
+    background-color: #f5f5f5 !important;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor > li > a:hover {
     color: #bbb;
-    background: #f5f5f5;
+    background: #f5f5f5 !important;
     border-width: 2px;
 }
 
@@ -93,7 +94,7 @@
 .ng-wizard-theme-circles > ul.step-anchor > li.active > a {
     border-color: var(--primary);
     color: #fff;
-    background: var(--primary);
+    background: var(--primary) !important;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor > li.active > a > small {
@@ -105,7 +106,7 @@
 .ng-wizard-theme-circles > ul.step-anchor > li.done > a {
     border-color: var(--primary-accent);
     color: #fff;
-    background: var(--primary-accent);
+    background: var(--primary-accent) !important;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor > li.done > a > small {
@@ -117,7 +118,7 @@
 .ng-wizard-theme-circles > ul.step-anchor > li.danger > a {
     border-color: #d9534f;
     color: #d9534f;
-    background: #fff;
+    background: #fff !important;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor > li.danger > a > small {
@@ -126,5 +127,5 @@
 
 .ng-wizard-theme-circles > ul.step-anchor > li.disabled > a,
 .ng-wizard-theme-circles > ul.step-anchor > li.disabled > a:hover {
-    color: #eee !important;
+    color: rgb(11, 89, 119) !important;
 }
