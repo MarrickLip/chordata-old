@@ -2,11 +2,6 @@
     background: var(--primary-contrast);
     border-radius: 4px 0 0 4px;
 }
-
-.input-group-text {
-    margin-right: 4px;
-}
-
 .label--icon {
     margin-left: 4px;
 }
@@ -75,4 +70,8 @@
 
 .notes-label {
     align-self: flex-start;
+}
+
+.prepend-title {
+    margin-right: 4px;
 }
