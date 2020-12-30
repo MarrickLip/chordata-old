@@ -9,18 +9,18 @@ class Project {
     }
 
     toObject(): object {
-        return {
-            id: this.id,
-        }
+    	return {
+    		id: this.id,
+    	};
     }
 
     static fromObject() {
-        return new Project()
+    	return new Project();
     }
 
     static validate(target: object | Project): [boolean, string?] {
-        const project = target instanceof Project ? target.toObject() : target
-        return [true, undefined]
+    	const project = target instanceof Project ? target.toObject() : target;
+    	return [true, undefined];
     }
 }
 
