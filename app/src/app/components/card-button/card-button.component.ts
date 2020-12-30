@@ -1,9 +1,9 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-card-button',
-    templateUrl: './card-button.component.html',
-    styleUrls: ['./card-button.component.css'],
+	selector: 'app-card-button',
+	templateUrl: './card-button.component.html',
+	styleUrls: ['./card-button.component.css'],
 })
 export class CardButtonComponent implements OnInit {
     @Input() name: string
@@ -13,10 +13,10 @@ export class CardButtonComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        console.log({ name: this.name, icon: this.icon })
+    	console.log({ name: this.name, icon: this.icon });
     }
 
     handleClick() {
-        this.cardButtonClick.emit()
+    	this.cardButtonClick.emit();
     }
 }

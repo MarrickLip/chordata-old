@@ -9,6 +9,7 @@
         "@typescript-eslint/parser": "^4.11.1",
         "eslint": "^7.16.0",
         "eslint-config-prettier": "^7.1.0",
+        "eslint-plugin-progress": "github:taskworld/eslint-plugin-progress",
         "prettier": "^2.2.1",
         "typescript": "^4.1.3"
     },

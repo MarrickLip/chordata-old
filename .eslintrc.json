@@ -15,9 +15,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "progress"
     ],
     "rules": {
+        "progress/activate": 1,
         "indent": [
             "error",
             "tab"

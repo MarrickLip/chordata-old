@@ -1,28 +1,28 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
-    selector: 'app-step-metadata',
-    templateUrl: './step-metadata.component.html',
-    styleUrls: ['./step-metadata.component.css'],
+	selector: 'app-step-metadata',
+	templateUrl: './step-metadata.component.html',
+	styleUrls: ['./step-metadata.component.css'],
 })
 export class StepMetadataComponent implements OnInit {
-    constructor() {}
+	constructor() {}
     tags = ['Amsterdam', 'Washington'];
 
     ngOnInit(): void {
-        // init tag input
-        const tagClass = $('.tagsinput').data('color');
-        if ($(".tagsinput").length != 0) {
-          $('.tagsinput').tagsinput();
-        }
-        $('.bootstrap-tagsinput').addClass('' + tagClass + '-badge');
+    	// init tag input
+    	const tagClass = $('.tagsinput').data('color');
+    	if ($('.tagsinput').length != 0) {
+    		$('.tagsinput').tagsinput();
+    	}
+    	$('.bootstrap-tagsinput').addClass('' + tagClass + '-badge');
 
-        $(".selectpicker").selectpicker({
-          iconBase: "nc-icon",
-          tickIcon: "nc-check-2",
-        });
+    	$('.selectpicker').selectpicker({
+    		iconBase: 'nc-icon',
+    		tickIcon: 'nc-check-2',
+    	});
 
     }
 }
