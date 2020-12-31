@@ -1,104 +1,124 @@
 <div class="card-body step-metadata">
-    <form method="get" action="/" class="form-horizontal metadata-form">
-        <div class="row">
-            <label class="col-sm-3 col-form-label label-column">
-                Summary
-                <i class="far fa-font-case label--icon"></i>
-            </label>
-            <div class="col-sm-9">
-                <div class="form-group">
-                    <input type="text" class="form-control" value="" />
-                </div>
-            </div>
-        </div>
-        <div class="row spacer-row"></div>
-        <div class="row">
-            <label class="col-sm-3 col-form-label label-column">
-                Location
-                <i class="fal fa-location label--icon"></i>
-            </label>
-            <div class="col-sm-9">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div
-                            class="btn-group btn-group-toggle toggle-button-group"
-                            data-toggle="buttons"
-                        >
-                            <label
-                                class="btn btn-outline-primary toggle-button active"
-                            >
-                                <input
-                                    type="radio"
-                                    name="options"
-                                    id="option1"
-                                    autocomplete="off"
-                                    checked
-                                />
-                                NZTM
-                            </label>
-                            <label
-                                class="btn btn-outline-primary toggle-button"
-                            >
-                                <input
-                                    type="radio"
-                                    name="options"
-                                    id="option2"
-                                    autocomplete="off"
-                                />
-                                WGS84
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <span class="prepend-title">x:</span>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <span class="prepend-title">y:</span>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row spacer-row"></div>
-        <div class="row">
-            <label class="col-sm-3 col-form-label label-column">
-                Tags
-                <i class="fal fa-tags label--icon"></i>
-            </label>
-            <div class="col-sm-9">
-                <tag-input
-                    [ngModel]="tags"
-                    name="test"
-                    theme="regular-theme"
-                ></tag-input>
-            </div>
-        </div>
-        <div class="row spacer-row"></div>
-        <div class="row">
-            <label class="col-sm-3 col-form-label label-column notes-label">
-                Notes
-                <i class="fal fa-comment-alt-lines label--icon"></i>
-            </label>
-            <div class="col-sm-9">
-                <div class="form-group">
-                    <textarea
-                        class="form-control form-control-multiline"
-                    ></textarea>
-                </div>
-            </div>
-        </div>
-    </form>
+	<form method="get" action="/" class="form-horizontal metadata-form">
+		<div class="row">
+			<label class="col-sm-3 col-form-label label-column">
+				Summary
+				<i class="far fa-font-case label--icon"></i>
+			</label>
+			<div class="col-sm-9">
+				<div class="form-group">
+					<input
+						[(ngModel)]="upload.metadata.summary"
+						name="summary"
+						type="text"
+						class="form-control"
+						value=""
+					/>
+				</div>
+			</div>
+		</div>
+		<div class="row spacer-row"></div>
+		<div class="row">
+			<label class="col-sm-3 col-form-label label-column">
+				Location
+				<i class="fal fa-location label--icon"></i>
+			</label>
+			<div class="col-sm-9">
+				<div class="row">
+					<div class="col-md-4">
+						<div
+							class="btn-group btn-group-toggle toggle-button-group"
+							data-toggle="buttons"
+						>
+							<label
+								class="btn btn-outline-primary toggle-button active"
+								(click)="selectCrs('nztm')"
+							>
+								<input
+									type="radio"
+									name="coordinateSystem"
+									autocomplete="off"
+									[checked]="upload.metadata.location.crs === 'nztm'"
+								/>
+								NZTM
+							</label>
+							<label
+								class="btn btn-outline-primary toggle-button"
+								(click)="selectCrs('wgs84')"
+							>
+								<input
+									type="radio"
+									name="coordinateSystem"
+									autocomplete="off"
+									value="wgs84"
+									[checked]="upload.metadata.location.crs === 'wgs84'"
+								/>
+								WGS84
+							</label>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<span class="prepend-title">{{ coordinateLabels.x }}:</span>
+								</div>
+							</div>
+							<input
+								[(ngModel)]="upload.metadata.location.x"
+								name="location-x"
+								type="text"
+								class="form-control"
+							/>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<span class="prepend-title">{{ coordinateLabels.y }}:</span>
+								</div>
+							</div>
+							<input
+								[(ngModel)]="upload.metadata.location.y"
+								name="location-y"
+								type="text"
+								class="form-control"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row spacer-row"></div>
+		<div class="row">
+			<label class="col-sm-3 col-form-label label-column">
+				Tags
+				<i class="fal fa-tags label--icon"></i>
+			</label>
+			<div class="col-sm-9">
+				<tag-input
+					[(ngModel)]="upload.metadata.tags"
+					name="test"
+					theme="regular-theme"
+				></tag-input>
+			</div>
+		</div>
+		<div class="row spacer-row"></div>
+		<div class="row">
+			<label class="col-sm-3 col-form-label label-column notes-label">
+				Notes
+				<i class="fal fa-comment-alt-lines label--icon"></i>
+			</label>
+			<div class="col-sm-9">
+				<div class="form-group">
+					<textarea
+						[(ngModel)]="upload.metadata.notes"
+						name="notes"
+						class="form-control form-control-multiline"
+					></textarea>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>
