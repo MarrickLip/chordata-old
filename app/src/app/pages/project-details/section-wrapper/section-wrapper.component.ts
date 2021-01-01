@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Section } from '../project-details.component';
 
 @Component({
 	selector: 'app-section-wrapper',

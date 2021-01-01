@@ -10,13 +10,11 @@ export class CardButtonComponent implements OnInit {
     @Input() icon: string
     @Output() cardButtonClick = new EventEmitter<void>()
 
-    constructor() {}
-
     ngOnInit(): void {
     	console.log({ name: this.name, icon: this.icon });
     }
 
-    handleClick() {
+    handleClick(): void {
     	this.cardButtonClick.emit();
     }
 }

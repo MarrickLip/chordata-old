@@ -1,6 +1,7 @@
 import { STEP_STATE } from 'ng-wizard';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let $: any;
 
 @Component({
@@ -18,9 +19,6 @@ export class UploadModalComponent implements AfterViewInit {
     	hidden: STEP_STATE.hidden,
     }
 
-    constructor() {}
-    
-
     ngAfterViewInit(): void {
     	$(function () {
     		$('[data-toggle="tooltip"]').tooltip();
@@ -28,7 +26,7 @@ export class UploadModalComponent implements AfterViewInit {
     	this.setupStepIcons();
     }
 
-    setupStepIcons() {
+    setupStepIcons(): void {
     	const wizardEl = this.wizard.nativeElement as HTMLDivElement;
     	const steps: HTMLElement[] = Array.from(wizardEl.getElementsByTagName('li'));
     	for (const stepEl of steps) {

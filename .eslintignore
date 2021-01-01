@@ -9,6 +9,8 @@ app/node_modules
 app/.*
 app/dist
 app/documentation
+app/src/assets/js/jquery.validate.min.js
+app/src/test.ts
 
 engine/.*
 engine/node_modules

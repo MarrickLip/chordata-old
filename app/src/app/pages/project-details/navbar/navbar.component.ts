@@ -1,28 +1,24 @@
 import {
 	Component,
 	OnInit,
-	Renderer2,
 	ViewChild,
 	ElementRef,
-	Directive,
 } from '@angular/core';
-import {
-	Router,
-	ActivatedRoute,
-	NavigationEnd,
-	NavigationStart,
-} from '@angular/router';
+
 import {
 	Location,
-	LocationStrategy,
-	PathLocationStrategy,
 } from '@angular/common';
-import { Subscription } from 'rxjs/Subscription';
 
-const misc: any = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const document: any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const window: any;
+
+const misc = {
 	navbar_menu_visible: 0,
 	active_collapse: true,
 	disabled_collapse_init: 0,
+	sidebar_mini_active: undefined,
 };
 
 @Component({
@@ -31,45 +27,30 @@ const misc: any = {
 	templateUrl: 'navbar.component.html',
 })
 export class NavbarComponent implements OnInit {
-    private listTitles: any[]
     location: Location
-    private nativeElement: Node
     private toggleButton
     private sidebarVisible: boolean
-    private _router: Subscription
     public open = false
 
     @ViewChild('navbar-cmp', { static: false }) button
 
     constructor(
     	location: Location,
-        private renderer: Renderer2,
-        private element: ElementRef,
-        private router: Router
-    ) {
+        private element: ElementRef    ) {
     	this.location = location;
-    	this.nativeElement = element.nativeElement;
     	this.sidebarVisible = false;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     	const navbar: HTMLElement = this.element.nativeElement;
     	const body = document.getElementsByTagName('body')[0];
     	this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     	if (body.classList.contains('sidebar-mini')) {
     		misc.sidebar_mini_active = true;
     	}
-    	this._router = this.router.events
-    		.filter((event) => event instanceof NavigationEnd)
-    		.subscribe((event: NavigationEnd) => {
-    			const $layer = document.getElementsByClassName('close-layer')[0];
-    			if ($layer) {
-    				$layer.remove();
-    			}
-    		});
     }
 
-    minimizeSidebar() {
+    minimizeSidebar(): void {
     	const body = document.getElementsByTagName('body')[0];
 
     	if (misc.sidebar_mini_active === true) {
@@ -94,14 +75,14 @@ export class NavbarComponent implements OnInit {
     	}, 1000);
     }
 
-    isMobileMenu() {
+    isMobileMenu(): boolean {
     	if (window.outerWidth < 991) {
     		return false;
     	}
     	return true;
     }
 
-    sidebarOpen() {
+    sidebarOpen(): boolean {
     	const toggleButton = this.toggleButton;
     	const html = document.getElementsByTagName('html')[0];
     	setTimeout(function () {
@@ -116,7 +97,7 @@ export class NavbarComponent implements OnInit {
     	html.classList.add('nav-open');
     	this.sidebarVisible = true;
     }
-    sidebarClose() {
+    sidebarClose(): void {
     	const html = document.getElementsByTagName('html')[0];
     	this.toggleButton.classList.remove('toggled');
     	this.sidebarVisible = false;
@@ -131,7 +112,7 @@ export class NavbarComponent implements OnInit {
     		}, 500);
     	}
     }
-    sidebarToggle() {
+    sidebarToggle(): void {
     	// var toggleButton = this.toggleButton;
     	// var body = document.getElementsByTagName('body')[0];
     	if (this.sidebarVisible == false) {
@@ -141,9 +122,7 @@ export class NavbarComponent implements OnInit {
     	}
     }
 
-    getTitle() {}
-
-    getPath() {
+    getPath(): string {
     	// console.log(this.location);
     	return this.location.prepareExternalUrl(this.location.path());
     }

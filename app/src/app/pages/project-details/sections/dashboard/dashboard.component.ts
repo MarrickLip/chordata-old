@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
 declare const $: any;
+declare const document: any;
 
 @Component({
 	selector: 'app-dashboard',
@@ -44,9 +47,6 @@ export class DashboardComponent implements OnInit {
     }
     public ngOnInit() {
     	this.chartColor = '#FFFFFF';
-
-    	const cardStatsMiniLineColor = '#fff',
-    		cardStatsMiniDotColor = '#fff';
 
     	this.canvas = document.getElementById('chartActivity');
     	this.ctx = this.canvas.getContext('2d');
@@ -629,7 +629,8 @@ export class DashboardComponent implements OnInit {
     	this.gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0)');
     	this.gradientFill.addColorStop(1, this.hexToRGB('#18ce0f', 0.4));
 
-    	var myChart = new Chart(this.ctx, {
+    	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+    	const myChart = new Chart(this.ctx, {
     		type: 'line',
     		data: {
     			labels: [
@@ -784,6 +785,7 @@ export class DashboardComponent implements OnInit {
     		},
     	};
 
+    	// eslint-disable-next-line @typescript-eslint/no-unused-vars
     	const viewsChart = new Chart(this.ctx, a);
 
     	const mapData = {

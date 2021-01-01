@@ -34,6 +34,11 @@
             "error",
             "always"
         ],
-        "prefer-const": "error"
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "args": "none"
+            }
+        ]
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UploadService } from '~app/services/upload.service';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let $: any;
 
 @Component({
