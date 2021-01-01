@@ -1,4 +1,4 @@
-import { APIGatewayProxyResult } from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import 'source-map-support/register';
 
 import { EventHandler } from '../lib/EventHandler';
@@ -14,7 +14,7 @@ const withCors = (response: APIGatewayProxyResult) => ({
 	},
 });
 
-export async function handler(event, _context) {
+export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
 	const _handler = {
 		'GET /projects': listProjectsHandler,
 		'GET /projects/{projectId}': getProjectHandler,

@@ -12,6 +12,7 @@ app/documentation
 
 engine/.*
 engine/node_modules
+engine/webpack.config.js
 
 # Logs
 logs

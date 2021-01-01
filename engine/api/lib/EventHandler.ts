@@ -13,7 +13,7 @@ export class EventHandler {
         ) => Promise<APIGatewayProxyResult>
 	) {}
 
-	async handle(event: APIGatewayProxyEvent) {
+	async handle(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
 		for (const [test, response] of this.guards) {
 			if (!(await test(event))) {
 				return response;

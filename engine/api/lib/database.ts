@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import { Collection, MongoClient } from 'mongodb';
 
 const uri = `mongodb+srv://admin:${process.env.DB_PASSWORD}@chordata.v9yqd.mongodb.net/chordata?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
@@ -15,5 +15,5 @@ async function getCollection(name: string) {
 }
 
 export const db = {
-	projects: () => getCollection('projects'),
+	projects: async (): Promise<Collection> => getCollection('projects'),
 };
