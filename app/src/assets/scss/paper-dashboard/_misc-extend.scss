@@ -1,77 +1,83 @@
 .ct-label.ct-horizontal.ct-end,
 .ct-label.ct-vertical.ct-start {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .ct-chart.ct-perfect-fourth {
-    .ct-chart-pie .ct-label {
-        font-size: 14px;
-    }
+  .ct-chart-pie .ct-label {
+    font-size: 14px;
+  }
 }
 
 .card {
-    .card-footer .footer-line {
-        padding-top: 3px;
+  .card-footer .footer-line {
+    padding-top: 3px;
+  }
+
+  &.bootstrap-table {
+    .dropdown-item.active {
+      background-color: $default-color;
+      color: $white-color;
+    }
+  }
+
+  .team-members {
+    .avatar {
+      margin-top: 5px;
     }
 
-    &.bootstrap-table {
-        .dropdown-item.active {
-            background-color: $default-color;
-            color: $white-color;
-        }
+    .text-right .btn {
+      margin-top: 5px;
     }
-
-    .team-members {
-        .avatar {
-            margin-top: 5px;
-        }
-        .text-right .btn {
-            margin-top: 5px;
-        }
-    }
+  }
 }
 
 .btn-group-sm {
-    .btn-round {
-        border-radius: 30px;
-    }
+  .btn-round {
+    border-radius: 30px;
+  }
 }
 
 // Pulsing Heart (footer)
 .heart {
-    color: #eb5e28;
-    animation: hearthing 1s ease infinite;
+  color: #eb5e28;
+  animation: hearthing 1s ease infinite;
 }
 
 @keyframes hearthing {
-    0% {
-        transform: scale(0.75);
-    }
-    20% {
-        transform: scale(1);
-    }
-    40% {
-        transform: scale(0.75);
-    }
-    60% {
-        transform: scale(1);
-    }
-    80% {
-        transform: scale(0.75);
-    }
-    100% {
-        transform: scale(0.75);
-    }
+  0% {
+    transform: scale(0.75);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.75);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(0.75);
+  }
+
+  100% {
+    transform: scale(0.75);
+  }
 }
 
 // Datetimepicker
 
 .datepicker {
-    .table-condensed {
-        tbody > tr:first-of-type {
-            .day {
-                padding-top: 5px;
-            }
-        }
+  .table-condensed {
+    tbody > tr:first-of-type {
+      .day {
+        padding-top: 5px;
+      }
     }
+  }
 }

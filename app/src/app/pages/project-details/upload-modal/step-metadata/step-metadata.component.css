@@ -1,77 +1,78 @@
 .input-group-prepend {
-    background: var(--primary-contrast);
-    border-radius: 4px 0 0 4px;
+  background: var(--primary-contrast);
+  border-radius: 4px 0 0 4px;
 }
+
 .label--icon {
-    margin-left: 4px;
+  margin-left: 4px;
 }
 
 .step-metadata {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .metadata-form {
-    max-width: 650px;
+  max-width: 650px;
 }
 
 .row {
-    align-items: center;
+  align-items: center;
 }
 
 .spacer-row {
-    height: 16px;
+  height: 16px;
 }
 
 .form-control {
-    height: 40px;
+  height: 40px;
 }
 
 .form-control-multiline {
-    height: 80px;
+  height: 80px;
 }
 
 .form-group {
-    margin: 0;
+  margin: 0;
 }
 
 .input-group {
-    margin: 0;
+  margin: 0;
 }
 
 .input-group-prepend {
-    height: 40px;
+  height: 40px;
 }
 
 .col-form-label {
-    padding: 0;
+  padding: 0;
 }
 
 .bootstrap-select {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .toggle-button-group {
-    width: 100%;
+  width: 100%;
 }
 
 .toggle-button {
-    margin: 0;
-    padding: 10px;
+  margin: 0;
+  padding: 10px;
 }
 
 .tag {
-    margin: 0;
+  margin: 0;
 }
 
 .label-column {
-    color: grey;
+  color: grey;
 }
 
 .notes-label {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .prepend-title {
-    margin-right: 4px;
+  margin-right: 4px;
 }

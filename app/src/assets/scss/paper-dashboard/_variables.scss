@@ -8,15 +8,15 @@ $chordata-primary-accent: #9fd4bf;
 
 $font-color: #66615b !default;
 $fill-font-color: rgba(255, 255, 255, 0.8);
-$font-family-sans-serif: 'Montserrat', 'Helvetica', Arial, sans-serif;
-$sans-serif-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+$font-family-sans-serif: 'Montserrat', 'Helvetica', arial, sans-serif;
+$sans-serif-family: 'Montserrat', 'Helvetica Neue', arial, sans-serif;
 
 $none: 0 !default;
 $border-thin: 1px !default;
 $border-thick: 2px !default;
 
-$white-color: #ffffff !default;
-$white-bg: #ffffff !default;
+$white-color: #fff !default;
+$white-bg: #fff !default;
 $orange-bg: #e95e38 !default;
 
 $smoke-bg: #f5f5f5 !default;
@@ -25,12 +25,12 @@ $light-black: #444 !default;
 $black-bg: rgba(30, 30, 30, 0.97) !default;
 
 $black-color: #2c2c2c !default;
-$black-hr: #444444 !default;
+$black-hr: #444 !default;
 
 $hr-line: rgba(0, 0, 0, 0.1) !default;
 
 $light-gray: #e3e3e3 !default;
-$medium-gray: #dddddd !default;
+$medium-gray: #ddd !default;
 $dark-gray: #9a9a9a !default;
 
 $table-line-color: #ccc !default;
@@ -50,7 +50,7 @@ $opacity-1: rgba(255, 255, 255, 0.1) !default;
 $opacity-2: rgba(255, 255, 255, 0.2) !default;
 
 $transparent-bg: transparent !default;
-$dark-background: #555555 !default;
+$dark-background: #555 !default;
 
 $gray-input-bg: #fffcf5 !default;
 $danger-input-bg: #ffc0a4 !default;
@@ -84,7 +84,7 @@ $warning-states-color: darken($warning-color, 10%) !default;
 $danger-color: #ef8157 !default;
 $danger-states-color: darken($danger-color, 8%) !default;
 
-$link-disabled-color: #666666 !default;
+$link-disabled-color: #666 !default;
 
 $purple-color: #c178c1 !default;
 $purple-states-color: darken($purple-color, 8%) !default;
@@ -128,7 +128,7 @@ $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
 $brand-inverse: $black-color !default;
 
-$link-disabled-color: #666666 !default;
+$link-disabled-color: #666 !default;
 $dark-color: #212120 !default;
 //     light colors
 $light-blue: rgba($primary-color, 0.2);
@@ -145,7 +145,7 @@ $margin-large-vertical: 30px !default;
 $margin-base-vertical: 15px !default;
 
 // border radius for buttons
-$border-radius-none: 0px !default;
+$border-radius-none: 0 !default;
 $border-radius-btn-small: 26px !default;
 $border-radius-btn-base: 20px !default;
 $border-radius-btn-large: 50px !default;
@@ -274,10 +274,10 @@ $border-radius-top: 10px 10px 0 0 !default;
 $border-radius-bottom: 0 0 10px 10px !default;
 
 $dropdown-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.125);
-$box-shadow-raised: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+$box-shadow-raised: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
 $box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-$sidebar-box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2),
-    0px 2px 30px 0 rgba(0, 0, 0, 0.35);
+$sidebar-box-shadow: 0 2px 22px 0 rgba(0, 0, 0, 0.2),
+  0 2px 30px 0 rgba(0, 0, 0, 0.35);
 
 $general-transition-time: 300ms !default;
 
@@ -292,12 +292,12 @@ $transition-bezier: cubic-bezier(0.34, 1.61, 0.7, 1) !default;
 $transition-ease: ease 0s;
 
 //$navbar-padding-a:               9px 13px;
-$navbar-margin-a: 15px 0px;
+$navbar-margin-a: 15px 0;
 
 $padding-social-a: 10px 5px;
 
-$navbar-margin-a-btn: 15px 0px;
-$navbar-margin-a-btn-round: 16px 0px;
+$navbar-margin-a-btn: 15px 0;
+$navbar-margin-a-btn-round: 16px 0;
 
 $navbar-padding-a-icons: 6px 15px;
 $navbar-margin-a-icons: 6px 3px;
@@ -319,7 +319,7 @@ $width-icon-message: 40px;
 $height-icon-message-sm: 20px;
 $width-icon-message-sm: 20px;
 
-$white-navbar: rgba(#ffffff, 0.96);
+$white-navbar: rgba(#fff, 0.96);
 $primary-navbar: rgba(#34acdc, 0.98);
 $info-navbar: rgba(#5bcaff, 0.98);
 $success-navbar: rgba(#4cd964, 0.98);
@@ -376,8 +376,8 @@ $social-pinterest-state-color: lighten(#cc2127, 6%) !default;
 $social-dribbble: #ea4c89 !default;
 $social-dribbble-state-color: lighten(#ea4c89, 6%) !default;
 
-$social-github: #333333 !default;
-$social-github-state-color: lighten(#333333, 6%) !default;
+$social-github: #333 !default;
+$social-github-state-color: lighten(#333, 6%) !default;
 
 $social-youtube: #e52d27 !default;
 $social-youtube-state-color: lighten(#e52d27, 6%) !default;
