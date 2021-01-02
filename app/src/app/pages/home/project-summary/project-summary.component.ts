@@ -7,5 +7,5 @@ import { ListProjectsResponseItem } from '~model/api/ListProjectsResponse';
 	styleUrls: ['./project-summary.component.css'],
 })
 export class ProjectSummaryComponent {
-    @Input() project: ListProjectsResponseItem
+	@Input() project: ListProjectsResponseItem;
 }

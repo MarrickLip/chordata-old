@@ -10,45 +10,52 @@ declare let $: any;
 	styleUrls: ['./upload-modal.component.css'],
 })
 export class UploadModalComponent implements AfterViewInit {
-    @ViewChild('wizard') wizard: ElementRef;
-    
-    stepStates = {
-    	normal: STEP_STATE.normal,
-    	disabled: STEP_STATE.disabled,
-    	error: STEP_STATE.error,
-    	hidden: STEP_STATE.hidden,
-    }
+	@ViewChild('wizard') wizard: ElementRef;
 
-    ngAfterViewInit(): void {
-    	$(function () {
-    		$('[data-toggle="tooltip"]').tooltip();
-    	});
-    	this.setupStepIcons();
-    }
+	stepStates = {
+		normal: STEP_STATE.normal,
+		disabled: STEP_STATE.disabled,
+		error: STEP_STATE.error,
+		hidden: STEP_STATE.hidden,
+	};
 
-    setupStepIcons(): void {
-    	const wizardEl = this.wizard.nativeElement as HTMLDivElement;
-    	const steps: HTMLElement[] = Array.from(wizardEl.getElementsByTagName('li'));
-    	for (const stepEl of steps) {
-    		const linkEl = stepEl.getElementsByClassName('nav-link')[0] as HTMLElement;
-    		const title = linkEl.innerText;
-            
-    		const icon = {
-    			'① Connect Device': 'fas fa-microchip',
-    			'② Metadata': 'fas fa-list-ul',
-    			'③ Upload': 'fas fa-upload'
-    		}[title] || 'fas fa-bug';
-            
-    		// inject the fontawesome icon
-    		linkEl.innerText = null;
-    		linkEl.classList.add('step-icon-container');
-    		linkEl.insertAdjacentHTML('afterbegin', `<i class="${icon} step-icon"></i>`);
-            
-    		// add a tooltip
-    		linkEl.setAttribute('title', title);
-    		linkEl.setAttribute('data-toggle', 'tooltip');
-    		linkEl.setAttribute('data-placement', 'bottom');
-    	}
-    }
+	ngAfterViewInit(): void {
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		this.setupStepIcons();
+	}
 
+	setupStepIcons(): void {
+		const wizardEl = this.wizard.nativeElement as HTMLDivElement;
+		const steps: HTMLElement[] = Array.from(
+			wizardEl.getElementsByTagName('li')
+		);
+		for (const stepEl of steps) {
+			const linkEl = stepEl.getElementsByClassName(
+				'nav-link'
+			)[0] as HTMLElement;
+			const title = linkEl.innerText;
+
+			const icon =
+				{
+					'① Connect Device': 'fas fa-microchip',
+					'② Metadata': 'fas fa-list-ul',
+					'③ Upload': 'fas fa-upload',
+				}[title] || 'fas fa-bug';
+
+			// inject the fontawesome icon
+			linkEl.innerText = null;
+			linkEl.classList.add('step-icon-container');
+			linkEl.insertAdjacentHTML(
+				'afterbegin',
+				`<i class="${icon} step-icon"></i>`
+			);
+
+			// add a tooltip
+			linkEl.setAttribute('title', title);
+			linkEl.setAttribute('data-toggle', 'tooltip');
+			linkEl.setAttribute('data-placement', 'bottom');
+		}
+	}
 }

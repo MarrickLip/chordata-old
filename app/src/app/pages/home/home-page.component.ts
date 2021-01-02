@@ -8,11 +8,11 @@ import { APIService } from '../../services/api.service';
 	styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-    projects: ListProjectsResponse
+	projects: ListProjectsResponse;
 
-    constructor(private API: APIService) {}
+	constructor(private API: APIService) {}
 
-    ngOnInit(): void {
-    	this.API.listProjects().then((projects) => (this.projects = projects));
-    }
+	ngOnInit(): void {
+		this.API.listProjects().then((projects) => (this.projects = projects));
+	}
 }

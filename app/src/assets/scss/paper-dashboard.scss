@@ -13,20 +13,20 @@
 
  */
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1000px,
-  xl: 1400px,
-  xxl: 1900px,
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1000px,
+	xl: 1400px,
+	xxl: 1900px,
 );
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 1000px,
-  xl: 1540px,
-  xxl: 1610px,
+	sm: 540px,
+	md: 720px,
+	lg: 1000px,
+	xl: 1540px,
+	xxl: 1610px,
 );
 
 @import '~bootstrap/scss/bootstrap';
@@ -105,9 +105,9 @@ $container-max-widths: (
 @import 'paper-dashboard/media-queries';
 
 :root {
-  --primary: #6f8581;
-  --primary-contrast: #f4f3ef;
-  --primary-accent: #b3c9b8;
+	--primary: #6f8581;
+	--primary-contrast: #f4f3ef;
+	--primary-accent: #b3c9b8;
 }
 
 @import '~ng-wizard/themes/ng_wizard.min.css';
@@ -115,10 +115,10 @@ $container-max-widths: (
 @import '~ngx-toastr/toastr';
 
 .step-icon-container {
-  color: white !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  padding: 0;
+	color: white !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	padding: 0;
 }

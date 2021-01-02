@@ -1,17 +1,17 @@
 <div class="device-buttons">
-    <app-card-button
-        *ngFor="let device of devices"
-        [name]="device.meta.name"
-        [icon]="device.meta.icon"
-        (cardButtonClick)="selectDevice(device)"
-    ></app-card-button>
+	<app-card-button
+		*ngFor="let device of devices"
+		[name]="device.meta.name"
+		[icon]="device.meta.icon"
+		(cardButtonClick)="selectDevice(device)"
+	></app-card-button>
 </div>
 <input
-    #upload
-    type="file"
-    id="upload"
-    name="upload"
-    webkitdirectory
-    (change)="selectFiles($event)"
-    hidden
+	#upload
+	type="file"
+	id="upload"
+	name="upload"
+	webkitdirectory
+	(change)="selectFiles($event)"
+	hidden
 />

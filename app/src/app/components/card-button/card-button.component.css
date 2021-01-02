@@ -1,32 +1,32 @@
 .card-button {
-  background: var(--primary);
-  min-width: 200px;
-  border-radius: 16px;
-  transition: box-shadow 0.25s, top 0.15s;
-  position: relative;
-  top: 0;
-  cursor: pointer;
+	background: var(--primary);
+	min-width: 200px;
+	border-radius: 16px;
+	transition: box-shadow 0.25s, top 0.15s;
+	position: relative;
+	top: 0;
+	cursor: pointer;
 }
 
 .card-button--body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px;
 }
 
 .card-button:hover {
-  background: var(--primary-accent);
-  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.5);
-  top: -10px;
+	background: var(--primary-accent);
+	box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.5);
+	top: -10px;
 }
 
 .icon {
-  font-size: 48px;
-  color: var(--primary-contrast);
+	font-size: 48px;
+	color: var(--primary-contrast);
 }
 
 .title {
-  color: var(--primary-contrast);
-  font-size: 16px;
+	color: var(--primary-contrast);
+	font-size: 16px;
 }

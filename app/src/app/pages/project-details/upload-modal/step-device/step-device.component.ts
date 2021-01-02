@@ -10,37 +10,36 @@ import { NgWizardService } from 'ng-wizard';
 	styleUrls: ['./step-device.component.css'],
 })
 export class StepDeviceComponent implements OnInit {
-    @ViewChild('upload', { static: true }) uploadEl: ElementRef
+	@ViewChild('upload', { static: true }) uploadEl: ElementRef;
 
-    public devices: Device[] = []
-    public selectedDevice: Device
+	public devices: Device[] = [];
+	public selectedDevice: Device;
 
-    constructor(
-        public project: ProjectService,
-        public upload: UploadService,
-        public wizard: NgWizardService
-    ) {}
+	constructor(
+		public project: ProjectService,
+		public upload: UploadService,
+		public wizard: NgWizardService
+	) {}
 
-    ngOnInit(): void {
-    	this.upload
-    		.getDevices(this.project.id)
-    		.then((devices) => (this.devices = devices));
+	ngOnInit(): void {
+		this.upload
+			.getDevices(this.project.id)
+			.then((devices) => (this.devices = devices));
+	}
 
-    }
+	selectDevice(device: Device): void {
+		this.selectedDevice = device;
+		// this.uploadEl.nativeElement.click()
+		this.wizard.next();
+	}
 
-    selectDevice(device: Device): void {
-    	this.selectedDevice = device;
-    	// this.uploadEl.nativeElement.click()
-    	this.wizard.next();
-    }
-
-    async selectFiles(event: DomInput): void {
-    	const filesAccepted = this.upload.setFiles(
-    		this.selectedDevice,
-    		event.target.files
-    	);
-    	if (filesAccepted) {
-    		this.wizard.next();
-    	}
-    }
+	async selectFiles(event: DomInput): void {
+		const filesAccepted = this.upload.setFiles(
+			this.selectedDevice,
+			event.target.files
+		);
+		if (filesAccepted) {
+			this.wizard.next();
+		}
+	}
 }

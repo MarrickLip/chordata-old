@@ -14,7 +14,9 @@ const withCors = (response: APIGatewayProxyResult) => ({
 	},
 });
 
-export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
+export async function handler(
+	event: APIGatewayProxyEvent
+): Promise<APIGatewayProxyResult> {
 	const _handler = {
 		'GET /projects': listProjectsHandler,
 		'GET /projects/{projectId}': getProjectHandler,

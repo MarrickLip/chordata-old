@@ -7,18 +7,18 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./section-wrapper.component.css'],
 })
 export class SectionWrapperComponent implements OnInit {
-    sectionId: string
-    showUploadModal: boolean
+	sectionId: string;
+	showUploadModal: boolean;
 
-    constructor(private route: ActivatedRoute) {}
+	constructor(private route: ActivatedRoute) {}
 
-    ngOnInit(): void {
-    	this.route.paramMap.subscribe(
-    		(params) => (this.sectionId = params.get('section'))
-    	);
+	ngOnInit(): void {
+		this.route.paramMap.subscribe(
+			(params) => (this.sectionId = params.get('section'))
+		);
 
-    	this.route.fragment.subscribe(
-    		(fragment) => (this.showUploadModal = fragment === 'upload')
-    	);
-    }
+		this.route.fragment.subscribe(
+			(fragment) => (this.showUploadModal = fragment === 'upload')
+		);
+	}
 }

@@ -2,15 +2,15 @@
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
-  display: block;
+	display: block;
 }
 
 .carousel {
-  .carousel-inner {
-    box-shadow: $box-shadow-raised;
-  }
+	.carousel-inner {
+		box-shadow: $box-shadow-raised;
+	}
 
-  .nc-icon {
-    font-size: 2em;
-  }
+	.nc-icon {
+		font-size: 2em;
+	}
 }

@@ -1,6 +1,6 @@
 import { WebkitFile } from './devices';
 
-export type FileListGuard = (files: FileList) => boolean
+export type FileListGuard = (files: FileList) => boolean;
 
 const getPaths = (files: FileList) =>
 	Array.from(files).map((file) => (file as WebkitFile).webkitRelativePath);

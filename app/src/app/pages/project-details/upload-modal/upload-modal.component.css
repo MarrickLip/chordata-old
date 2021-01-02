@@ -1,31 +1,31 @@
 .upload-modal-dialog {
-  max-width: 800px;
+	max-width: 800px;
 }
 
 .upload-modal-body {
-  padding: 0;
-  padding-top: 16px;
-  background: white;
+	padding: 0;
+	padding-top: 16px;
+	background: white;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .step-title {
-  margin-bottom: 10px;
-  color: var(--primary);
+	margin-bottom: 10px;
+	color: var(--primary);
 }
 
 .step-description {
-  font-weight: 200;
+	font-weight: 200;
 }
 
 .step-body {
-  margin: 32px 16px 16px 16px;
-  padding: 24px;
+	margin: 32px 16px 16px 16px;
+	padding: 24px;
 }
 
 .ng-wizard-theme-circles > ul.step-anchor > li > a {
-  background: red !important;
+	background: red !important;
 }

@@ -11,7 +11,7 @@ declare let $: any;
 	styleUrls: ['./step-metadata.component.css'],
 })
 export class StepMetadataComponent implements OnInit {
-	coordinateLabels: {x: string, y: string};	
+	coordinateLabels: { x: string; y: string };
 
 	constructor(public upload: UploadService, public toastr: ToastrService) {}
 
@@ -41,13 +41,12 @@ export class StepMetadataComponent implements OnInit {
 		(this.upload.metadata.location as any).crs = crs;
 
 		switch (crs) {
-		case 'nztm':
-			this.coordinateLabels = {x: 'x', y: 'y'};
-			break;
-		case 'wgs84':
-			this.coordinateLabels = {x: 'lon', y: 'lat'};
-			break;
+			case 'nztm':
+				this.coordinateLabels = { x: 'x', y: 'y' };
+				break;
+			case 'wgs84':
+				this.coordinateLabels = { x: 'lon', y: 'lat' };
+				break;
 		}
-
 	}
 }

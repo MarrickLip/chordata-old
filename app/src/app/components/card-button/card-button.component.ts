@@ -6,15 +6,15 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./card-button.component.css'],
 })
 export class CardButtonComponent implements OnInit {
-    @Input() name: string
-    @Input() icon: string
-    @Output() cardButtonClick = new EventEmitter<void>()
+	@Input() name: string;
+	@Input() icon: string;
+	@Output() cardButtonClick = new EventEmitter<void>();
 
-    ngOnInit(): void {
-    	console.log({ name: this.name, icon: this.icon });
-    }
+	ngOnInit(): void {
+		console.log({ name: this.name, icon: this.icon });
+	}
 
-    handleClick(): void {
-    	this.cardButtonClick.emit();
-    }
+	handleClick(): void {
+		this.cardButtonClick.emit();
+	}
 }

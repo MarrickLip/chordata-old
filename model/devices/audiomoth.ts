@@ -28,10 +28,7 @@ export const AudioMothDevice: Device = {
 			],
 		],
 		warnings: [
-			[
-				NoPathsMatch.forPattern(/^[^/]*\/.*\/.*$/),
-				'Ignoring sub-directories',
-			],
+			[NoPathsMatch.forPattern(/^[^/]*\/.*\/.*$/), 'Ignoring sub-directories'],
 		],
 	},
 	filters: [],

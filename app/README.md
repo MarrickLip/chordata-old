@@ -8,30 +8,30 @@
 
 During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
 
--   [Robert McIntosh](https://github.com/mouse0270) for the notification system
--   [Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts
--   [Tristan Edwards](https://twitter.com/t4t5) for the [Sweet Alert](http://limonte.github.io/sweetalert2/)
--   [Eonasdan](https://github.com/Eonasdan) for the [DateTimPicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
--   Kirill Lebedev for [jVector Maps](http://jvectormap.com/)
--   [Vincent Gabriel](https://twitter.com/gabrielva) for the [Bootstrap Wizard](https://github.com/VinceG/twitter-bootstrap-wizard)
--   [FullCalendar.io](https://fullcalendar.io/) for the awesome Calendar
+- [Robert McIntosh](https://github.com/mouse0270) for the notification system
+- [Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts
+- [Tristan Edwards](https://twitter.com/t4t5) for the [Sweet Alert](http://limonte.github.io/sweetalert2/)
+- [Eonasdan](https://github.com/Eonasdan) for the [DateTimPicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
+- Kirill Lebedev for [jVector Maps](http://jvectormap.com/)
+- [Vincent Gabriel](https://twitter.com/gabrielva) for the [Bootstrap Wizard](https://github.com/VinceG/twitter-bootstrap-wizard)
+- [FullCalendar.io](https://fullcalendar.io/) for the awesome Calendar
 
 Let us know your thoughts below. And good luck with development!
 
 ## Table of Contents
 
--   [Versions](#versions)
--   [Demo](#demo)
--   [Quick Start](#quick-start)
--   [Terminal Commands](#terminal-commands)
--   [Documentation](#documentation)
--   [File Structure](#file-structure)
--   [Browser Support](#browser-support)
--   [Resources](#resources)
--   [Reporting Issues](#reporting-issues)
--   [Technical Support or Questions](#technical-support-or-questions)
--   [Licensing](#licensing)
--   [Useful Links](#useful-links)
+- [Versions](#versions)
+- [Demo](#demo)
+- [Quick Start](#quick-start)
+- [Terminal Commands](#terminal-commands)
+- [Documentation](#documentation)
+- [File Structure](#file-structure)
+- [Browser Support](#browser-support)
+- [Resources](#resources)
+- [Reporting Issues](#reporting-issues)
+- [Technical Support or Questions](#technical-support-or-questions)
+- [Licensing](#licensing)
+- [Useful Links](#useful-links)
 
 ## Versions
 
@@ -48,12 +48,12 @@ Let us know your thoughts below. And good luck with development!
 
 ## Demo
 
--   [Start page](https://demos.creative-tim.com/paper-dashboard-pro-angular)
--   [Widgets page](https://demos.creative-tim.com/paper-dashboard-pro-angular/widgets)
--   [Tables page ](https://demos.creative-tim.com/paper-dashboard-pro-angular/tables/extended)
--   [Maps Page](https://demos.creative-tim.com/paper-dashboard-pro-angular/maps/google)
--   [Notifications page](https://demos.creative-tim.com/paper-dashboard-pro-angular/components/notifications)
--   [Charts page](https://demos.creative-tim.com/paper-dashboard-pro-angular/charts)
+- [Start page](https://demos.creative-tim.com/paper-dashboard-pro-angular)
+- [Widgets page](https://demos.creative-tim.com/paper-dashboard-pro-angular/widgets)
+- [Tables page ](https://demos.creative-tim.com/paper-dashboard-pro-angular/tables/extended)
+- [Maps Page](https://demos.creative-tim.com/paper-dashboard-pro-angular/maps/google)
+- [Notifications page](https://demos.creative-tim.com/paper-dashboard-pro-angular/components/notifications)
+- [Charts page](https://demos.creative-tim.com/paper-dashboard-pro-angular/charts)
 
 [View More](https://demos.creative-tim.com/paper-dashboard-pro-angular).
 
@@ -61,7 +61,7 @@ Let us know your thoughts below. And good luck with development!
 
 Quick start options:
 
--   Buy from [Creative Tim](https://www.creative-tim.com/product/paper-dashboard-pro-angular)
+- Buy from [Creative Tim](https://www.creative-tim.com/product/paper-dashboard-pro-angular)
 
 ## Terminal Commands
 
@@ -265,14 +265,14 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Resources
 
--   [Live Preview](https://demos.creative-tim.com/paper-dashboard-pro-angular)
--   Buy Page: https://www.creative-tim.com/product/paper-dashboard-pro-angular
--   Documentation is [here](https://demos.creative-tim.com/paper-dashboard-pro-angular/documentation/tutorial)
--   License Agreement: https://www.creative-tim.com/license
--   Support: https://www.creative-tim.com/contact-us
--   Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-paper-dashboard-pro-angular/issues)
--   Paper Dashboard Angular- [demo](https://www.creative-tim.com/product/paper-dashboard-angular?ref=github-pd-pro-angular)
--   For Front End Development - [Paper Kit Pro ](https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=github-pd-pro)
+- [Live Preview](https://demos.creative-tim.com/paper-dashboard-pro-angular)
+- Buy Page: https://www.creative-tim.com/product/paper-dashboard-pro-angular
+- Documentation is [here](https://demos.creative-tim.com/paper-dashboard-pro-angular/documentation/tutorial)
+- License Agreement: https://www.creative-tim.com/license
+- Support: https://www.creative-tim.com/contact-us
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-paper-dashboard-pro-angular/issues)
+- Paper Dashboard Angular- [demo](https://www.creative-tim.com/product/paper-dashboard-angular?ref=github-pd-pro-angular)
+- For Front End Development - [Paper Kit Pro ](https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=github-pd-pro)
 
 ## Reporting Issues
 
@@ -288,20 +288,20 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Licensing
 
--   Copyright 2018 Creative Tim (https://www.creative-tim.com)
--   Creative Tim [license](https://www.creative-tim.com/license)
+- Copyright 2018 Creative Tim (https://www.creative-tim.com)
+- Creative Tim [license](https://www.creative-tim.com/license)
 
 ## Useful Links
 
--   [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
+- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
 
--   [Angular products](https://www.creative-tim.com/bootstrap-themes/angular-themes) from Creative Tim
+- [Angular products](https://www.creative-tim.com/bootstrap-themes/angular-themes) from Creative Tim
 
--   [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 
--   [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
 
--   [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
 
 ##### Social Media
 

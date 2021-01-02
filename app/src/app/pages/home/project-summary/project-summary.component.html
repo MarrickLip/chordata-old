@@ -1,25 +1,25 @@
 <div class="card project-card" routerLink="/projects/{{ project._id }}">
-    <div>
-        <img
-            class="project-card--image"
-            src="{{ project.info.image }}"
-            alt="Image for {{ project.info.name }}"
-        />
-    </div>
-    <div class="card-content project-card--body">
-        <h6 class="project-card--title">
-            {{ project.info.name }}
-        </h6>
-        <div class="text-muted project-card--description">
-            {{ project.info.description }}
-        </div>
-    </div>
-    <div class="footer project-card--tags">
-        <span
-            *ngFor="let tag of project.info.tags"
-            class="badge badge-pill badge-default project-card--tag"
-        >
-            {{ tag }}
-        </span>
-    </div>
+	<div>
+		<img
+			class="project-card--image"
+			src="{{ project.info.image }}"
+			alt="Image for {{ project.info.name }}"
+		/>
+	</div>
+	<div class="card-content project-card--body">
+		<h6 class="project-card--title">
+			{{ project.info.name }}
+		</h6>
+		<div class="text-muted project-card--description">
+			{{ project.info.description }}
+		</div>
+	</div>
+	<div class="footer project-card--tags">
+		<span
+			*ngFor="let tag of project.info.tags"
+			class="badge badge-pill badge-default project-card--tag"
+		>
+			{{ tag }}
+		</span>
+	</div>
 </div>

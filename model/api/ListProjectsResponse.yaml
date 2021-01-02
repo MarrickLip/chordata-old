@@ -1,32 +1,32 @@
 type: array
 items:
-    type: object
-    properties:
-        id:
+  type: object
+  properties:
+    id:
+      type: string
+    type:
+      type: string
+    info:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+          format: uri
+        tags:
+          type: array
+          items:
             type: string
-        type:
-            type: string
-        info:
-            type: object
-            properties:
-                name:
-                    type: string
-                description:
-                    type: string
-                image:
-                    type: string
-                    format: uri
-                tags:
-                    type: array
-                    items:
-                        type: string
 example:
-    - id: auckland-bats
-      type: audio-detection-v1
-      info:
-          name: Auckland Bats
-          description: ABM recordings in the Auckland region.
-          image: https://chordata.nz/default-project-image.png/
-          tags:
-              - Audio
-              - Bats
+  - id: auckland-bats
+    type: audio-detection-v1
+    info:
+      name: Auckland Bats
+      description: ABM recordings in the Auckland region.
+      image: https://chordata.nz/default-project-image.png/
+      tags:
+        - Audio
+        - Bats

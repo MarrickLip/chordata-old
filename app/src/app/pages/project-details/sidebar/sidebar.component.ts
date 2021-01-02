@@ -8,5 +8,5 @@ import { Section } from '../project-details.component';
 	styleUrls: ['sidebar.component.css'],
 })
 export class SidebarComponent {
-    @Input() sections: Section[]
+	@Input() sections: Section[];
 }
