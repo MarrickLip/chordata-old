@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { Credentials } from '@aws-sdk/types';
+import { v4 as uuid } from 'uuid';
 
 import { Device, devices } from '~model/devices/devices';
+import { AwsCredentials } from '~app/credentials';
+import { BLOB_BUCKET } from '~app/constants';
 
 @Injectable({
 	providedIn: 'root',
@@ -40,9 +45,19 @@ export class UploadService {
 	}
 
 	async createIngest(): Promise<void> {
+		const s3 = new S3Client({
+			region: 'ap-southeast-2',
+			credentials: AwsCredentials as Credentials
+		});
+		
 		for (const file of Array.from(this.files)) {
-			file.name
+			await s3.send(
+				new PutObjectCommand({
+					Bucket: BLOB_BUCKET,
+					Key: uuid(),
+					Body: file,
+				})
+			);
 		}
 	}
-
 }
