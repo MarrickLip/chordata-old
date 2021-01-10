@@ -38,4 +38,11 @@ export class UploadService {
 	async getDevices(projectId: string): Promise<Device[]> {
 		return devices;
 	}
+
+	async createIngest(): Promise<void> {
+		for (const file of Array.from(this.files)) {
+			file.name
+		}
+	}
+
 }

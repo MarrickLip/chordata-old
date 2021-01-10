@@ -73,7 +73,7 @@ export class NavbarComponent implements OnInit {
 		return true;
 	}
 
-	sidebarOpen(): boolean {
+	sidebarOpen(): void {
 		const toggleButton = this.toggleButton;
 		const html = document.getElementsByTagName('html')[0];
 		setTimeout(function () {

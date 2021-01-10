@@ -59,7 +59,7 @@ export class DashboardComponent implements OnInit {
 		this.gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0)');
 		this.gradientFill.addColorStop(1, 'rgba(249, 99, 59, 0.40)');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'bar',
 			data: {
 				labels: [
@@ -256,7 +256,7 @@ export class DashboardComponent implements OnInit {
 		this.canvas = document.getElementById('chartDonut1');
 		this.ctx = this.canvas.getContext('2d');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'pie',
 			data: {
 				labels: [1, 2],
@@ -323,7 +323,7 @@ export class DashboardComponent implements OnInit {
 		this.canvas = document.getElementById('chartDonut2');
 		this.ctx = this.canvas.getContext('2d');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'pie',
 			data: {
 				labels: [1, 2],
@@ -390,7 +390,7 @@ export class DashboardComponent implements OnInit {
 		this.canvas = document.getElementById('chartDonut3');
 		this.ctx = this.canvas.getContext('2d');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'pie',
 			data: {
 				labels: [1, 2],
@@ -457,7 +457,7 @@ export class DashboardComponent implements OnInit {
 		this.canvas = document.getElementById('chartDonut4');
 		this.ctx = this.canvas.getContext('2d');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'pie',
 			data: {
 				labels: [1, 2],
@@ -532,7 +532,7 @@ export class DashboardComponent implements OnInit {
 		this.gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0)');
 		this.gradientFill.addColorStop(1, 'rgba(249, 99, 59, 0.40)');
 
-		myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'line',
 			data: {
 				labels: [
@@ -616,7 +616,7 @@ export class DashboardComponent implements OnInit {
 		this.gradientFill.addColorStop(1, this.hexToRGB('#18ce0f', 0.4));
 
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		const myChart = new Chart(this.ctx, {
+		new Chart(this.ctx, {
 			type: 'line',
 			data: {
 				labels: ['12pm', '3pm', '6pm', '9pm', '12am', '3am', '6am', '9am'],

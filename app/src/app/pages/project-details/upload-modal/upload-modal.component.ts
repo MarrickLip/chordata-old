@@ -42,7 +42,9 @@ export class UploadModalComponent implements AfterViewInit {
 					'① Connect Device': 'fas fa-microchip',
 					'② Metadata': 'fas fa-list-ul',
 					'③ Upload': 'fas fa-upload',
-				}[title] || 'fas fa-bug';
+				}[title.trim()] || 'fas fa-bug';
+
+			console.log({title, icon});
 
 			// inject the fontawesome icon
 			linkEl.innerText = null;
