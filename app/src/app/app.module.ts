@@ -31,9 +31,8 @@ import { TagInputModule } from 'ngx-chips';
 		BrowserAnimationsModule,
 		FormsModule,
 		RouterModule.forRoot(AppRoutes, {
-			//useHash: true,
-			// enableTracing: true,
-		}),
+    relativeLinkResolution: 'legacy'
+}),
 		NgbModule,
 		HttpClientModule,
 		SidebarModule,
