@@ -20,6 +20,7 @@ import { CardButtonComponent } from './components/card-button/card-button.compon
 import { StepDeviceComponent } from './pages/project-details/upload-modal/step-device/step-device.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { StepUploadComponent } from '~app/pages/project-details/upload-modal/step-upload/step-upload.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { StepMetadataComponent } from './pages/project-details/upload-modal/step-metadata/step-metadata.component';
@@ -31,8 +32,8 @@ import { TagInputModule } from 'ngx-chips';
 		BrowserAnimationsModule,
 		FormsModule,
 		RouterModule.forRoot(AppRoutes, {
-    relativeLinkResolution: 'legacy'
-}),
+			relativeLinkResolution: 'legacy'
+		}),
 		NgbModule,
 		HttpClientModule,
 		SidebarModule,
@@ -52,6 +53,7 @@ import { TagInputModule } from 'ngx-chips';
 		CardButtonComponent,
 		StepDeviceComponent,
 		StepMetadataComponent,
+		StepUploadComponent,
 	],
 	bootstrap: [AppComponent],
 })

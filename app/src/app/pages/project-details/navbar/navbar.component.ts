@@ -113,6 +113,10 @@ export class NavbarComponent implements OnInit {
 		}
 	}
 
+	getTitle(): string {
+		return 'Chordata';
+	}
+
 	getPath(): string {
 		// console.log(this.location);
 		return this.location.prepareExternalUrl(this.location.path());

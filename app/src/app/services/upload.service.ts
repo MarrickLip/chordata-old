@@ -7,15 +7,27 @@ import { v4 as uuid } from 'uuid';
 import { Device, devices } from '~model/devices/devices';
 import { AwsCredentials } from '~app/credentials';
 import { BLOB_BUCKET } from '~app/constants';
+import { NgWizardService, StepChangedArgs } from 'ng-wizard';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class UploadService {
-	files: FileList = undefined;
+	files: FileList;
 	metadata: Record<string, unknown> = {};
 
-	constructor(public toastr: ToastrService) {}
+	constructor(public toastr: ToastrService, public wizard: NgWizardService) {
+		this.wizard.stepChanged().subscribe(this.handleWizardStepChange.bind(this));
+	}
+
+	async handleWizardStepChange(event: StepChangedArgs): Promise<void> {
+		console.log({handleWizardStepChange: event.step.index});
+		
+		if (event.step.index == 2) {
+			this.createIngest()
+		}
+		
+	}
 
 	setFiles(device: Device, files: FileList): boolean {
 		for (const [test, errorMessage] of device.guards.errors) {
@@ -36,7 +48,8 @@ export class UploadService {
 				});
 			}
 		}
-
+		
+		this.files = files;
 		return true;
 	}
 
@@ -50,14 +63,18 @@ export class UploadService {
 			credentials: AwsCredentials as Credentials
 		});
 		
+		console.log({ingestingFiles: Array.from(this.files)});
+
 		for (const file of Array.from(this.files)) {
-			await s3.send(
+			const response = await s3.send(
 				new PutObjectCommand({
 					Bucket: BLOB_BUCKET,
 					Key: uuid(),
 					Body: file,
 				})
 			);
+			console.log({response});
 		}
+		console.log('ingest complete');
 	}
 }

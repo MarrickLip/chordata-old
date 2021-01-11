@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
 	imports: [CommonModule, FormsModule, NavbarModule, RouterModule],
-	declarations: [DashboardComponent, UploadCardComponent],
+	declarations: [DashboardComponent, UploadCardComponent, ],
 	exports: [DashboardComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
