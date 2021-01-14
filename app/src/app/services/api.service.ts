@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { ListProjectsResponse } from '~model/api/ListProjectsResponse';
 import { API_ENDPOINT } from '../constants';
+import { PostIngestRequestBody, PostIngestRequestHeaders } from '~model/api/PostIngestRequest';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,10 +13,11 @@ export class APIService {
 
 	async listProjects(): Promise<ListProjectsResponse> {
 		const url = `${API_ENDPOINT}/projects`;
-		console.log({
-			response: await this.http.get(url).toPromise(),
-			url,
-		});
 		return this.http.get<ListProjectsResponse>(url).toPromise();
+	}
+
+	async postIngest(projectId: string, body: PostIngestRequestBody, headers: PostIngestRequestHeaders): Promise<void> {
+		const url = `${API_ENDPOINT}/projects/${projectId}/ingests`;
+		await this.http.post(url, body, {headers});
 	}
 }

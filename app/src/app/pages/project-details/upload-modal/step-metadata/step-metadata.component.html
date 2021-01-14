@@ -9,7 +9,7 @@
 			<div class="col-sm-9">
 				<div class="form-group">
 					<input
-						[(ngModel)]="upload.metadata.summary"
+						[(ngModel)]="upload.state.metadata.summary"
 						name="summary"
 						type="text"
 						class="form-control"
@@ -39,7 +39,7 @@
 									type="radio"
 									name="coordinateSystem"
 									autocomplete="off"
-									[checked]="upload.metadata.location.crs === 'nztm'"
+									[checked]="upload.state.metadata.location.crs === 'nztm'"
 								/>
 								NZTM
 							</label>
@@ -52,7 +52,7 @@
 									name="coordinateSystem"
 									autocomplete="off"
 									value="wgs84"
-									[checked]="upload.metadata.location.crs === 'wgs84'"
+									[checked]="upload.state.metadata.location.crs === 'wgs84'"
 								/>
 								WGS84
 							</label>
@@ -66,7 +66,7 @@
 								</div>
 							</div>
 							<input
-								[(ngModel)]="upload.metadata.location.x"
+								[(ngModel)]="upload.state.metadata.location.x"
 								name="location-x"
 								type="text"
 								class="form-control"
@@ -81,7 +81,7 @@
 								</div>
 							</div>
 							<input
-								[(ngModel)]="upload.metadata.location.y"
+								[(ngModel)]="upload.state.metadata.location.y"
 								name="location-y"
 								type="text"
 								class="form-control"
@@ -99,7 +99,7 @@
 			</label>
 			<div class="col-sm-9">
 				<tag-input
-					[(ngModel)]="upload.metadata.tags"
+					[(ngModel)]="upload.state.metadata.tags"
 					name="test"
 					theme="regular-theme"
 				></tag-input>
@@ -114,7 +114,7 @@
 			<div class="col-sm-9">
 				<div class="form-group">
 					<textarea
-						[(ngModel)]="upload.metadata.notes"
+						[(ngModel)]="upload.state.metadata.notes"
 						name="notes"
 						class="form-control form-control-multiline"
 					></textarea>

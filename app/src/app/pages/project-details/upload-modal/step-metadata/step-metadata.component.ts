@@ -13,10 +13,12 @@ declare let $: any;
 export class StepMetadataComponent implements OnInit {
 	coordinateLabels: { x: string; y: string };
 
-	constructor(public upload: UploadService, public toastr: ToastrService) {}
+	constructor(public upload: UploadService, public toastr: ToastrService) {
+		this.upload.state.metadata.location = {}
+	}
 
 	ngOnInit(): void {
-		this.upload.metadata = {
+		this.upload.state.metadata = {
 			location: {},
 			tags: ['Bats'],
 		};
@@ -38,7 +40,7 @@ export class StepMetadataComponent implements OnInit {
 
 	selectCrs(crs: 'wgs84' | 'nztm'): void {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		(this.upload.metadata.location as any).crs = crs;
+		(this.upload.state.metadata.location as any).crs = crs;
 
 		switch (crs) {
 			case 'nztm':

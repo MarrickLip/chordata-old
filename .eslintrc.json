@@ -38,11 +38,11 @@
             "always"
         ],
         "@typescript-eslint/no-unused-vars": [
-            "error",
+            "warn",
             {
                 "args": "none"
             }
         ],
-        "no-fallthrough": "off"
+        "no-fallthrough": "off",
     }
 }
