@@ -3,7 +3,7 @@ import 'source-map-support/register';
 
 import { EventHandler } from '../lib/EventHandler';
 import { getProject, listProjects } from './actions';
-import { ProjectExists } from './guards';
+import { ProjectExists } from '../lib/guards';
 
 const withCors = (response: APIGatewayProxyResult) => ({
 	...response,

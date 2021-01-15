@@ -82,11 +82,20 @@ functions:
               paths:
                 projectId: true
       - http:
-          path: projects/{projectId}/deployments/{id}
+          path: projects/{projectId}/deployments/{deploymentId}
           method: get
           cors: true
           request:
             parameters:
               paths:
                 projectId: true
-                id: true
+                deploymentId: true
+      - http:
+          path: projects/{projectId}/deployments/{deploymentId}
+          method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                projectId: true
+                deploymentId: true
