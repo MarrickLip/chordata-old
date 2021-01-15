@@ -42,7 +42,6 @@
             {
                 "args": "none"
             }
-        ],
-        "no-fallthrough": "off",
+        ]
     }
 }

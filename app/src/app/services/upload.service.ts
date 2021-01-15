@@ -9,7 +9,7 @@ import { AwsCredentials } from '~app/credentials';
 import { BLOB_BUCKET } from '~app/constants';
 import { NgWizardService, StepChangedArgs } from 'ng-wizard';
 import { UploadState } from './upload-state';
-import { PostIngestRequestBody, PostIngestRequestHeaders } from '~model/api/PostIngestRequest';
+import { PostDeploymentRequestBody, PostDeploymentRequestHeaders } from '~model/api/PostDeploymentRequest';
 import { APIService } from './api.service';
 
 @Injectable({
@@ -30,12 +30,15 @@ export class UploadService {
 		switch (event.step.index) {
 			case 0:
 				this.resetState();
+				break;
 			case 1:
 				// add metadata
+				break;
 			case 2:
-				this.createIngest();
+				console.log('creating deployment!')
+				this.upload();
+				break;
 		}
-		
 	}
 
 	resetState(): void {
@@ -86,7 +89,7 @@ export class UploadService {
 
 	async upload(): Promise<void> {
 		await this.createBlobs();
-		await this.createIngest();
+		await this.createDeployment();
 	}
 
 	async createBlobs(): Promise<void> {
@@ -102,6 +105,8 @@ export class UploadService {
 			region: 'ap-southeast-2',
 			credentials: AwsCredentials as Credentials
 		});
+
+		console.log({blobs: this.state.files})
 
 		for (const file of this.state.files) {
 			const guid = uuid();
@@ -120,17 +125,17 @@ export class UploadService {
 		}
 	}
 
-	async createIngest(): Promise<void> {
-		const body: PostIngestRequestBody = {
+	async createDeployment(): Promise<void> {
+		const body: PostDeploymentRequestBody = {
 			metadata: this.state.metadata,
 			blobs: this.state.blobs,
 		};
 
-		const headers: PostIngestRequestHeaders = {
+		const headers: PostDeploymentRequestHeaders = {
 			device: this.state.deviceId,
 		};
 
-		this.api.postIngest(this.state.projectId, body, headers);
+		this.api.postDeployment(this.state.projectId, body, headers);
 
 	}
 }
