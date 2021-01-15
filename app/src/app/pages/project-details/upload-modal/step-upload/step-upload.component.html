@@ -1,1 +1,20 @@
-<p>step-upload works!</p>
+<div *ngIf="upload.state.stage === 'CREATE_BLOBS'">
+	<h6 class="text-center stage-description">Uploading...</h6>
+	<progress-bar
+		[progress]="upload.progress * 100"
+		[color]="'#6f8581'"
+	></progress-bar>
+</div>
+<div *ngIf="upload.state.stage === 'CREATE_DEPLOYMENT'">
+	<h6 class="text-center stage-description">Creating deployment...</h6>
+	<progress-bar
+		[progress]="upload.progress * 100"
+		[color]="'#6f8581'"
+	></progress-bar>
+</div>
+<div *ngIf="upload.state.stage === 'COMPLETE'">
+	<div class="done-message">
+		<div class="done-message--icon"><i class="fal fa-check-circle"></i></div>
+		<div class="done-message--text"><h6>Done</h6></div>
+	</div>
+</div>

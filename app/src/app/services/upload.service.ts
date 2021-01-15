@@ -126,6 +126,11 @@ export class UploadService {
 	}
 
 	async createDeployment(): Promise<void> {
+		this.state = {
+			...this.state,
+			stage: 'CREATE_DEPLOYMENT',
+		}
+		
 		const body: PostDeploymentRequestBody = {
 			metadata: this.state.metadata,
 			blobs: this.state.blobs,
@@ -135,7 +140,13 @@ export class UploadService {
 			device: this.state.deviceId,
 		};
 
-		this.api.postDeployment(this.state.projectId, body, headers);
+		await this.api.postDeployment(this.state.projectId, body, headers);
+
+		// TODO: get deployment ID back
+		this.state = {
+			...this.state,
+			stage: 'COMPLETE',
+		}
 
 	}
 }

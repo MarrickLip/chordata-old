@@ -1,0 +1,17 @@
+.stage-description {
+	font-weight: 200;
+}
+
+.done-message {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--primary);
+}
+
+.done-message--icon {
+	font-size: 128px;
+}
+
+.done-message--text {
+}
