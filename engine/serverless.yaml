@@ -91,11 +91,13 @@ functions:
                 projectId: true
                 deploymentId: true
       - http:
-          path: projects/{projectId}/deployments/{deploymentId}
+          path: projects/{projectId}/deployments
           method: post
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - device
           request:
             parameters:
               paths:
-                projectId: true
-                deploymentId: true
+                projectId: tru

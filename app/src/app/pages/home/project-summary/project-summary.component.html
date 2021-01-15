@@ -1,4 +1,7 @@
-<div class="card project-card" routerLink="/projects/{{ project._id }}">
+<div
+	class="card project-card"
+	(click)="selectProject()"
+>
 	<div>
 		<img
 			class="project-card--image"

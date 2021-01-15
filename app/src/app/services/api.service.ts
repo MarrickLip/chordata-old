@@ -18,6 +18,11 @@ export class APIService {
 
 	async postDeployment(projectId: string, body: PostDeploymentRequestBody, headers: PostDeploymentRequestHeaders): Promise<void> {
 		const url = `${API_ENDPOINT}/projects/${projectId}/deployments`;
-		await this.http.post(url, body, {headers});
+		console.log({
+			url,
+			body,
+			headers,
+		});
+		await this.http.post(url, body, {headers}).toPromise();
 	}
 }

@@ -1,5 +1,5 @@
 export type ListProjectsResponseItem = {
-	id: string;
+	_id: string;
 	type: string;
 	info: {
 		name: string;

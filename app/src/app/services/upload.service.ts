@@ -11,6 +11,7 @@ import { NgWizardService, StepChangedArgs } from 'ng-wizard';
 import { UploadState } from './upload-state';
 import { PostDeploymentRequestBody, PostDeploymentRequestHeaders } from '~model/api/PostDeploymentRequest';
 import { APIService } from './api.service';
+import { ProjectService } from './project.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -19,7 +20,7 @@ export class UploadService {
 	state: UploadState
 	progress: number = undefined;
 
-	constructor(public toastr: ToastrService, public wizard: NgWizardService, public api: APIService) {
+	constructor(public toastr: ToastrService, public wizard: NgWizardService, public api: APIService, public project: ProjectService) {
 		this.wizard.stepChanged().subscribe(this.handleWizardStepChange.bind(this));
 		this.resetState();
 	}
@@ -44,6 +45,7 @@ export class UploadService {
 	resetState(): void {
 		this.state = {
 			stage: 'SELECT_FILES',
+			projectId: this.project.id,
 			metadata: {
 				location: {}
 			}, // set this now to help with NgModel bindings
@@ -51,10 +53,6 @@ export class UploadService {
 	}
 
 	async getDevices(projectId: string): Promise<Device[]> {
-		this.state = {
-			...this.state,
-			projectId,
-		}
 		return devices;
 	}
 
