@@ -6,6 +6,8 @@ import {
 	NoPathsMatch,
 } from './guards';
 
+import { AUDIOMOTH_METADATA } from './audiomoth-metadata';
+
 export const AudioMothDevice: Device = {
 	id: 'audio-moth',
 	meta: {
@@ -32,4 +34,5 @@ export const AudioMothDevice: Device = {
 		],
 	},
 	filters: [],
+	metadata: AUDIOMOTH_METADATA,
 };

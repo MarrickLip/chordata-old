@@ -4,6 +4,12 @@ import { AudioMothDevice } from './audiomoth';
 
 export type WebkitFile = File & { webkitRelativePath: string };
 
+export type MetadataValidator = {
+	field: string | null,
+	schema: unknown,
+	message: string | null,
+}
+
 export type Device = {
 	id: string;
 	meta: {
@@ -15,6 +21,7 @@ export type Device = {
 		warnings: Array<[FileListGuard, string]>;
 	};
 	filters: FileListFilter[];
+	metadata: MetadataValidator[];
 };
 
 export const devices = [AudioMothDevice];

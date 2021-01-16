@@ -7,7 +7,6 @@ import { v4 as uuid } from 'uuid';
 import { Device, devices, WebkitFile } from '~model/devices/devices';
 import { AwsCredentials } from '~app/credentials';
 import { BLOB_BUCKET } from '~app/constants';
-import { NgWizardService, StepChangedArgs } from 'ng-wizard';
 import { UploadState } from './upload-state';
 import { PostDeploymentRequestBody, PostDeploymentRequestHeaders } from '~model/api/PostDeploymentRequest';
 import { APIService } from './api.service';
@@ -19,27 +18,10 @@ import { ProjectService } from './project.service';
 export class UploadService {
 	state: UploadState
 	progress: number = undefined;
+	device?: Device = undefined;
 
-	constructor(public toastr: ToastrService, public wizard: NgWizardService, public api: APIService, public project: ProjectService) {
-		this.wizard.stepChanged().subscribe(this.handleWizardStepChange.bind(this));
+	constructor(public toastr: ToastrService, public api: APIService, public project: ProjectService) {
 		this.resetState();
-	}
-
-	async handleWizardStepChange(event: StepChangedArgs): Promise<void> {
-		console.log({handleWizardStepChange: event.step.index});
-		
-		switch (event.step.index) {
-			case 0:
-				this.resetState();
-				break;
-			case 1:
-				// add metadata
-				break;
-			case 2:
-				console.log('creating deployment!')
-				this.upload();
-				break;
-		}
 	}
 
 	resetState(): void {
@@ -57,6 +39,8 @@ export class UploadService {
 	}
 
 	setFiles(device: Device, files: FileList): boolean {
+		this.device = device;
+
 		for (const [test, errorMessage] of device.guards.errors) {
 			console.log({ test, errorMessage, result: test(files) });
 			if (!test(files)) {
@@ -90,6 +74,10 @@ export class UploadService {
 		await this.createDeployment();
 	}
 
+	async validateMetadata(): Promise<void> {
+
+	}
+
 	async createBlobs(): Promise<void> {
 		this.state = {
 			...this.state, 
@@ -104,7 +92,7 @@ export class UploadService {
 			credentials: AwsCredentials as Credentials
 		});
 
-		console.log({blobs: this.state.files})
+		console.log({blobs: this.state.files});
 
 		for (const file of this.state.files) {
 			const guid = uuid();
@@ -127,7 +115,7 @@ export class UploadService {
 		this.state = {
 			...this.state,
 			stage: 'CREATE_DEPLOYMENT',
-		}
+		};
 		
 		const body: PostDeploymentRequestBody = {
 			metadata: this.state.metadata,
@@ -144,7 +132,7 @@ export class UploadService {
 		this.state = {
 			...this.state,
 			stage: 'COMPLETE',
-		}
+		};
 
 	}
 }

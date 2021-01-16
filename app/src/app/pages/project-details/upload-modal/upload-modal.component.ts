@@ -1,5 +1,7 @@
-import { STEP_STATE } from 'ng-wizard';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { NgWizardService, StepChangedArgs, StepValidationArgs, STEP_DIRECTIN } from 'ng-wizard';
+import { AfterViewInit, OnInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { UploadService } from '~app/services/upload.service';
+import { ToastrService } from 'ngx-toastr';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let $: any;
@@ -9,15 +11,16 @@ declare let $: any;
 	templateUrl: './upload-modal.component.html',
 	styleUrls: ['./upload-modal.component.css'],
 })
-export class UploadModalComponent implements AfterViewInit {
-	@ViewChild('wizard') wizard: ElementRef;
+export class UploadModalComponent implements OnInit, AfterViewInit {
+	@ViewChild('wizard') wizardEl: ElementRef;
 
-	stepStates = {
-		normal: STEP_STATE.normal,
-		disabled: STEP_STATE.disabled,
-		error: STEP_STATE.error,
-		hidden: STEP_STATE.hidden,
-	};
+
+
+	constructor(public wizard: NgWizardService, public upload: UploadService, public toastr: ToastrService) { }
+
+	ngOnInit(): void {
+		this.wizard.stepChanged().subscribe(this.handleWizardStepChange.bind(this));
+	}
 
 	ngAfterViewInit(): void {
 		$(function () {
@@ -26,8 +29,36 @@ export class UploadModalComponent implements AfterViewInit {
 		this.setupStepIcons();
 	}
 
+	validateLeaveStep = (args: StepValidationArgs): boolean => {
+		console.log({validateLeaveStep: args.direction});
+		if (args.direction === STEP_DIRECTIN.forward) {
+			switch(args.fromStep.index) {
+				case 0:
+					if (this.upload.state.files) {
+						return true;
+					} else {
+						this.toastr.error('No files selected!');
+						return false;
+					}
+				case 1:
+					console.log(this.upload.state.metadata);
+					return false;
+				case 2:
+					return true;
+			}
+		} else {
+			return true;
+		}
+	}
+
+	async handleWizardStepChange(event: StepChangedArgs): Promise<void> {
+		if (event.step.index === 2) {
+			this.upload.upload();
+		}
+	}
+
 	setupStepIcons(): void {
-		const wizardEl = this.wizard.nativeElement as HTMLDivElement;
+		const wizardEl = this.wizardEl.nativeElement as HTMLDivElement;
 		const steps: HTMLElement[] = Array.from(
 			wizardEl.getElementsByTagName('li')
 		);

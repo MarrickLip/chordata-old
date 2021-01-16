@@ -10,7 +10,10 @@
 		<div class="modal-content">
 			<div class="modal-body upload-modal-body" #wizard>
 				<ng-wizard>
-					<ng-wizard-step title="① Connect Device">
+					<ng-wizard-step
+						title="① Connect Device"
+						[canExit]="validateLeaveStep"
+					>
 						<h3 class="text-center step-title">① Connect Device</h3>
 						<h6 class="text-center step-description">
 							Select a device type and locate its data.
@@ -19,14 +22,14 @@
 							<app-step-device></app-step-device>
 						</div>
 					</ng-wizard-step>
-					<ng-wizard-step title="② Metadata">
+					<ng-wizard-step title="② Metadata" [canExit]="validateLeaveStep">
 						<h3 class="text-center step-title">② Metadata</h3>
 						<h6 class="text-center step-description">
 							Enter metadata for this deployment.
 						</h6>
 						<app-step-metadata></app-step-metadata>
 					</ng-wizard-step>
-					<ng-wizard-step title="③ Upload">
+					<ng-wizard-step title="③ Upload" [canExit]="validateLeaveStep">
 						<h3 class="text-center step-title">③ Upload</h3>
 						<div class="step-body">
 							<app-step-upload></app-step-upload>
