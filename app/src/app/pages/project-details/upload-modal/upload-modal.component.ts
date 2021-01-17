@@ -2,6 +2,8 @@ import { NgWizardService, StepChangedArgs, StepValidationArgs, STEP_DIRECTIN } f
 import { AfterViewInit, OnInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { UploadService } from '~app/services/upload.service';
 import { ToastrService } from 'ngx-toastr';
+import * as _ from 'lodash';
+
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let $: any;
@@ -13,8 +15,6 @@ declare let $: any;
 })
 export class UploadModalComponent implements OnInit, AfterViewInit {
 	@ViewChild('wizard') wizardEl: ElementRef;
-
-
 
 	constructor(public wizard: NgWizardService, public upload: UploadService, public toastr: ToastrService) { }
 
@@ -41,7 +41,14 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 						return false;
 					}
 				case 1:
-					console.log(this.upload.state.metadata);
+					this.parseMetadata();
+					this.toastr.info(JSON.stringify(this.upload.state.metadata, undefined, 4));
+					setTimeout(() => console.log(this.upload.state.metadata), 1000);
+					if (this.upload.validateMetadata().valid) {
+						this.toastr.success(JSON.stringify(this.upload.validateMetadata()));
+					} else {
+						this.toastr.error(JSON.stringify(this.upload.validateMetadata()));
+					}
 					return false;
 				case 2:
 					return true;
@@ -60,11 +67,11 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 	setupStepIcons(): void {
 		const wizardEl = this.wizardEl.nativeElement as HTMLDivElement;
 		const steps: HTMLElement[] = Array.from(
-			wizardEl.getElementsByTagName('li')
+			wizardEl.getElementsByTagName('li'),
 		);
 		for (const stepEl of steps) {
 			const linkEl = stepEl.getElementsByClassName(
-				'nav-link'
+				'nav-link',
 			)[0] as HTMLElement;
 			const title = linkEl.innerText;
 
@@ -82,13 +89,23 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 			linkEl.classList.add('step-icon-container');
 			linkEl.insertAdjacentHTML(
 				'afterbegin',
-				`<i class="${icon} step-icon"></i>`
+				`<i class="${icon} step-icon"></i>`,
 			);
 
 			// add a tooltip
 			linkEl.setAttribute('title', title);
 			linkEl.setAttribute('data-toggle', 'tooltip');
 			linkEl.setAttribute('data-placement', 'bottom');
+		}
+	}
+
+	parseMetadata(): void {
+		if (this.upload.state.metadata) {
+			this.upload.state.metadata.location =_.mapValues(
+				// eslint-disable-next-line @typescript-eslint/ban-types
+				this.upload.state.metadata.location as object,
+				value => isNaN(Number(value)) ? value : Number(value),
+			);
 		}
 	}
 }

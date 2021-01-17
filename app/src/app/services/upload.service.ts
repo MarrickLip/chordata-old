@@ -12,6 +12,14 @@ import { PostDeploymentRequestBody, PostDeploymentRequestHeaders } from '~model/
 import { APIService } from './api.service';
 import { ProjectService } from './project.service';
 
+import * as Ajv from 'ajv';
+const ajv = new Ajv();
+
+export type MetadataValidationResult = {valid: true} | {
+	valid: false,
+	errors: Array<{field: string, message: string}>
+}
+
 @Injectable({
 	providedIn: 'root',
 })
@@ -29,7 +37,7 @@ export class UploadService {
 			stage: 'SELECT_FILES',
 			projectId: this.project.id,
 			metadata: {
-				location: {}
+				location: {},
 			}, // set this now to help with NgModel bindings
 		};
 	}
@@ -74,8 +82,23 @@ export class UploadService {
 		await this.createDeployment();
 	}
 
-	async validateMetadata(): Promise<void> {
+	validateMetadata(): MetadataValidationResult {
+		if (this.device && this.state.metadata) {
+			
+			const errors = this.device.metadata
+				// eslint-disable-next-line @typescript-eslint/ban-types
+				.filter(({schema}) => !ajv.compile(schema as object)(this.state.metadata))
+				.map(({field, message}) => ({field, message}));
 
+			return {
+				valid: !errors.length,
+				errors: errors.length ? errors : undefined,
+			};
+			
+		} else {
+			throw new Error('Can\'t validate metadata, device or state.metadata is undefined');
+		}
+		
 	}
 
 	async createBlobs(): Promise<void> {

@@ -8,10 +8,10 @@ const LOCATION_X_IS_NUMBER = {
 		location: {
 			type: 'object',
 			properties: {
-				x: { type: 'number'},
-			}
-		}
-	}
+				x: { type: 'boolean'},
+			},
+		},
+	},
 };
 
 const LOCATION_Y_IS_NUMBER = {
@@ -20,10 +20,10 @@ const LOCATION_Y_IS_NUMBER = {
 		location: {
 			type: 'object',
 			properties: {
-				y: { type: 'number'},
-			}
-		}
-	}
+				y: { type: 'boolean'},
+			},
+		},
+	},
 };
 
 const IF_NZTM_THEN_X_POSITIVE_INTEGER = {
@@ -32,13 +32,16 @@ const IF_NZTM_THEN_X_POSITIVE_INTEGER = {
 		location: {
 			type: 'object',
 			if: {
-				properties: { crs: { const: 'nztm' } }
+				properties: { crs: { const: 'nztm' } },
 			},
 			then: {
-				properties: { x: { type: 'integer', minimum: 0 }}
-			}
-		}
-	}
+				properties: { x: { type: 'integer', minimum: 0 }},
+			},
+			else: {
+				properties: {},
+			},
+		},
+	},
 };
 
 const IF_NZTM_THEN_Y_POSITIVE_INTEGER = {
@@ -47,13 +50,13 @@ const IF_NZTM_THEN_Y_POSITIVE_INTEGER = {
 		location: {
 			type: 'object',
 			if: {
-				properties: { crs: { const: 'nztm' } }
+				properties: { crs: { const: 'nztm' } },
 			},
 			then: {
-				properties: { y: { type: 'integer', minimum: 0 }}
-			}
-		}
-	}
+				properties: { y: { type: 'integer', minimum: 0 }},
+			},
+		},
+	},
 };
 
 const SUMMARY_REQUIRED = {
@@ -62,10 +65,10 @@ const SUMMARY_REQUIRED = {
 		summary: {
 			type: 'string',
 			minLength: 1,
-		}
+		},
 	},
 	required: ['summary'],
-}
+};
 
 export const AUDIOMOTH_METADATA: MetadataValidator[] = [
 	{
@@ -88,5 +91,9 @@ export const AUDIOMOTH_METADATA: MetadataValidator[] = [
 		schema: IF_NZTM_THEN_Y_POSITIVE_INTEGER,
 		message: 'NZTM coordinates must be positive integers',
 	},
-
+	{
+		field: 'summary',
+		schema: SUMMARY_REQUIRED,
+		message: 'A summary is required',
+	},
 ];
