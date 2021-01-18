@@ -2,13 +2,35 @@ import { MetadataValidator } from './devices';
 
 // {location: {crs: "wgs84", x: "12324.231", y: "2132.42"}, tags: ["Bats"], summary: "Where in the world", notes: "these are the notes"}
 
+const LOCATION_X_REQUIRED = {
+	type: 'object',
+	properties: {
+		location: {
+			type: 'object',
+			required: ['x'],
+		},
+	},
+	required: ['location'],
+};
+
+const LOCATION_Y_REQUIRED = {
+	type: 'object',
+	properties: {
+		location: {
+			type: 'object',
+			required: ['y'],
+		},
+	},
+	required: ['location'],
+};
+
 const LOCATION_X_IS_NUMBER = {
 	type: 'object',
 	properties: {
 		location: {
 			type: 'object',
 			properties: {
-				x: { type: 'boolean'},
+				x: { type: 'number'},
 			},
 		},
 	},
@@ -20,7 +42,7 @@ const LOCATION_Y_IS_NUMBER = {
 		location: {
 			type: 'object',
 			properties: {
-				y: { type: 'boolean'},
+				y: { type: 'number'},
 			},
 		},
 	},
@@ -71,6 +93,16 @@ const SUMMARY_REQUIRED = {
 };
 
 export const AUDIOMOTH_METADATA: MetadataValidator[] = [
+	{
+		field: 'location.x',
+		schema: LOCATION_X_REQUIRED,
+		'message': 'An x coordinate is required',
+	},
+	{
+		field: 'location.y',
+		schema: LOCATION_Y_REQUIRED,
+		'message': 'An y coordinate is required',
+	},
 	{
 		field: 'location.x',
 		schema: LOCATION_X_IS_NUMBER,

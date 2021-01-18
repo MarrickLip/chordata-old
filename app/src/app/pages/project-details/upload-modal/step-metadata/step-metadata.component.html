@@ -7,13 +7,19 @@
 			</label>
 			<div class="col-sm-9">
 				<div class="form-group">
-					<input
-						[(ngModel)]="upload.state.metadata.summary"
-						name="summary"
-						type="text"
-						class="form-control"
-						value=""
-					/>
+					<div
+						class="input-group"
+						[class.has-danger]="showErrorOnField('summary')"
+					>
+						<input
+							[(ngModel)]="upload.state.metadata.summary"
+							(ngModelChange)="parseMetadata()"
+							name="summary"
+							type="text"
+							class="form-control"
+							value=""
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,7 +64,10 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="input-group">
+						<div
+							class="input-group"
+							[class.has-danger]="showErrorOnField('location.x')"
+						>
 							<div class="input-group-prepend">
 								<div class="input-group-text">
 									<span class="prepend-title">{{ coordinateLabels.x }}:</span>
@@ -66,6 +75,7 @@
 							</div>
 							<input
 								[(ngModel)]="upload.state.metadata.location.x"
+								(ngModelChange)="parseMetadata()"
 								name="location-x"
 								type="text"
 								class="form-control"
@@ -73,7 +83,10 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="input-group">
+						<div
+							class="input-group"
+							[class.has-danger]="showErrorOnField('location.y')"
+						>
 							<div class="input-group-prepend">
 								<div class="input-group-text">
 									<span class="prepend-title">{{ coordinateLabels.y }}:</span>
@@ -81,6 +94,7 @@
 							</div>
 							<input
 								[(ngModel)]="upload.state.metadata.location.y"
+								(ngModelChange)="parseMetadata()"
 								name="location-y"
 								type="text"
 								class="form-control"

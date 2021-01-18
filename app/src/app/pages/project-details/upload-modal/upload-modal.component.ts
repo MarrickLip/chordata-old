@@ -3,6 +3,7 @@ import { AfterViewInit, OnInit, Component, ElementRef, ViewChild } from '@angula
 import { UploadService } from '~app/services/upload.service';
 import { ToastrService } from 'ngx-toastr';
 import * as _ from 'lodash';
+import { Subject } from 'rxjs';
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,6 +16,7 @@ declare let $: any;
 })
 export class UploadModalComponent implements OnInit, AfterViewInit {
 	@ViewChild('wizard') wizardEl: ElementRef;
+	showMetadataErrors: Subject<boolean> = new Subject<boolean>();
 
 	constructor(public wizard: NgWizardService, public upload: UploadService, public toastr: ToastrService) { }
 
@@ -42,14 +44,12 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 					}
 				case 1:
 					this.parseMetadata();
-					this.toastr.info(JSON.stringify(this.upload.state.metadata, undefined, 4));
-					setTimeout(() => console.log(this.upload.state.metadata), 1000);
 					if (this.upload.validateMetadata().valid) {
-						this.toastr.success(JSON.stringify(this.upload.validateMetadata()));
-					} else {
-						this.toastr.error(JSON.stringify(this.upload.validateMetadata()));
+						return true;
+					} else { 
+						this.showMetadataErrors.next(true);
+						return false;
 					}
-					return false;
 				case 2:
 					return true;
 			}
@@ -59,8 +59,15 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 	}
 
 	async handleWizardStepChange(event: StepChangedArgs): Promise<void> {
-		if (event.step.index === 2) {
-			this.upload.upload();
+		switch (event.step.index) {
+			case 0:
+				this.upload.resetState();
+			case 1:
+				this.showMetadataErrors.next(false);
+			case 2:
+				this.upload.upload();
+				break;
+
 		}
 	}
 

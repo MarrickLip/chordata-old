@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 import { UploadService } from '~app/services/upload.service';
+
+import * as _ from 'lodash';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let $: any;
@@ -11,6 +14,9 @@ declare let $: any;
 	styleUrls: ['./step-metadata.component.css'],
 })
 export class StepMetadataComponent implements OnInit {
+	@Input() showMetadataErrors: Observable<boolean>;
+	_showMetadataErrors: boolean = false;
+
 	coordinateLabels: { x: string; y: string };
 
 	constructor(public upload: UploadService, public toastr: ToastrService) {
@@ -18,6 +24,10 @@ export class StepMetadataComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		this.showMetadataErrors.subscribe(
+			value => this._showMetadataErrors = value
+		)
+
 		this.upload.state.metadata = {
 			location: {},
 			tags: ['Bats'],
@@ -36,6 +46,29 @@ export class StepMetadataComponent implements OnInit {
 			iconBase: 'nc-icon',
 			tickIcon: 'nc-check-2',
 		});
+	}
+
+	showErrorOnField(field: string): boolean {
+		if (this._showMetadataErrors) {
+			const validationResult = this.upload.validateMetadata();
+			if ('errors' in validationResult) {
+				return validationResult.errors.some(error => error.field === field);
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	parseMetadata(): void {
+		if (this.upload.state.metadata) {
+			this.upload.state.metadata.location = _.mapValues(
+				// eslint-disable-next-line @typescript-eslint/ban-types
+				this.upload.state.metadata.location as object,
+				value => isNaN(Number(value)) ? value : Number(value),
+			);
+		}
 	}
 
 	selectCrs(crs: 'wgs84' | 'nztm'): void {
