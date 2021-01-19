@@ -4,7 +4,5 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root',
 })
 export class ProjectService {
-	id = 'na';
-
-	
+	id: string = undefined;
 }

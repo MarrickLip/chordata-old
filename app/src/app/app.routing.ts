@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
+import { ProjectGuard } from './services/project-guard.guard';
 
 export const AppRoutes: Routes = [
 	{
@@ -17,6 +18,7 @@ export const AppRoutes: Routes = [
 	{
 		path: 'projects/:id',
 		component: ProjectDetailsComponent,
+		canActivate: [ProjectGuard],
 		children: [
 			{
 				path: '',

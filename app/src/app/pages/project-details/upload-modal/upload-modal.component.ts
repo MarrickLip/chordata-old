@@ -62,12 +62,13 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 		switch (event.step.index) {
 			case 0:
 				this.upload.resetState();
+				break;
 			case 1:
 				this.showMetadataErrors.next(false);
+				break;
 			case 2:
 				this.upload.upload();
 				break;
-
 		}
 	}
 

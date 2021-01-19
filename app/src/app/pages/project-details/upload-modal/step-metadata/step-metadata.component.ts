@@ -48,13 +48,12 @@ export class StepMetadataComponent implements OnInit {
 	}
 
 	visibleFieldError(field: string): string | undefined {
-		field = field ?? 'summary';
 		if (this._showMetadataErrors) {
 			const validationResult = this.upload.validateMetadata();
 			if ('errors' in validationResult) {
 				return validationResult.errors
-					.find(error => error.field === field)
-					?.message;
+				?.find(error => error.field === field)
+				?.message;
 			} else {
 				return undefined;
 			}
