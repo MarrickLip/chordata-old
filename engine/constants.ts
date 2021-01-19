@@ -1,0 +1,1 @@
+export const INGEST_QUEUE_URL = deviceId => `https://sqs.ap-southeast-2.amazonaws.com/876352702765/chordata-IngestQueue-${deviceId}`;

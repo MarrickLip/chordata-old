@@ -142,7 +142,7 @@ export class UploadService {
 		
 		const body: PostDeploymentRequestBody = {
 			metadata: this.state.metadata,
-			blobs: this.state.blobs,
+			samples: this.state.blobs,
 		};
 
 		const headers: PostDeploymentRequestHeaders = {

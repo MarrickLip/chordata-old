@@ -16,4 +16,5 @@ async function getCollection(name: string) {
 
 export const db = {
 	projects: async (): Promise<Collection> => getCollection('projects'),
+	deployments: async (): Promise<Collection> => getCollection('deployments'),
 };
