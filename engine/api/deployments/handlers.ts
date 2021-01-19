@@ -39,6 +39,7 @@ const postDeploymentHandler = new EventHandler([ProjectExists], async (event) =>
 		_id: deploymentId,
 		metadata: body.metadata,
 		device: event.headers.device,
+		timestamp: new Date().getTime(),
 	});
 
 	console.log('[postDeploymentHandler] ingestSamples')
