@@ -16,7 +16,6 @@ declare let $: any;
 export class StepMetadataComponent implements OnInit {
 	@Input() showMetadataErrors: Observable<boolean>;
 	_showMetadataErrors: boolean = false;
-
 	coordinateLabels: { x: string; y: string };
 
 	constructor(public upload: UploadService, public toastr: ToastrService) {
@@ -48,16 +47,19 @@ export class StepMetadataComponent implements OnInit {
 		});
 	}
 
-	showErrorOnField(field: string): boolean {
+	visibleFieldError(field: string): string | undefined {
+		field = field ?? 'summary';
 		if (this._showMetadataErrors) {
 			const validationResult = this.upload.validateMetadata();
 			if ('errors' in validationResult) {
-				return validationResult.errors.some(error => error.field === field);
+				return validationResult.errors
+					.find(error => error.field === field)
+					?.message;
 			} else {
-				return false;
+				return undefined;
 			}
 		} else {
-			return false;
+			return undefined;
 		}
 	}
 

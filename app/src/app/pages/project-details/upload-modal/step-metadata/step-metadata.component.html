@@ -8,17 +8,21 @@
 			<div class="col-sm-9">
 				<div class="form-group">
 					<div
-						class="input-group"
-						[class.has-danger]="showErrorOnField('summary')"
+						class="input-group has-validation"
+						[class.has-danger]="visibleFieldError('summary')"
 					>
 						<input
 							[(ngModel)]="upload.state.metadata.summary"
 							(ngModelChange)="parseMetadata()"
+							[class.is-invalid]="visibleFieldError('summary')"
 							name="summary"
 							type="text"
 							class="form-control"
 							value=""
 						/>
+						<div class="invalid-feedback">
+							{{ visibleFieldError('summary') }}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -65,8 +69,8 @@
 					</div>
 					<div class="col-md-4">
 						<div
-							class="input-group"
-							[class.has-danger]="showErrorOnField('location.x')"
+							class="input-group has-validation"
+							[class.has-danger]="visibleFieldError('location.x')"
 						>
 							<div class="input-group-prepend">
 								<div class="input-group-text">
@@ -76,16 +80,20 @@
 							<input
 								[(ngModel)]="upload.state.metadata.location.x"
 								(ngModelChange)="parseMetadata()"
+								[class.is-invalid]="visibleFieldError('location.x')"
 								name="location-x"
 								type="text"
 								class="form-control"
 							/>
+							<div class="invalid-feedback">
+								{{ visibleFieldError('location.x') }}
+							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div
-							class="input-group"
-							[class.has-danger]="showErrorOnField('location.y')"
+							class="input-group has-validation"
+							[class.has-danger]="visibleFieldError('location.y')"
 						>
 							<div class="input-group-prepend">
 								<div class="input-group-text">
@@ -95,10 +103,14 @@
 							<input
 								[(ngModel)]="upload.state.metadata.location.y"
 								(ngModelChange)="parseMetadata()"
+								[class.is-invalid]="visibleFieldError('location.y')"
 								name="location-y"
 								type="text"
 								class="form-control"
 							/>
+							<div class="invalid-feedback">
+								{{ visibleFieldError('location.y') }}
+							</div>
 						</div>
 					</div>
 				</div>
