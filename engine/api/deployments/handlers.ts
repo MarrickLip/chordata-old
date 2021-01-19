@@ -33,8 +33,6 @@ const postDeploymentHandler = new EventHandler([ProjectExists], async (event) =>
 	const body = JSON.parse(event.body);
 	const deploymentId = uuid();
 
-	console.log('[postDeploymentHandler] create deployment')
-
 	await createDeployment({
 		_id: deploymentId,
 		metadata: body.metadata,
@@ -42,7 +40,6 @@ const postDeploymentHandler = new EventHandler([ProjectExists], async (event) =>
 		timestamp: new Date().getTime(),
 	});
 
-	console.log('[postDeploymentHandler] ingestSamples')
 	await ingestSamples(body.samples, event.headers.device, deploymentId);
 
 	return {

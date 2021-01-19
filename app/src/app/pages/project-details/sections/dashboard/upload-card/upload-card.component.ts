@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	templateUrl: './upload-card.component.html',
 	styleUrls: ['./upload-card.component.css'],
 })
-export class UploadCardComponent {}
+export class UploadCardComponent {
+
+}

@@ -16,9 +16,5 @@ export class SectionWrapperComponent implements OnInit {
 		this.route.paramMap.subscribe(
 			(params) => (this.sectionId = params.get('section'))
 		);
-
-		this.route.fragment.subscribe(
-			(fragment) => (this.showUploadModal = fragment === 'upload')
-		);
 	}
 }
