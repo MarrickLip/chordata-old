@@ -22,6 +22,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { StepUploadComponent } from '~app/pages/project-details/upload-modal/step-upload/step-upload.component';
 import { ProgressBarModule } from 'angular-progress-bar';
+import { StatsCardComponent } from '~app/pages/project-details/sections/dashboard/stats-card/stats-card.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { StepMetadataComponent } from './pages/project-details/upload-modal/step-metadata/step-metadata.component';
@@ -56,6 +57,7 @@ import { TagInputModule } from 'ngx-chips';
 		StepDeviceComponent,
 		StepMetadataComponent,
 		StepUploadComponent,
+		StatsCardComponent,
 	],
 	bootstrap: [AppComponent],
 })

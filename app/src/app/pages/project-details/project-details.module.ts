@@ -7,6 +7,7 @@ import { NavbarModule } from './navbar/navbar.module';
 import { UploadCardComponent } from './sections/dashboard/upload-card/upload-card.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
 	imports: [CommonModule, FormsModule, NavbarModule, RouterModule],
 	declarations: [DashboardComponent, UploadCardComponent, ],
