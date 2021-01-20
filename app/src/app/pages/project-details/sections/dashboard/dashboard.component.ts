@@ -28,11 +28,11 @@ export class DashboardComponent implements OnInit {
 	public activeUsersChartColors: Array<any>;
 
 	public chartClicked(e: any): void {
-		console.log(e);
+
 	}
 
 	public chartHovered(e: any): void {
-		console.log(e);
+
 	}
 	public hexToRGB(hex, alpha) {
 		const r = parseInt(hex.slice(1, 3), 16),

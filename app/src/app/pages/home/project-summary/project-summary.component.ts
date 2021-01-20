@@ -16,6 +16,5 @@ export class ProjectSummaryComponent {
 	selectProject(): void {
 		this.projectService.id = this.project._id;
 		this.router.navigate(['projects', this.projectService.id]);
-		console.log({selectedProject: this.projectService.id});
 	}
 }

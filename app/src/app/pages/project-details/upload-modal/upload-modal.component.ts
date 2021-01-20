@@ -32,7 +32,6 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 	}
 
 	validateLeaveStep = (args: StepValidationArgs): boolean => {
-		console.log({validateLeaveStep: args.direction});
 		if (args.direction === STEP_DIRECTIN.forward) {
 			switch(args.fromStep.index) {
 				case 0:
@@ -89,8 +88,6 @@ export class UploadModalComponent implements OnInit, AfterViewInit {
 					'② Metadata': 'fas fa-list-ul',
 					'③ Upload': 'fas fa-upload',
 				}[title.trim()] || 'fas fa-bug';
-
-			console.log({title, icon});
 
 			// inject the fontawesome icon
 			linkEl.innerText = null;

@@ -50,7 +50,6 @@ export class UploadService {
 		this.device = device;
 
 		for (const [test, errorMessage] of device.guards.errors) {
-			console.log({ test, errorMessage, result: test(files) });
 			if (!test(files)) {
 				this.toastr.error(errorMessage, null, {
 					positionClass: 'toast-top-center',
@@ -60,7 +59,6 @@ export class UploadService {
 		}
 
 		for (const [test, warningMessage] of device.guards.warnings) {
-			console.log({ test, warningMessage, result: test(files) });
 			if (!test(files)) {
 				this.toastr.warning(warningMessage, null, {
 					positionClass: 'toast-top-center',
@@ -114,8 +112,6 @@ export class UploadService {
 			region: 'ap-southeast-2',
 			credentials: AwsCredentials as Credentials
 		});
-
-		console.log({blobs: this.state.files});
 
 		for (const file of this.state.files) {
 			const guid = uuid();

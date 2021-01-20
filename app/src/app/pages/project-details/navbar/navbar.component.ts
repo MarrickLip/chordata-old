@@ -118,7 +118,6 @@ export class NavbarComponent implements OnInit {
 	}
 
 	getPath(): string {
-		// console.log(this.location);
 		return this.location.prepareExternalUrl(this.location.path());
 	}
 }
