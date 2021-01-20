@@ -23,6 +23,7 @@
 .upload-card--body--icon {
 	font-size: 56px;
 	min-width: 56px;
+	min-height: 56px;
 	margin-right: 6px;
 	color: var(--primary-contrast);
 }
