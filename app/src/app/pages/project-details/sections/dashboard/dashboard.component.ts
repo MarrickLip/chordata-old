@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { StatsCardProps } from '~app/components/stats-card/stats-card.component';
+import { ProjectService } from '~app/services/project.service';
 
 declare const $: any;
 declare const document: any;
@@ -12,6 +14,33 @@ declare const document: any;
 	styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+	statsCardProps: StatsCardProps[];
+
+	constructor(public project: ProjectService) { }
+
+	renderProjectStatistics() {
+		this.statsCardProps = [
+			{
+				icon: 'far fa-map-marker-alt',
+				title: 'Deployments',
+				value: this.project.statistics.deployments.count,
+				summary: this.project.statistics.deployments.description,
+			},
+			{
+				icon: 'far fa-crosshairs',
+				title: 'Detections',
+				value: this.project.statistics.detections.count,
+				summary: this.project.statistics.detections.description,
+			},
+			{
+				icon: 'far fa-sensor-on',
+				title: 'Samples',
+				value: this.project.statistics.samples.count,
+				summary: this.project.statistics.samples.description,
+			},
+		];
+	}
+
 	public gradientStroke;
 	public chartColor;
 	public canvas: any;
@@ -45,7 +74,11 @@ export class DashboardComponent implements OnInit {
 			return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 		}
 	}
+
+
 	public ngOnInit() {
+		this.renderProjectStatistics();
+
 		this.chartColor = '#FFFFFF';
 
 		this.canvas = document.getElementById('chartActivity');

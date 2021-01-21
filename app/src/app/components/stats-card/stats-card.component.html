@@ -1,0 +1,27 @@
+<div class="card card-stats">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-5 col-md-4">
+				<div class="icon-big text-center">
+					<i class="{{ props.icon }} text-primary"></i>
+				</div>
+			</div>
+			<div class="col-7 col-md-8 d-flex">
+				<div
+					class="numbers d-flex flex-row justify-content-between align-items-center h-100 w-100"
+				>
+					<p class="card-category text-primary font-weight-bold">
+						{{ props.title }}
+					</p>
+					<p class="card-title">{{ props.value }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card-footer">
+		<hr />
+		<div class="stats">
+			{{ props.summary }}
+		</div>
+	</div>
+</div>
