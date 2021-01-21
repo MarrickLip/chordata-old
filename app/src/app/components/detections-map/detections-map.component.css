@@ -1,0 +1,11 @@
+.map {
+	height: 512px;
+	width: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.map-wrapper {
+	padding: 16px;
+	padding-top: 0;
+}

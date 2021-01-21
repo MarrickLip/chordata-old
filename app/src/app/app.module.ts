@@ -28,6 +28,8 @@ import { StepMetadataComponent } from './pages/project-details/upload-modal/step
 import { TagInputModule } from 'ngx-chips';
 import { DashboardComponent } from '~app/pages/project-details/sections/dashboard/dashboard.component';
 import { UploadCardComponent } from './pages/project-details/sections/dashboard/upload-card/upload-card.component';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { DetectionsMapComponent } from './components/detections-map/detections-map.component';
 
 @NgModule({
 	imports: [
@@ -45,6 +47,9 @@ import { UploadCardComponent } from './pages/project-details/sections/dashboard/
 		ToastrModule.forRoot(),
 		TagInputModule,
 		ProgressBarModule,
+		NgxMapboxGLModule.withConfig({
+			accessToken: 'pk.eyJ1IjoibWFycmlja2xpcCIsImEiOiJja2s2OGNkdTkwMWlrMzBueWRpOWpsaGd5In0.Z8M6Mu2uojeL15TLbQ5uJQ',
+		})
 	],
 	declarations: [
 		AppComponent,
@@ -60,6 +65,7 @@ import { UploadCardComponent } from './pages/project-details/sections/dashboard/
 		StatsCardComponent,
 		DashboardComponent,
 		UploadCardComponent,
+		DetectionsMapComponent,
 	],
 	bootstrap: [AppComponent],
 })
