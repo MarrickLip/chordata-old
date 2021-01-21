@@ -13,7 +13,6 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 import { AppRoutes } from './app.routing';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { ProjectSummaryComponent } from './pages/home/project-summary/project-summary.component';
-import { ProjectDetailsModule } from './pages/project-details/project-details.module';
 import { SectionWrapperComponent } from './pages/project-details/section-wrapper/section-wrapper.component';
 import { UploadModalComponent } from './pages/project-details/upload-modal/upload-modal.component';
 import { CardButtonComponent } from './components/card-button/card-button.component';
@@ -27,6 +26,8 @@ import { StatsCardComponent } from '~app/pages/project-details/sections/dashboar
 import { ToastrModule } from 'ngx-toastr';
 import { StepMetadataComponent } from './pages/project-details/upload-modal/step-metadata/step-metadata.component';
 import { TagInputModule } from 'ngx-chips';
+import { DashboardComponent } from '~app/pages/project-details/sections/dashboard/dashboard.component';
+import { UploadCardComponent } from './pages/project-details/sections/dashboard/upload-card/upload-card.component';
 
 @NgModule({
 	imports: [
@@ -40,7 +41,6 @@ import { TagInputModule } from 'ngx-chips';
 		HttpClientModule,
 		SidebarModule,
 		NavbarModule,
-		ProjectDetailsModule,
 		NgWizardModule.forRoot({ theme: THEME.circles }),
 		ToastrModule.forRoot(),
 		TagInputModule,
@@ -58,6 +58,8 @@ import { TagInputModule } from 'ngx-chips';
 		StepMetadataComponent,
 		StepUploadComponent,
 		StatsCardComponent,
+		DashboardComponent,
+		UploadCardComponent,
 	],
 	bootstrap: [AppComponent],
 })
