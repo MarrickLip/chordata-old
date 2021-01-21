@@ -5,6 +5,7 @@ export type StatsCardProps = {
 	title: string;
 	value: number | string;
 	summary: string;
+  routerLink?: string;
 };
 
 @Component({

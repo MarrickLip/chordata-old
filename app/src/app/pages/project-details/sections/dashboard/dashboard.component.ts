@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
 				title: 'Samples',
 				value: this.project.statistics.samples.count,
 				summary: this.project.statistics.samples.description,
+				routerLink: '../samples',
 			},
 		];
 	}
